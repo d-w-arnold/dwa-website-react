@@ -4,11 +4,16 @@ import Nav from './Nav';
 
 class App extends React.Component {
     render() {
+        let cv_path = '/resources/David_W_Arnold-CV-website.pdf';
+        let loading_icon = '/resources/favicon/android-chrome-192x192.png';
+        let github = 'https://github.com/d-w-arnold';
+        let linkedin = 'https://www.linkedin.com/in/david-w-arnold';
+        let keybase = 'https://keybase.io/d_w_arnold';
         return (
             <Fragment>
                 <div id="loader">
                     <div id="loading">
-                        <img id="loading-icon" src="%PUBLIC_URL%/resources/favicon/android-chrome-192x192.png"
+                        <img id="loading-icon" src={loading_icon}
                              alt="Loading ..."/>
                     </div>
                 </div>
@@ -16,17 +21,18 @@ class App extends React.Component {
                     <header>
                         <div id="top">
                             <div className="alignRight">
-                                <a className="iconLink" target="_blank" href="https://github.com/d-w-arnold">
+                                <a className="iconLink" target="_blank" rel="noopener noreferrer" href={github}>
                                     <i className="fa fa-github-square" aria-hidden="true"></i>
                                 </a>
-                                <a className="iconLink" target="_blank"
-                                   href="https://www.linkedin.com/in/david-w-arnold">
+                                <a className="iconLink" target="_blank" rel="noopener noreferrer"
+                                   href={linkedin}>
                                     <i className="fa fa-linkedin-square" aria-hidden="true"></i>
                                 </a>
-                                <a className="iconLink" target="_blank" href="https://keybase.io/d_w_arnold">
+                                <a className="iconLink" target="_blank" rel="noopener noreferrer" href={keybase}>
                                     <i className="fa fa-key" aria-hidden="true"></i>
                                 </a>
-                                <a id="cv" target="_blank" href="/resources/David_W_Arnold-CV-website.pdf">** CV
+                                <a id="cv" target="_blank" rel="noopener noreferrer"
+                                   href="/resources/David_W_Arnold-CV-website.pdf">** CV
                                     (Résumé) **</a>
                             </div>
                             <div className="alignLeft">
@@ -36,12 +42,12 @@ class App extends React.Component {
                             </div>
                         </div>
                         <div>
-                            <h1 id="myName"><a className="link-color" target="_blank"
-                                               href="/resources/David_W_Arnold-CV-website.pdf">David W.
+                            <h1 id="myName"><a className="link-color" target="_blank" rel="noopener noreferrer"
+                                               href={cv_path}>David W.
                                 Arnold</a></h1>
                         </div>
-                        <Nav/>
                     </header>
+                    <Nav/>
                 </div>
             </Fragment>
         );

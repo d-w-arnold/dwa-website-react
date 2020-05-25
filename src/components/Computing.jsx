@@ -21,6 +21,7 @@ function Computing() {
 
                 <div className="roboto">
                     <table className="computingTable">
+                        <tbody>
                         <tr>
                             <td className="computingSubTitle">OS's</td>
                             <td className="computingWriting">Mac OS, iOS, Windows 7/10, Ubuntu</td>
@@ -37,36 +38,36 @@ function Computing() {
                         <tr>
                             <td className="computingSubTitle">Projects</td>
                             <td className="computingWriting">
-                                <a target="_blank" href={my_first_website}>My First
+                                <a target="_blank" rel="noopener noreferrer" href={my_first_website}>My First
                                     Website</a>
                                 (PHP, HTML, CSS & JavaScript)<br/>
-                                <a target="_blank"
+                                <a target="_blank" rel="noopener noreferrer"
                                    href={csv_to_txt}>CSV
                                     to TXT
                                     Converter</a>
                                 (Java)<br/>
-                                <a target="_blank" href={timestamp_media}>Timestamp
+                                <a target="_blank" rel="noopener noreferrer" href={timestamp_media}>Timestamp
                                     Media</a>
                                 (AppleScript)<br/>
-                                <a target="_blank" href={ciphertext_decrypt}>Ciphertext
+                                <a target="_blank" rel="noopener noreferrer" href={ciphertext_decrypt}>Ciphertext
                                     Decryption</a>
                                 (Java)<br/>
-                                <a target="_blank" href={git_bisect}>Git Bisect</a>
+                                <a target="_blank" rel="noopener noreferrer" href={git_bisect}>Git Bisect</a>
                                 (Java)<br/>
-                                <a target="_blank" href={iot_device}>IoT BLE &
+                                <a target="_blank" rel="noopener noreferrer" href={iot_device}>IoT BLE &
                                     Motion Detection
                                     Device</a>
                                 (C++)<br/>
-                                <a target="_blank" href={iot_server}>IoT Central
+                                <a target="_blank" rel="noopener noreferrer" href={iot_server}>IoT Central
                                     Server</a>
                                 (Java)<br/>
-                                <a target="_blank" href={iot_web_app}>IoT
+                                <a target="_blank" rel="noopener noreferrer" href={iot_web_app}>IoT
                                     Admin Web
                                     App</a> (PHP, HTML, CSS & MySQL)<br/>
-                                <a target="_blank" href={sudoku_solver}>Sudoku
+                                <a target="_blank" rel="noopener noreferrer" href={sudoku_solver}>Sudoku
                                     Solver</a> (Java &
                                 JavaFX)<br/>
-                                <a target="_blank" href={talks}>Learn:
+                                <a target="_blank" rel="noopener noreferrer" href={talks}>Learn:
                                     Git,
                                     GitHub and JetBrains IDEs</a> (Markdown) (Talks aimed at Year 1 and 2
                                 undergraduates)
@@ -75,11 +76,12 @@ function Computing() {
                         <tr>
                             <td className="computingSubTitle">Events</td>
                             <td className="computingWriting"><a
-                                target="_blank"
+                                target="_blank" rel="noopener noreferrer"
                                 href={cisco_uni_cha}>2017
                                 Cisco
                                 University Challenge</a></td>
                         </tr>
+                        </tbody>
                     </table>
                 </div>
 
@@ -90,44 +92,43 @@ function Computing() {
                 {/*Red Bull*/}
                 <div className="roboto">
                     <table className="marginBottom2">
+                        <tbody>
                         <tr>
                             <td className="employerName"><span className="iconLap" aria-hidden="true"/><b><a
-                                target="_blank" href={red_bull_careers}>Red Bull Technology /
+                                target="_blank" rel="noopener noreferrer" href={red_bull_careers}>Red Bull Technology /
                                 Red Bull Racing</a></b></td>
                             <td className="location">Milton Keynes, U.K.</td>
                         </tr>
+                        </tbody>
                     </table>
 
                     <table className="marginBottom2">
+                        <tbody>
                         <tr>
                             <td className="jobTitle">IT Student Placement</td>
                         </tr>
                         <tr>
                             <td className="jobDates">Jun. 2018 - Jun. 2019</td>
                         </tr>
+                        </tbody>
                     </table>
 
-                    <table>
-                        <tr>
-                            <td className="jobDetails">
-                                <p>•&nbsp;&nbsp;Responsible for supporting, maintaining and optimising internal
-                                    systems.</p>
-                                <p>•&nbsp;&nbsp;Expected to work well both individually and as part of a team.</p>
-                                <p>•&nbsp;&nbsp;Main accountabilities during role:</p>
-                                <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Support and manage critical business
-                                    applications and
-                                    tools</p>
-                                <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Communication, building relationships and
-                                    working with
-                                    people across teams</p>
-                                <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Technical approach to problem solving</p>
-                                <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Participation in project work</p>
-                                <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Identify and propose opportunities to improve
-                                    processes and
-                                    systems</p>
-                            </td>
-                        </tr>
-                    </table>
+                    <div className="jobDetails">
+                        <p>•&nbsp;&nbsp;Responsible for supporting, maintaining and optimising internal
+                            systems.</p>
+                        <p>•&nbsp;&nbsp;Expected to work well both individually and as part of a team.</p>
+                        <p>•&nbsp;&nbsp;Main accountabilities during role:</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Support and manage critical business
+                            applications and
+                            tools</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Communication, building relationships and
+                            working with
+                            people across teams</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Technical approach to problem solving</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Participation in project work</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Identify and propose opportunities to improve processes
+                            and systems</p>
+                    </div>
                 </div>
 
                 <div className="spacing"/>
@@ -135,30 +136,30 @@ function Computing() {
                 {/*IT-Alan*/}
                 <div className="roboto">
                     <table className="marginBottom2">
+                        <tbody>
                         <tr>
                             <td className="employerName"><span className="iconLap" aria-hidden="true"/><b><a
-                                target="_blank" href={it_alan}>IT-Alan</a></b></td>
+                                target="_blank" rel="noopener noreferrer" href={it_alan}>IT-Alan</a></b></td>
                             <td className="location">Burmarsh, Kent, U.K.</td>
                         </tr>
+                        </tbody>
                     </table>
 
                     <table className="marginBottom2">
+                        <tbody>
                         <tr>
                             <td className="jobTitle">Assistant Engineer</td>
                         </tr>
                         <tr>
                             <td className="jobDates">Jun. 2017 - Sep. 2017</td>
                         </tr>
+                        </tbody>
                     </table>
 
-                    <table>
-                        <tr>
-                            <td className="jobDetails">
-                                <p>•&nbsp;&nbsp;Computer repair & maintenance with a Microsoft Certified Systems
-                                    Engineer.</p>
-                            </td>
-                        </tr>
-                    </table>
+                    <div className="jobDetails">
+                        <p>•&nbsp;&nbsp;Computer repair & maintenance with a Microsoft Certified Systems
+                            Engineer.</p>
+                    </div>
                 </div>
             </div>
         </Fragment>
