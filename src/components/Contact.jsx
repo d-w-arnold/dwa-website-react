@@ -1,4 +1,5 @@
 import React, {Fragment} from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import GITHUB_ICON from '../github_white.png';
 import KEYBASE_ICON from '../keybase-tile.svg';
 
@@ -7,10 +8,8 @@ function Contact() {
     let keybase = 'https://keybase.io/d_w_arnold';
     return (
         <Fragment>
+            <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer/>
             <div className="body">
-
-                <script src="https://www.google.com/recaptcha/api.js" async defer/>
-                <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer/>
 
                 {/*TODO: React form validation*/}
 
@@ -36,8 +35,7 @@ function Contact() {
                             </div>
                         </div>
                         <div className="right">
-                            {/*TODO: Form*/}
-                            Form
+                            <MyForm/>
                         </div>
                     </div>
                 </div>
@@ -45,6 +43,87 @@ function Contact() {
             </div>
         </Fragment>
     );
+}
+
+const recaptchaRef = React.createRef();
+
+class MyForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            fullname: '',
+            emailaddress: '',
+            mssg: ''
+        };
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+    }
+
+    handleInputChange(event) {
+        const target = event.target;
+        const name = target.name;
+        if (name === 'fullname') {
+            this.setState({fullname: target.value});
+        } else if (name === 'emailaddress') {
+            this.setState({emailaddress: target.value});
+        } else if (name === 'mssg') {
+            this.setState({mssg: target.value});
+        }
+    }
+
+    onChange(value) {
+        console.log("ReCAPTCHA success! Captcha value:", value);
+    }
+
+    render() {
+        return (
+            <form id="contact-form" onSubmit={() => {
+                recaptchaRef.current.execute();
+            }}>
+                <div className="tinySpacing">
+                    <label htmlFor="name">Name:</label>
+                </div>
+                <input
+                    type="text"
+                    name="fullname"
+                    value={this.state.fullname}
+                    onChange={this.handleInputChange}
+                    className="response"
+                    id="name"
+                    tabIndex="1"
+                    autoFocus={true}/>
+                <div className="tinySpacing">
+                    <label htmlFor="email">Email Address:</label>
+                </div>
+                <input
+                    type="email"
+                    name="emailaddress"
+                    value={this.state.emailaddress}
+                    onChange={this.handleInputChange}
+                    className="response"
+                    id="email"
+                    tabIndex="2"/>
+                <div className="tinySpacing">
+                    <label htmlFor="message">Message:</label>
+                </div>
+                <textarea
+                    name="mssg"
+                    value={this.state.mssg}
+                    onChange={this.handleInputChange}
+                    className="response"
+                    id="message"
+                    tabIndex="3"
+                    rows="10"/>
+                <button type="submit" id="button" tabIndex="4">Send Your Message</button>
+                <ReCAPTCHA
+                    ref={recaptchaRef}
+                    size="invisible"
+                    sitekey="6Lcl1rcUAAAAAP9cwFpK09YM8xi3Lhbc0jjgSFWs"
+                    onChange={this.onChange}
+                />
+            </form>
+        );
+    }
 }
 
 export default Contact;
