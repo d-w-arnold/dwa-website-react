@@ -1,38 +1,500 @@
-.App {
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+body {
+    padding: 2% 5% 2% 5%;
+    background-color: #282828;
+    color: #ffffff;
+    text-align: center;
+    font-size: 16pt;
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+form {
+    margin: 0 !important;
+}
+
+html * {
+    margin: 0;
+    height: 100%;
+}
+
+label.error {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    font-family: serif !important;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    padding: 2% 0 4% 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
     text-align: center;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+p {
+    margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
+p b a:hover {
+    text-decoration: underline;
+}
+
+span.iconUni::before {
+    content: "\f19c";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    padding-right: 10px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+span.iconLap::before {
+    content: "\f109";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    padding-right: 10px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+table {
+    width: 100%;
+}
+
+table tr td a {
+    color: #0395DE;
+}
+
+table tr td a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+    text-decoration-color: #ffffff;
+}
+
+#button {
+    background-color: #ffffff;
+    font-size: 14pt;
+    padding: 2% 3%;
+}
+
+#cv {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 10pt;
+    padding: 1.4% 2%;
+    border-radius: 20px;
+    background-color: lightgrey;
+    color: #282828;
+    vertical-align: text-top;
+}
+
+#cv:hover {
+    background-color: #ffffff;
+}
+
+#delta {
+    line-height: 1;
+    font-size: 60pt;
+}
+
+#github {
+    width: 50%;
+    float: left;
+}
+
+#github:hover {
+    transform: scale(1.2);
+}
+
+#keybase {
+    width: 50%;
+    float: right;
+}
+
+#keybase:hover {
+    transform: scale(1.2);
+}
+
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+#loading { /* Website loading circle */
+    margin: -75px 0 0 -75px;
+    border: 16px solid #ffffff;
+    border-radius: 50%;
+    border-top: 16px solid #0395DE;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+#loading-icon { /* Website loading icon */
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    padding: 25% 0;
+    -webkit-animation: spin 2s linear infinite reverse;
+    animation: spin 2s linear infinite reverse;
+}
+
+#message {
+    resize: none;
+}
+
+#myDiv {
+    display: none;
+}
+
+#myName {
+    font-size: 22pt;
+    padding-bottom: 1%;
+    border-bottom: solid #ffffff;
+    font-weight: normal;
+    text-align: right;
+}
+
+#top {
+    height: 40pt
+}
+
+.alignLeft {
+    width: 50%;
+    float: left;
+    text-align: left;
+}
+
+.alignRight {
+    width: 50%;
+    float: right;
+    text-align: right;
+}
+
+.animate-bottom { /* Add animation to page content */
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+
+.body {
+    margin: 0 15% 6% 15%;
+    text-align: left;
+}
+
+.buttonPlacement {
+    padding: 3% 0;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.computingSubTitle {
+    text-align: right;
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.computingTable {
+    border-spacing: 0 15px;
+    margin: -15px 0 -15px 0;
+}
+
+.computingWriting {
+    padding-left: 2%;
+    font-size: 12pt;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-details .left {
+    padding-top: 2%;
+}
+
+.contact-details .right {
+    flex: 1;
+    padding-left: 3%;
+}
+
+.employerName {
+    font-size: 18pt;
+}
+
+.error {
+    color: red;
+}
+
+.iconLink {
+    font-size: 20pt;
+    color: lightgrey;
+}
+
+.iconLink:hover {
+    color: #ffffff;
+}
+
+.jobDates {
+    margin-bottom: 2%;
+    font-size: 12pt;
+}
+
+.jobDetails {
+    font-size: 12pt;
+}
+
+.jobTitle {
+    margin-bottom: 2%;
+    font-size: 14pt;
+}
+
+.link-color {
+    color: #0395DE;
+}
+
+.link-color:hover {
+    text-decoration: underline;
+    color: #ffffff;
+    text-decoration-color: #ffffff;
+}
+
+.location {
+    font-size: 14pt;
+    text-align: right;
+}
+
+.logos {
+    padding-top: 5%;
+}
+
+.marginBottom2 {
+    margin-bottom: 2%;
+}
+
+.response {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2%;
+    font-size: 16px;
+}
+
+.roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+.spacing {
+    margin: 2% 0;
+}
+
+.spacingWithoutLine {
+    margin-bottom: 6%;
+}
+
+.statusMessage {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.tinySpacing {
+    padding: 3% 0;
+}
+
+.title {
+    font-size: 24pt;
+    margin-bottom: 4%;
+    font-family: serif !important;
+}
+
+.uniCourseDetails {
+    font-size: 12pt;
+}
+
+.writing {
+    font-size: 12pt;
+    text-align: left;
+}
+
+.writing-justify {
+    font-size: 12pt;
+    text-align: justify;
+    text-align-last: left;
+}
+
+@-webkit-keyframes spin { /* Safari */
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
     }
 }
 
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.App-link {
-    color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-    from {
+@keyframes spin {
+    0% {
         transform: rotate(0deg);
     }
-    to {
+    100% {
         transform: rotate(360deg);
     }
+}
+
+@-webkit-keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+    to {
+        bottom: 0px;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    li a {
+        display: block;
+        text-align: center;
+        font-family: serif !important;
+        padding: 2%;
+    }
+
+    .body {
+        margin: 0 0 6% 0;
+        text-align: left;
+    }
+
+    .contact-details {
+        flex-direction: column;
+    }
+
+    .contact-details .left {
+        text-align: center;
+        padding-top: 0 !important;
+    }
+
+    .contact-details .right {
+        padding-left: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    ul {
+        flex-direction: column;
+    }
+
+    #cv {
+        font-family: 'Roboto', sans-serif !important;
+        font-size: 8pt;
+        padding: 1.4% 2%;
+        border-radius: 20px;
+        background-color: #ffffff;
+        color: #282828;
+        vertical-align: super;
+    }
+
+    #myName {
+        text-align: center;
+    }
+
+    #top {
+        height: 80pt !important;
+    }
+
+    .alignLeft {
+        text-align: center;
+        float: none;
+        width: auto;
+        height: auto;
+    }
+
+    .alignRight {
+        text-align: right;
+        float: none;
+        width: auto;
+        height: auto;
+    }
+
+    .buttonPlacement {
+        text-align: left;
+    }
+
+    .iconLink {
+        font-size: 16pt;
+        float: left;
+        margin-right: 4%;
+    }
+
+    .statusMessage {
+        text-align: center;
+    }
+
+    span.iconUni::before {
+        display: none !important;
+    }
+
+    span.iconLap::before {
+        display: none !important;
+    }
+}
+
+body::-webkit-scrollbar { /* Hide scrollbar for Chrome, Safari and Opera */
+    display: none;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: red;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    color: red;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+    color: red;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: red;
 }
