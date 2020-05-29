@@ -5,7 +5,6 @@ function Education() {
     let newberry = 'https://www.newberry.edu';
     let open_uni = 'http://www.open.ac.uk';
     let harvey = 'http://www.harveygs.kent.sch.uk';
-
     return (
         <Fragment>
             <div className="body">

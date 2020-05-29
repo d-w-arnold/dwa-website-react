@@ -257,6 +257,7 @@ table tr td a:hover {
 
 .iconLink {
     font-size: 20pt;
+    margin-right: 2%;
     color: lightgrey;
 }
 
@@ -462,8 +463,8 @@ table tr td a:hover {
 
     .iconLink {
         font-size: 16pt;
+        margin-right: 3%;
         float: left;
-        margin-right: 4%;
     }
 
     .statusMessage {
