@@ -95,6 +95,8 @@ table tr td a:hover {
     background-color: #ffffff;
     font-size: 14pt;
     padding: 2% 3%;
+    margin-top: 2%;
+    border-radius: 10px;
 }
 
 #cv {
