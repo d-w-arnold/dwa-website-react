@@ -92,6 +92,7 @@ table tr td a:hover {
 }
 
 #button {
+    text-align: center;
     background-color: #ffffff;
     font-size: 14pt;
     padding: 2% 3%;
@@ -211,7 +212,7 @@ table tr td a:hover {
 }
 
 .buttonPlacement {
-    padding: 3% 0;
+    margin-top: 2%;
     text-align: center;
 }
 
