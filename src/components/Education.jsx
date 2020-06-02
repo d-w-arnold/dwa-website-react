@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React from "react";
 
 function Education() {
     let uni_of_kent = 'https://www.kent.ac.uk/';
@@ -6,7 +6,7 @@ function Education() {
     let open_uni = 'http://www.open.ac.uk';
     let harvey = 'http://www.harveygs.kent.sch.uk';
     return (
-        <Fragment>
+        <React.Fragment>
             <div className="body">
                 <p className="title">Education</p>
 
@@ -187,7 +187,7 @@ function Education() {
                     </div>
                 </div>
             </div>
-        </Fragment>
+        </React.Fragment>
     );
 }
 

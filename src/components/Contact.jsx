@@ -1,14 +1,58 @@
-import React, {Fragment} from "react";
-import axios from 'axios';
-// import ReCAPTCHA from "react-google-recaptcha"; // TODO: Add when finished
+import React from "react";
 import GITHUB_ICON from '../github_white.png';
 import KEYBASE_ICON from '../keybase-tile.svg';
+import MyForm from "./MyForm";
+
+/**
+ * @config preparing config prop.
+ * api: url for the server endpoint
+ * successMessage: message will show in the UI when mail is successfully sent.
+ * errorMessage: message will show in the UI when mail is not sent.
+ * fields: this is the name of each field. This should be exact order of the fieldsConfig and fieldsConfig.fieldName should be the same
+ * fieldsConfig = settings for each input/textarea field
+ */
+const config = {
+    api: `${process.env.REACT_APP_API}`,
+    successMessage: 'Thank you for contacting me.',
+    errorMessage: 'Sorry we have some problems.',
+    fields: {
+        fullname: '',
+        emailaddress: '',
+        mssg: ''
+    },
+    fieldsConfig: [
+        {
+            id: 1,
+            label: 'Name:',
+            fieldName: 'fullname',
+            type: 'text',
+            isRequired: true,
+            klassName: 'fullname-field response'
+        },
+        {
+            id: 2,
+            label: 'Email Address:',
+            fieldName: 'emailaddress',
+            type: 'email',
+            isRequired: true,
+            klassName: 'emailaddress-field response'
+        },
+        {
+            id: 3,
+            label: 'Message:',
+            fieldName: 'mssg',
+            type: 'textarea',
+            isRequired: true,
+            klassName: 'mssg-field response'
+        }
+    ]
+}
 
 function Contact() {
     let github = 'https://github.com/d-w-arnold';
     let keybase = 'https://keybase.io/d_w_arnold';
     return (
-        <Fragment>
+        <React.Fragment>
             <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer/>
             <div className="body">
 
@@ -37,125 +81,14 @@ function Contact() {
                             </div>
                         </div>
                         <div className="right">
-                            <MyForm/>
+                            <MyForm config={config}/>
                         </div>
                     </div>
                 </div>
 
             </div>
-        </Fragment>
+        </React.Fragment>
     );
-}
-
-// const recaptchaRef = React.createRef();
-const API_PATH = 'http://localhost:8080/api/contact/index.php';
-
-class MyForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            fullname: '',
-            emailaddress: '',
-            mssg: '',
-            mailSent: false,
-            error: ''
-        };
-
-        this.handleInputChange = this.handleInputChange.bind(this);
-    }
-
-    handleInputChange(event) {
-        const target = event.target;
-        const name = target.name;
-        if (name === 'fullname') {
-            this.setState({fullname: target.value});
-        } else if (name === 'emailaddress') {
-            this.setState({emailaddress: target.value});
-        } else if (name === 'mssg') {
-            this.setState({mssg: target.value});
-        }
-    }
-
-    onChange(value) {
-        console.log("ReCAPTCHA success! Captcha value:", value);
-    }
-
-    handleFormSubmit = e => {
-        e.preventDefault();
-        console.log(this.state); // TODO: Remove when finished
-        axios({
-            method: 'post',
-            url: `${API_PATH}`,
-            headers: {'content-type': 'application/json'},
-            data: this.state
-        })
-            .then(result => {
-                this.setState({
-                    mailSent: result.data.sent
-                })
-            })
-            .catch(error => this.setState({error: error.message}));
-    };
-
-    render() {
-        return (
-            <form id="contact-form">
-                <div className="tinySpacing">
-                    <label htmlFor="name">Name:</label>
-                </div>
-                <input
-                    type="text"
-                    name="fullname"
-                    value={this.state.fullname}
-                    onChange={this.handleInputChange}
-                    className="response"
-                    id="name"
-                    tabIndex="1"
-                    autoFocus={true}/>
-                <div className="tinySpacing">
-                    <label htmlFor="email">Email Address:</label>
-                </div>
-                <input
-                    type="email"
-                    name="emailaddress"
-                    value={this.state.emailaddress}
-                    onChange={this.handleInputChange}
-                    className="response"
-                    id="email"
-                    tabIndex="2"/>
-                <div className="tinySpacing">
-                    <label htmlFor="message">Message:</label>
-                </div>
-                <textarea
-                    name="mssg"
-                    value={this.state.mssg}
-                    onChange={this.handleInputChange}
-                    className="response"
-                    id="message"
-                    tabIndex="3"
-                    rows="10"/>
-                <div className="buttonPlacement">
-                    <input
-                        type="submit"
-                        id="button"
-                        onClick={(e) => this.handleFormSubmit(e)}
-                        value="Send Your Message"
-                        tabIndex="4"/>
-                </div>
-                <div>
-                    {this.state.mailSent &&
-                    <div>Thank you for contacting us.</div>
-                    }
-                </div>
-                {/*<ReCAPTCHA TODO: Add when finished*/}
-                {/*    ref={recaptchaRef}*/}
-                {/*    size="invisible"*/}
-                {/*    sitekey="6Lcl1rcUAAAAAP9cwFpK09YM8xi3Lhbc0jjgSFWs"*/}
-                {/*    onChange={this.onChange}*/}
-                {/*/>*/}
-            </form>
-        );
-    }
 }
 
 export default Contact;

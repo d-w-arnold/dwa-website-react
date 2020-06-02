@@ -1,11 +1,11 @@
-import React, {Fragment} from "react";
+import React from "react";
 
 function Home() {
     let uni_of_kent = 'https://www.kent.ac.uk/';
     let kent_golf = 'https://www.kentgolf.org/';
     let euro_pro = 'http://www.europrotour.com/';
     return (
-        <Fragment>
+        <React.Fragment>
             <div className="body">
                 <p className="title">Welcome!</p>
                 <div className="writing roboto">
@@ -56,7 +56,7 @@ function Home() {
                         coast.</p>
                 </div>
             </div>
-        </Fragment>
+        </React.Fragment>
     );
 }
 

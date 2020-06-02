@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React from "react";
 
 function Computing() {
     let my_first_website = 'https://github.com/d-w-arnold/deltawhiskeyalpha.com';
@@ -15,7 +15,7 @@ function Computing() {
     let red_bull_careers = 'https://redbullracing.redbull.com/careers';
     let it_alan = 'http://www.it-alan.co.uk/';
     return (
-        <Fragment>
+        <React.Fragment>
             <div className="body">
                 <p className="title">Computing</p>
 
@@ -162,7 +162,7 @@ function Computing() {
                     </div>
                 </div>
             </div>
-        </Fragment>
+        </React.Fragment>
     );
 }
 
