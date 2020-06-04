@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React from "react";
 import './App.css';
 import Nav from './Nav';
 
@@ -10,7 +10,7 @@ class App extends React.Component {
         let linkedin = 'https://www.linkedin.com/in/david-w-arnold';
         let keybase = 'https://keybase.io/d_w_arnold';
         return (
-            <Fragment>
+            <React.Fragment>
                 <div id="loader">
                     <div id="loading">
                         <img id="loading-icon" src={loading_icon}
@@ -22,18 +22,17 @@ class App extends React.Component {
                         <div id="top">
                             <div className="alignRight">
                                 <a className="iconLink" target="_blank" rel="noopener noreferrer" href={github}>
-                                    <i className="fa fa-github-square" aria-hidden="true"></i>
+                                    <i className="fa fa-github-square" aria-hidden="true"/>
                                 </a>
                                 <a className="iconLink" target="_blank" rel="noopener noreferrer"
                                    href={linkedin}>
-                                    <i className="fa fa-linkedin-square" aria-hidden="true"></i>
+                                    <i className="fa fa-linkedin-square" aria-hidden="true"/>
                                 </a>
                                 <a className="iconLink" target="_blank" rel="noopener noreferrer" href={keybase}>
-                                    <i className="fa fa-key" aria-hidden="true"></i>
+                                    <i className="fa fa-key" aria-hidden="true"/>
                                 </a>
                                 <a id="cv" target="_blank" rel="noopener noreferrer"
-                                   href="/resources/David_W_Arnold-CV-website.pdf">** CV
-                                    (Résumé) **</a>
+                                   href={cv_path}>** CV (Résumé) **</a>
                             </div>
                             <div className="alignLeft">
                                 <p id="delta">
@@ -43,13 +42,12 @@ class App extends React.Component {
                         </div>
                         <div>
                             <h1 id="myName"><a className="link-color" target="_blank" rel="noopener noreferrer"
-                                               href={cv_path}>David W.
-                                Arnold</a></h1>
+                                               href={cv_path}>David W. Arnold</a></h1>
                         </div>
                     </header>
                     <Nav/>
                 </div>
-            </Fragment>
+            </React.Fragment>
         );
     }
 }

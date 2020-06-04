@@ -103,7 +103,7 @@ class MyForm extends React.Component {
                         value="Send Your Message"
                         tabIndex="4"/>
                 </div>
-                <div>
+                <div className="tinySpacing">
                     {this.state.mailSent && <div className="success">{successMessage}</div>}
                     {this.state.error && <div className="error">{errorMessage}</div>}
                 </div>

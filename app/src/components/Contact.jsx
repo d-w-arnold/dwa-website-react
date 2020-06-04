@@ -1,6 +1,6 @@
 import React from "react";
-import GITHUB_ICON from '../github_white.png';
-import KEYBASE_ICON from '../keybase-tile.svg';
+import GITHUB_ICON from '../icons/github_white.png';
+import KEYBASE_ICON from '../icons/keybase-tile.svg';
 import MyForm from "./MyForm";
 
 /**
