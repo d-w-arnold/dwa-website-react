@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
 
-// TODO: Add when finished
-// import ReCAPTCHA from "react-google-recaptcha";
-// const recaptchaRef = React.createRef();
+const recaptchaRef = React.createRef();
 
 class MyForm extends React.Component {
     constructor(props) {
@@ -15,12 +14,6 @@ class MyForm extends React.Component {
         };
     }
 
-    /**
-     * @function handleChange
-     * @param e { obj } - change event
-     * @param field { string } - namve of the field
-     * @return void
-     */
     handleInputChange = (e, field) => {
         let value = e.target.value;
         let updateValue = {};
@@ -28,13 +21,10 @@ class MyForm extends React.Component {
         this.setState(updateValue);
     };
 
-    /**
-     * @function handleFormSubmit
-     * @param e { obj } - form event
-     * @return void
-     */
-    handleFormSubmit = e => {
+    handleFormSubmit = (e) => {
         e.preventDefault();
+        recaptchaRef.current.execute();
+        // console.log(this.state);
         axios({
             method: "post",
             url: `${process.env.REACT_APP_API}`,
@@ -54,7 +44,6 @@ class MyForm extends React.Component {
             .catch(error => this.setState({error: error.message}));
     };
 
-    // TODO: Remove when finished
     onChange(value) {
         console.log("ReCAPTCHA success! Captcha value:", value);
     }
@@ -77,7 +66,8 @@ class MyForm extends React.Component {
                                         name={field.fieldName}
                                         className={field.klassName}
                                         tabIndex={field.id}
-                                        onChange={e => this.handleInputChange(e, field.fieldName)}/>
+                                        onChange={e => this.handleInputChange(e, field.fieldName)}
+                                    />
                                 </React.Fragment>
                             ) : (
                                 <React.Fragment>
@@ -89,31 +79,33 @@ class MyForm extends React.Component {
                                         className={field.klassName}
                                         tabIndex={field.id}
                                         onChange={e => this.handleInputChange(e, field.fieldName)}
-                                        rows="10"/>
+                                        rows="10"
+                                    />
                                 </React.Fragment>
                             )}
                         </React.Fragment>
                     );
                 })}
+                {/*TODO: Fix button not wide enough, when website loaded from a component other than Contact*/}
                 <div className="buttonPlacement">
                     <input
                         type="submit"
                         id="button"
                         onClick={(e) => this.handleFormSubmit(e)}
                         value="Send Your Message"
-                        tabIndex="4"/>
+                        tabIndex="4"
+                    />
                 </div>
+                <ReCAPTCHA
+                    ref={recaptchaRef}
+                    size="invisible"
+                    sitekey="6Lcl1rcUAAAAAP9cwFpK09YM8xi3Lhbc0jjgSFWs"
+                    // onChange={this.onChange}
+                />
                 <div className="tinySpacing">
                     {this.state.mailSent && <div className="success">{successMessage}</div>}
                     {this.state.error && <div className="error">{errorMessage}</div>}
                 </div>
-                {/*TODO: Add when finished*/}
-                {/*<ReCAPTCHA*/}
-                {/*    ref={recaptchaRef}*/}
-                {/*    size="invisible"*/}
-                {/*    sitekey="6Lcl1rcUAAAAAP9cwFpK09YM8xi3Lhbc0jjgSFWs"*/}
-                {/*    onChange={this.onChange}*/}
-                {/*/>*/}
             </form>
         );
     }

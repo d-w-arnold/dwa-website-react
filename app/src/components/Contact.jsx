@@ -53,7 +53,6 @@ function Contact() {
     let keybase = 'https://keybase.io/d_w_arnold';
     return (
         <React.Fragment>
-            <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer/>
             <div className="body">
 
                 {/* TODO: React form validation */}
@@ -63,9 +62,8 @@ function Contact() {
                 <div className="roboto">
                     <div className="contact-details">
                         <div className="left">
-                            {/* TODO: Fix LinkedIn Public Profile Badge */}
                             <div className="LI-profile-badge" data-version="v1" data-size="medium" data-locale="en_US"
-                                 datatype="vertical" data-theme="dark" data-vanity="david-w-arnold"><a
+                                 data-type="vertical" data-theme="dark" data-vanity="david-w-arnold"><a
                                 className="LI-simple-link"
                                 href='https://uk.linkedin.com/in/david-w-arnold?trk=profile-badge'>David W. Arnold</a>
                             </div>
