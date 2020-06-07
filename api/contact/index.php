@@ -1,7 +1,7 @@
 <?php
 require './vendor/autoload.php';
 require 'config.php';
-require 'sparkpostSecret.php';
+require 'sparkpostSecret.php'; // Provides $sparkpostSecret, assign your own Sparkpost API key secret to this variable.
 header("Access-Control-Allow-Origin: *");
 header('Access-Control-Allow-Headers: Content-Type');
 $rest_json = file_get_contents("php://input");

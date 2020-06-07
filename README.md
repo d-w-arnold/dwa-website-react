@@ -1,4 +1,4 @@
-# My First Dockerised React Website 💻 🌎
+# My First Dockerised React Website ⚛️ 🐳
 
 ## Usage of complete project.
 
@@ -39,7 +39,7 @@ Api will run in `localhost:8080`
 
 Make sure to change api url in the `.env` file is correct:
 
-```javascript
+```dotenv
 $REACT_APP_API = http://localhost:8080/contact/index.php
 ```
 
@@ -49,7 +49,7 @@ Change this to whatever you want.
 
 Please go to `/api/contact/config.php` and change adminName to your name, and adminEmail to your email - this is the email address emails will be sent to.
 
-When the contact form is submitted, emails will be sent using <a href="https://github.com/SparkPost/php-sparkpost" target="_blank">Sparkpost's client library for PHP</a>.
+When the contact form is submitted, emails will be sent using <a href="https://github.com/SparkPost/php-sparkpost" target="_blank">Sparkpost's client library for PHP</a>. You will need to provide your own Sparkpost API key secret to send emails (see `/api/contact/index.php`, line 4).
 
 
 
