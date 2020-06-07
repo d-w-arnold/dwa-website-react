@@ -62,6 +62,7 @@ function Contact() {
                 <div className="roboto">
                     <div className="contact-details">
                         <div className="left">
+                            {/*TODO: LinkedIn badge not appearing when website loaded from a component other than Contact*/}
                             <div className="LI-profile-badge" data-version="v1" data-size="medium" data-locale="en_US"
                                  data-type="vertical" data-theme="dark" data-vanity="david-w-arnold"><a
                                 className="LI-simple-link"

@@ -21,6 +21,7 @@ class MyForm extends React.Component {
         this.setState(updateValue);
     };
 
+    // TODO: Google ReCAPTCHA check with axios
     handleFormSubmit = (e) => {
         e.preventDefault();
         recaptchaRef.current.execute();
@@ -100,6 +101,7 @@ class MyForm extends React.Component {
                     ref={recaptchaRef}
                     size="invisible"
                     sitekey="6Lcl1rcUAAAAAP9cwFpK09YM8xi3Lhbc0jjgSFWs"
+                    theme="dark"
                     // onChange={this.onChange}
                 />
                 <div className="tinySpacing">
