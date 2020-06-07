@@ -13,7 +13,7 @@ import MyForm from "./MyForm";
  */
 const config = {
     api: `${process.env.REACT_APP_API}`,
-    successMessage: 'Thank you for contacting me.',
+    successMessage: 'Thank you for contacting me, I\'ll be in touch!',
     errorMessage: 'Sorry we have some problems.',
     fields: {
         fullname: '',
