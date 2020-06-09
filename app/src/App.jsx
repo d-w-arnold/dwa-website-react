@@ -7,7 +7,7 @@ class App extends React.Component {
         let cv_path = '/resources/David_W_Arnold-CV-website.pdf';
         let loading_icon = '/resources/favicon/android-chrome-192x192.png';
         let github = 'https://github.com/d-w-arnold';
-        let linkedin = 'https://www.linkedin.com/in/david-w-arnold';
+        let linkedin = 'https://uk.linkedin.com/in/david-w-arnold';
         let keybase = 'https://keybase.io/d_w_arnold';
         return (
             <React.Fragment>

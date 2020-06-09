@@ -9,11 +9,11 @@ function Home() {
             <div className="body">
                 <p className="title">Welcome!</p>
                 <div className="writing roboto">
-                    <p>Hello there, I’m a computer science graduate (graduating June 2020 - available for employment
-                        25th May, predicted grade: 1st) from the <a className="link-color" target="_blank"
-                                                                    rel="noopener noreferrer"
-                                                                    href={uni_of_kent}>University of
-                            Kent</a>. I’m eager to learn new skills and
+                    <p>Hello there, I’m a computer science graduate (graduating June 2020 - predicted: 1st) from the <a
+                        className="link-color" target="_blank"
+                        rel="noopener noreferrer"
+                        href={uni_of_kent}>University of
+                        Kent</a>. I’m eager to learn new skills and
                         take on a role where I can contribute to solving real-world challenges. I am highly motivated,
                         organised, reliable and work well both independently and as part of a team.</p>
                 </div>

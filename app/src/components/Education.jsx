@@ -1,6 +1,7 @@
 import React from "react";
 
 function Education() {
+    let report_path = '/resources/David_W_Arnold-Research_Project-Technical_Report.pdf';
     let uni_of_kent = 'https://www.kent.ac.uk/';
     let newberry = 'https://www.newberry.edu';
     let open_uni = 'http://www.open.ac.uk';
@@ -36,10 +37,17 @@ function Education() {
 
                     <div className="uniCourseDetails">
                         <p>•&nbsp;&nbsp;Year 3: (Predicted: 1st)</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Research Project - ”Quantum Cryptography:
-                            Security
-                            for
-                            the Post-Quantum world”: (Predicted: 1st)</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;<span className="iconPaper" aria-hidden="true"/><a
+                            className="link-color"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={report_path}>Research
+                            Project</a> - "Quantum Cryptography: Security for
+                            the Post-Quantum world": (Predicted: 1st)</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;Awarded: Most Exciting Idea for
+                            Global Outreach - Sponsored by <a className="link-color" target="_blank"
+                                                              rel="noopener noreferrer"
+                                                              href="https://www.tmlep.com/">TMLEP</a></p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Computer Networks and Communication (Java): 92%
                             Coursework</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Computer Security and Cryptography (Java): 89%
@@ -53,7 +61,7 @@ function Education() {
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Programming Languages: Application and Design
                             (Java,
                             Rust &
-                            Haskell): (Predicted: 1st)</p>
+                            Haskell): 84% Coursework</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;(Masters) Data Mining and Knowledge Discovery
                             (R):
                             77%

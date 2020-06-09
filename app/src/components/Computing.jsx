@@ -1,12 +1,13 @@
 import React from "react";
 
 function Computing() {
+    let dwa_website_react = 'https://github.com/d-w-arnold/dwa_website_react';
     let my_first_website = 'https://github.com/d-w-arnold/deltawhiskeyalpha.com';
     let csv_to_txt = 'https://github.com/d-w-arnold/Reflective-Journal_CSV-to-TXT-Converter';
-    let timestamp_media = 'https://github.com/d-w-arnold/AppleScript_Timestamp-Media';
     let ciphertext_decrypt = 'https://github.com/d-w-arnold/CO634-Assignment-2';
-    let git_bisect = 'https://github.com/d-w-arnold/CO663-Git_Bisect';
     let iot_device = 'https://github.com/d-w-arnold/CO657-IoT_Device';
+    let git_bisect = 'https://github.com/d-w-arnold/CO663-Git_Bisect';
+    let timestamp_media = 'https://github.com/d-w-arnold/AppleScript_Timestamp-Media';
     let iot_server = 'https://github.com/d-w-arnold/CO657-IoT_Server';
     let iot_web_app = 'https://github.com/d-w-arnold/CO657-IoT_Admin_Web_App';
     let sudoku_solver = 'https://github.com/d-w-arnold/Java_Sudoku-Solver';
@@ -28,39 +29,34 @@ function Computing() {
                         </tr>
                         <tr>
                             <td className="computingSubTitle">Skills</td>
-                            <td className="computingWriting">UNIX CLI, Java, Git, HTML, CSS & SCSS, JavaScript (w/
-                                React, jQuery, AJAX &
-                                Node.js), TypeScript, PHP, MySQL, Docker, Shell, Erlang, C, C++, Rust, Haskell, OCaml,
-                                R,
-                                AppleScript, Markdown, LaTeX, JetBrains IDEs, Cryptography, Mathematics
+                            <td className="computingWriting">UNIX CLI, Git, Java, JavaScript (w/ React, jQuery, AJAX &
+                                Node.js), TypeScript, Docker, PHP, MySQL, HTML, CSS, SCSS, Shell, Erlang, C, C++, Rust,
+                                R, AppleScript, Markdown, LaTeX, JetBrains IDEs, Cryptography, Mathematics
                             </td>
                         </tr>
                         <tr>
                             <td className="computingSubTitle">Projects</td>
                             <td className="computingWriting">
+                                <a target="_blank" rel="noopener noreferrer" href={dwa_website_react}>My First
+                                    Dockerised React Website</a> (JavaScript, React, JSX, Docker, Docker-Compose, PHP,
+                                HTML & CSS)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={my_first_website}>My First
-                                    Website</a>
-                                (PHP, HTML, CSS & JavaScript)<br/>
+                                    Website</a> (PHP, HTML, CSS, JavaScript & jQuery)<br/>
                                 <a target="_blank" rel="noopener noreferrer"
                                    href={csv_to_txt}>CSV
                                     to TXT
-                                    Converter</a>
-                                (Java)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={timestamp_media}>Timestamp
-                                    Media</a>
-                                (AppleScript)<br/>
+                                    Converter</a> (Java)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={ciphertext_decrypt}>Ciphertext
-                                    Decryption</a>
-                                (Java)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={git_bisect}>Git Bisect</a>
-                                (Java)<br/>
+                                    Decryption</a> (Java)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={iot_device}>IoT BLE &
                                     Motion Detection
-                                    Device</a>
-                                (C++)<br/>
+                                    Device</a> (C++)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={git_bisect}>Git
+                                    Bisect</a> (Java)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={timestamp_media}>Timestamp
+                                    Media</a> (AppleScript)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={iot_server}>IoT Central
-                                    Server</a>
-                                (Java)<br/>
+                                    Server</a> (Java & JDBC)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={iot_web_app}>IoT
                                     Admin Web
                                     App</a> (PHP, HTML, CSS & MySQL)<br/>
