@@ -1,7 +1,8 @@
 <?php
 require './vendor/autoload.php';
 require 'config.php';
-require 'sparkpostSecret.php'; // Provides $sparkpostSecret, assign your own Sparkpost API key secret to this variable.
+require 'sparkpostSecret.php'; // Provides $sparkpostSecret, assign your own Sparkpost API key secret.
+require 'reCAPTCHAsecret.php'; // Provides $reCAPTCHAsecret, assign your own ReCAPTCHA API key secret.
 header("Access-Control-Allow-Origin: *");
 header('Access-Control-Allow-Headers: Content-Type');
 $rest_json = file_get_contents("php://input");
@@ -31,7 +32,30 @@ if (strlen($_POST['mssg']) > 1000) {
     exit();
 }
 
+function getRealIpAddr()
+{
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) { //check ip from share internet
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    } else {
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
+}
+
 if ($_POST) {
+    $recaptcha = new ReCaptcha\ReCaptcha($reCAPTCHAsecret);
+    $resp = $recaptcha->verify($_POST['recaptchaResponse'], getRealIpAddr());
+    if (!$resp->isSuccess()) {
+        echo json_encode(
+            [
+                "sent" => false,
+                "mssg" => $SendMailReCAPTCHAerrorMessage
+            ]
+        );
+        exit();
+    }
     http_response_code(200);
     $name = $_POST['fullname'];
     $from = $_POST['emailaddress'];
@@ -67,7 +91,7 @@ if ($_POST) {
         ];
         $promise = $sparky->transmissions->post($transmissionData);
         echo json_encode(array("sent" => true));
-    } catch (\Exception $e) {
+    } catch (Exception $e) {
         echo json_encode(
             [
                 "sent" => false,
@@ -75,7 +99,6 @@ if ($_POST) {
             ]
         );
     }
-
 } else {
     echo json_encode(
         [

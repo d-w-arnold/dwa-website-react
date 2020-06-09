@@ -9,6 +9,7 @@ class MyForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            recaptchaResponse: null,
             mailSent: false,
             error: null
         };
@@ -21,11 +22,13 @@ class MyForm extends React.Component {
         this.setState(updateValue);
     };
 
-    // TODO: Google ReCAPTCHA check with axios
     handleFormSubmit = (e) => {
         e.preventDefault();
         recaptchaRef.current.execute();
-        // console.log(this.state);
+    };
+
+    handleCaptchaResponseChange(response) {
+        this.setState({recaptchaResponse: response});
         axios({
             method: "post",
             url: `${process.env.REACT_APP_API}`,
@@ -34,19 +37,13 @@ class MyForm extends React.Component {
         })
             .then(result => {
                 if (result.data.sent) {
-                    this.setState({
-                        mailSent: result.data.sent
-                    });
+                    this.setState({mailSent: result.data.sent});
                     this.setState({error: false});
                 } else {
                     this.setState({error: true});
                 }
             })
             .catch(error => this.setState({error: error.message}));
-    };
-
-    onChange(value) {
-        console.log("ReCAPTCHA success! Captcha value:", value);
     }
 
     render() {
@@ -87,25 +84,25 @@ class MyForm extends React.Component {
                         </React.Fragment>
                     );
                 })}
-                {/*TODO: Fix button not wide enough, when website loaded from a component other than Contact*/}
+                {/*TODO: Fix button sizing/formatting, when website loaded from a component other than Contact*/}
                 <div className="buttonPlacement">
-                    <input
+                    <button
                         type="submit"
                         id="button"
                         onClick={(e) => this.handleFormSubmit(e)}
-                        value="Send Your Message"
-                        tabIndex="4"
-                    />
+                        tabIndex="4">Send Your Message
+                    </button>
                 </div>
                 <ReCAPTCHA
                     ref={recaptchaRef}
                     size="invisible"
                     sitekey="6Lcl1rcUAAAAAP9cwFpK09YM8xi3Lhbc0jjgSFWs"
                     theme="dark"
-                    // onChange={this.onChange}
+                    onChange={(response) => this.handleCaptchaResponseChange(response)}
                 />
                 <div className="tinySpacing">
                     {this.state.mailSent && <div className="success">{successMessage}</div>}
+                    {/*TODO: Make this a dynamic error message*/}
                     {this.state.error && <div className="error">{errorMessage}</div>}
                 </div>
             </form>
