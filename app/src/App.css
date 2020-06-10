@@ -339,6 +339,10 @@ table tr td a:hover {
     font-weight: bold;
 }
 
+.success {
+    color: green;
+}
+
 .tinySpacing {
     padding: 3% 0;
 }

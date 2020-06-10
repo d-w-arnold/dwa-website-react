@@ -11,6 +11,7 @@ class MyForm extends React.Component {
         this.state = {
             recaptchaResponse: null,
             mailSent: false,
+            errorMssg: this.props.config.errorMessage,
             error: null
         };
     }
@@ -37,17 +38,27 @@ class MyForm extends React.Component {
         })
             .then(result => {
                 if (result.data.sent) {
-                    this.setState({mailSent: result.data.sent});
-                    this.setState({error: false});
+                    this.setState({
+                        mailSent: result.data.sent,
+                        error: false
+                    });
                 } else {
-                    this.setState({error: true});
+                    this.setState({
+                        errorMssg: result.data.mssg,
+                        error: true
+                    });
                 }
             })
-            .catch(error => this.setState({error: error.message}));
+            .catch(error => {
+                this.setState({
+                    errorMssg: this.props.config.errorMessage,
+                    error: error.message
+                });
+            });
     }
 
     render() {
-        const {successMessage, errorMessage, fieldsConfig} = this.props.config;
+        const {successMessage, fieldsConfig} = this.props.config;
         return (
             <form action="#" id="contact-form">
                 {fieldsConfig &&
@@ -102,8 +113,7 @@ class MyForm extends React.Component {
                 />
                 <div className="tinySpacing">
                     {this.state.mailSent && <div className="success">{successMessage}</div>}
-                    {/*TODO: Make this a dynamic error message*/}
-                    {this.state.error && <div className="error">{errorMessage}</div>}
+                    {this.state.error && <div className="error">{this.state.errorMssg}</div>}
                 </div>
             </form>
         );
