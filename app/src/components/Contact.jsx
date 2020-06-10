@@ -55,8 +55,6 @@ function Contact() {
         <React.Fragment>
             <div className="body">
 
-                {/* TODO: React form validation */}
-
                 <p id="contactTitle" className="title">Contact</p>
 
                 <div className="roboto">

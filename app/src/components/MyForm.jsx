@@ -4,6 +4,10 @@ import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const recaptchaRef = React.createRef();
+const validEmailRegex = RegExp(/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i);
+const fullnameErrMsg = 'Please provide a name of at least 2 characters, thank you.';
+const emailaddressErrMsg = 'Please enter a valid email address, thank you.';
+const mssgErrMsg = 'Please do not exceed 1000 characters in your message, thank you.';
 
 class MyForm extends React.Component {
     constructor(props) {
@@ -12,20 +16,64 @@ class MyForm extends React.Component {
             recaptchaResponse: null,
             mailSent: false,
             errorMssg: this.props.config.errorMessage,
-            error: null
+            error: null,
+            errors: {
+                fullname: '',
+                emailaddress: '',
+                mssg: '',
+            }
         };
     }
 
-    handleInputChange = (e, field) => {
-        let value = e.target.value;
-        let updateValue = {};
-        updateValue[field] = value;
-        this.setState(updateValue);
+    handleInputChange = (e) => {
+        e.preventDefault();
+        const {name, value} = e.target;
+        let errors = this.state.errors;
+        switch (name) {
+            case 'fullname':
+                errors.fullname =
+                    value.length > 2 ? '' : fullnameErrMsg;
+                break;
+            case 'emailaddress':
+                errors.emailaddress =
+                    validEmailRegex.test(value) ? '' : emailaddressErrMsg;
+                break;
+            case 'mssg':
+                errors.mssg =
+                    value.length < 1000 ? '' : mssgErrMsg;
+                break;
+            default:
+                break;
+        }
+        this.setState({
+            errors,
+            error: false,
+            [name]: value
+        });
     };
 
+    validateForm = (errors) => {
+        let valid = true;
+        Object.values(errors).forEach(
+            // If we have an error string, set valid to false
+            (val) => val.length > 0 && (valid = false)
+        );
+        return valid;
+    };
+
+    // TODO: Look into why form won't submit after having just tried to submit just a mssg, then populated all fields, and still won't submit.
     handleFormSubmit = (e) => {
         e.preventDefault();
-        recaptchaRef.current.execute();
+        if (this.validateForm(this.state.errors)) {
+            // Valid Form
+            recaptchaRef.current.execute();
+        } else {
+            // Invalid Form
+            this.setState({
+                errorMssg: 'Please meet the above criteria before submitting this form, thank you.',
+                error: true
+            })
+        }
     };
 
     handleCaptchaResponseChange(response) {
@@ -59,8 +107,11 @@ class MyForm extends React.Component {
 
     render() {
         const {successMessage, fieldsConfig} = this.props.config;
+        let fullnameError = this.state.errors.fullname;
+        let emailaddressError = this.state.errors.emailaddress;
+        let mssgError = this.state.errors.mssg;
         return (
-            <form action="#" id="contact-form">
+            <form action="#" id="contact-form" noValidate>
                 {fieldsConfig &&
                 fieldsConfig.map(field => {
                     return (
@@ -75,8 +126,13 @@ class MyForm extends React.Component {
                                         name={field.fieldName}
                                         className={field.klassName}
                                         tabIndex={field.id}
-                                        onChange={e => this.handleInputChange(e, field.fieldName)}
+                                        onChange={e => this.handleInputChange(e)}
+                                        noValidate
                                     />
+                                    {field.fieldName === "fullname" && fullnameError.length > 0 &&
+                                    <span className="tinySpacing error">{fullnameError}</span>}
+                                    {field.fieldName === "emailaddress" && emailaddressError.length > 0 &&
+                                    <span className="tinySpacing error">{emailaddressError}</span>}
                                 </React.Fragment>
                             ) : (
                                 <React.Fragment>
@@ -87,9 +143,12 @@ class MyForm extends React.Component {
                                         name={field.fieldName}
                                         className={field.klassName}
                                         tabIndex={field.id}
-                                        onChange={e => this.handleInputChange(e, field.fieldName)}
+                                        onChange={e => this.handleInputChange(e)}
                                         rows="10"
+                                        noValidate
                                     />
+                                    {mssgError.length > 0 &&
+                                    <span className="tinySpacing error">{mssgError}</span>}
                                 </React.Fragment>
                             )}
                         </React.Fragment>

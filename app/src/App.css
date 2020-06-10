@@ -21,11 +21,6 @@ html * {
     height: 100%;
 }
 
-label.error {
-    font-size: 12pt;
-    font-weight: bold;
-}
-
 li a {
     display: block;
     text-align: center;
@@ -55,6 +50,11 @@ p {
 
 p b a:hover {
     text-decoration: underline;
+}
+
+span.error {
+    font-size: 12pt;
+    font-weight: bold;
 }
 
 span.iconUni::before {
