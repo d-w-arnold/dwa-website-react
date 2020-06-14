@@ -81,7 +81,7 @@ function Computing() {
                     </table>
                 </div>
 
-                <div className="spacingWithoutLine"/>
+                <div className="spacing6"/>
 
                 <p className="title">Experience</p>
 
@@ -127,7 +127,7 @@ function Computing() {
                     </div>
                 </div>
 
-                <div className="spacing"/>
+                <div className="spacing4"/>
 
                 {/*IT-Alan*/}
                 <div className="roboto">

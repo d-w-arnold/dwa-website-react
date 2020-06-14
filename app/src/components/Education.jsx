@@ -1,7 +1,7 @@
 import React from "react";
 
 function Education() {
-    let report_path = '/resources/David_W_Arnold-Research_Project-Technical_Report.pdf';
+    let report_path = '/research/Quantum_Cryptography-Security_for_the_Post-Quantum_world.pdf';
     let uni_of_kent = 'https://www.kent.ac.uk/';
     let newberry = 'https://www.newberry.edu';
     let open_uni = 'http://www.open.ac.uk';
@@ -88,7 +88,7 @@ function Education() {
                     </div>
                 </div>
 
-                <div className="spacing"/>
+                <div className="spacing2"/>
 
                 {/*Newberry College*/}
                 <div className="roboto">
@@ -124,7 +124,7 @@ function Education() {
                     </div>
                 </div>
 
-                <div className="spacing"/>
+                <div className="spacing2"/>
 
                 {/*The Open University*/}
                 <div className="roboto">
@@ -159,7 +159,7 @@ function Education() {
                     </div>
                 </div>
 
-                <div className="spacing"/>
+                <div className="spacing2"/>
 
                 {/*The Harvey Grammar School*/}
                 <div className="roboto">

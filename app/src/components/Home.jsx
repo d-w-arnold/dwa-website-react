@@ -2,6 +2,7 @@ import React from "react";
 
 function Home() {
     let uni_of_kent = 'https://www.kent.ac.uk/';
+    let research_project = '/research/Quantum_Cryptography-Security_for_the_Post-Quantum_world.pdf';
     let kent_golf = 'https://www.kentgolf.org/';
     let euro_pro = 'http://www.europrotour.com/';
     return (
@@ -17,7 +18,24 @@ function Home() {
                         take on a role where I can contribute to solving real-world challenges. I am highly motivated,
                         organised, reliable and work well both independently and as part of a team.</p>
                 </div>
-                <div className="spacingWithoutLine"/>
+                <div className="spacing4"/>
+                <p className="title">Quantum Cryptography: Security for the Post-Quantum world</p>
+                <div className="writing roboto">
+                    <p>As part of my final year of university, I undertook a research project
+                        titled <a
+                            className="link-color"
+                            target="_blank"
+                            href={research_project}>"Quantum
+                            Cryptography:
+                            Security for the Post-Quantum world"</a>. This project set out to survey the field of
+                        quantum
+                        cryptography, providing a basic insight into various aspects of quantum cryptography - all of
+                        which could be
+                        very important regarding our online security in the future! Aimed at computer scientists and
+                        people in
+                        industry concerned with security.</p>
+                </div>
+                <div className="spacing4"/>
                 <p className="title">About Me</p>
                 <div className="writing roboto">
                     <p>Before I became a computer scientist, I was a golfer. Growing up my grandfather lived near a golf
@@ -28,7 +46,7 @@ function Home() {
                             Golf Union</a> in various fixtures for their various teams: Kent Under 13's, Under 14's,
                         Under 16's
                         (Captain), Under 18's.</p>
-                    <br/>
+                    <div className="spacing2"/>
                     <p>In January 2016, I relinquished my amateur status and turned professional (aged 19) joining
                         the <a
                             className="link-color" target="_blank" rel="noopener noreferrer" href={euro_pro}>EuroPro UK
@@ -39,7 +57,7 @@ function Home() {
                         Computer Science at the <a className="link-color" target="_blank" rel="noopener noreferrer"
                                                    href={uni_of_kent}>University of
                             Kent</a>. Golf remains a passion of mine, and will remain a lifetime hobby.</p>
-                    <br/>
+                    <div className="spacing2"/>
                     <p>Motorsport is a strong passion of mine. I have a broad knowledge of various disciplines of
                         motor racing, and
                         I enjoy learning of new technological developments to make cars faster, safer and more
