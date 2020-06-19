@@ -1,3 +1,6 @@
+declare module 'react-router-dom';
+declare module 'react-google-recaptcha';
+
 declare module '*.pdf' {
     const url: string;
     export default url;

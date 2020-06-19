@@ -144,7 +144,6 @@ class MyForm extends Component<MyProps, MyState> {
                                         className={field.klassName}
                                         tabIndex={field.id}
                                         onChange={e => this.handleInputChange(e)}
-                                        // noValidate // TODO: Add to TypeScript
                                     />
                                     {field.fieldName === "fullname" && fullnameError.length > 0 &&
                                     <span className="tinySpacing error">{fullnameError}</span>}
@@ -162,7 +161,6 @@ class MyForm extends Component<MyProps, MyState> {
                                         tabIndex={field.id}
                                         onChange={e => this.handleInputChange(e)}
                                         rows={6}
-                                        // noValidate // TODO: Add to TypeScript
                                     />
                                     {mssgError.length > 0 &&
                                     <span className="tinySpacing error">{mssgError}</span>}
@@ -185,7 +183,7 @@ class MyForm extends Component<MyProps, MyState> {
                     size="invisible"
                     sitekey="6Lcl1rcUAAAAAP9cwFpK09YM8xi3Lhbc0jjgSFWs"
                     theme="dark"
-                    onChange={(response) => this.handleCaptchaResponseChange(response)}
+                    onChange={(response: string | null) => this.handleCaptchaResponseChange(response)}
                 />
                 <div className="tinySpacing">
                     {this.state.mailSent && <div className="success">{successMessage}</div>}
