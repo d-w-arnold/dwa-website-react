@@ -51,7 +51,6 @@ const config = {
 function Contact() {
     let github = 'https://github.com/d-w-arnold';
     let keybase = 'https://keybase.io/d_w_arnold';
-    // @ts-ignore
     return (
         <React.Fragment>
             <div className="body">

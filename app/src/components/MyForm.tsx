@@ -1,9 +1,9 @@
-import React, {Component} from "react";
+import React, {Component, RefObject} from "react";
 import PropTypes, {Validator} from "prop-types";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const recaptchaRef: any = React.createRef();
+const recaptchaRef: RefObject<any> = React.createRef();
 const validEmailRegex = RegExp(/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i);
 const fullnameErrMsg = 'Please provide a name of at least 2 characters, thank you.';
 const emailaddressErrMsg = 'Please enter a valid email address, thank you.';
@@ -11,10 +11,10 @@ const mssgErrMsg = 'Please do not exceed 1000 characters in your message, thank 
 
 type MyProps = any;
 type MyState = {
-    recaptchaResponse: any;
+    recaptchaResponse: string | null;
     mailSent: boolean;
-    errorMssg: any;
-    error: any;
+    errorMssg: string;
+    error: boolean | null;
     errors: {
         fullname: string;
         emailaddress: string;
@@ -39,7 +39,7 @@ class MyForm extends Component<MyProps, MyState> {
         };
     }
 
-    handleInputChange = (e: { preventDefault: () => void; target: { name: any; value: any; }; }) => {
+    handleInputChange = (e: { preventDefault: () => void; target: { name: string; value: string; }; }) => {
         e.preventDefault();
         const {name, value} = e.target;
         let errors: { fullname: string, emailaddress: string, mssg: string } = this.state.errors;
