@@ -32,7 +32,7 @@ class MyForm extends React.Component {
         switch (name) {
             case 'fullname':
                 errors.fullname =
-                    value.length > 2 ? '' : fullnameErrMsg;
+                    value.length >= 2 ? '' : fullnameErrMsg;
                 break;
             case 'emailaddress':
                 errors.emailaddress =
