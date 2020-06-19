@@ -5,15 +5,14 @@ WORKDIR /app
 # add `/app/node_modules/.bin` to $PATH
 #ENV PATH /app/node_modules/.bin:$PATH
 
-# install app dependencies
 COPY package.json ./
 COPY package-lock.json ./
-RUN npm ci -qy
+RUN npm ci -qy && npm install typescript -g
 
-# add app
 COPY . .
+
+RUN tsc
 
 EXPOSE 3000
 
-# start app
 CMD ["npm", "start"]
