@@ -44,6 +44,7 @@ function Home() {
                         titled <a
                             className="link-color"
                             target="_blank"
+                            rel="noopener noreferrer"
                             href={research_project}>"Quantum
                             Cryptography:
                             Security for the Post-Quantum world"</a>. This project set out to survey the field of
