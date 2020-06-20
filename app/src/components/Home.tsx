@@ -67,7 +67,7 @@ function Home() {
                         enjoy the thrill of driving on track, having invested in multiple track day sessions with
                         tuition from
                         professional racing drivers to better my skill set.</p>
-                    <br/>
+                    <div className="spacing2"/>
                     <p>Running used to be a big part of my regular training routine for golf. When I can I find
                         it helps take things
                         off ones mind and keep the body healthy. I participated in a half marathon in September
