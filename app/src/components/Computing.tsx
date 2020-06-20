@@ -38,8 +38,8 @@ function Computing() {
                             <td className="computingSubTitle">Projects</td>
                             <td className="computingWriting">
                                 <a target="_blank" rel="noopener noreferrer" href={dwa_website_react}>My First
-                                    Dockerised React Website</a> (JavaScript, React, JSX, Docker, Docker-Compose, PHP,
-                                HTML & CSS)<br/>
+                                    Dockerised React Website</a> (React, TypeScript, Docker, Docker-Compose, PHP,
+                                HTML & SCSS)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={my_first_website}>My First
                                     Website</a> (PHP, HTML, CSS, JavaScript & jQuery)<br/>
                                 <a target="_blank" rel="noopener noreferrer"
