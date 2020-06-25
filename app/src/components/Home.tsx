@@ -1,7 +1,7 @@
 import React from "react";
 
 function PPHScript(d: Document, s: any) {
-    var useSSL = 'https:' == document.location.protocol;
+    var useSSL = 'https:' === document.location.protocol;
     var where = d.getElementsByTagName(s)[0];
     var js = d.createElement(s);
     if (window.innerWidth > 600) {
@@ -29,7 +29,7 @@ function Home() {
             <div className="body">
                 <p className="title">Welcome!</p>
                 <div className="writing roboto">
-                    <p>Hello there, I’m a computer science graduate (graduating June 2020 - predicted: 1st) from the <a
+                    <p>Hello there, I’m a computer science graduate with a first class honours degree from the <a
                         className="link-color" target="_blank"
                         rel="noopener noreferrer"
                         href={uni_of_kent}>University of
@@ -38,7 +38,7 @@ function Home() {
                         organised, reliable and work well both independently and as part of a team.</p>
                 </div>
                 <div className="spacing2"/>
-                <div id="pph-hireme"/>
+                <div id="pph-hireme"/> {/*TODO: Widget disappears when opening CV then returning to Home component*/}
                 <p className="title">Quantum Cryptography: Security for the Post-Quantum world</p>
                 <div className="writing roboto">
                     <p>As part of my final year of university, I undertook a research project

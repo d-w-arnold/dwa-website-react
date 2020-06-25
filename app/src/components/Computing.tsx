@@ -36,37 +36,30 @@ function Computing() {
                         </tr>
                         <tr>
                             <td className="computingSubTitle">Projects</td>
-                            <td className="computingWriting">
+                            <td className="computingWriting"> {/*rel="noopener noreferrer"*/}
                                 <a target="_blank" rel="noopener noreferrer" href={dwa_website_react}>My First
-                                    Dockerised React Website</a> (React, TypeScript, Docker, Docker-Compose, PHP,
-                                HTML & SCSS)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={my_first_website}>My First
-                                    Website</a> (PHP, HTML, CSS, JavaScript & jQuery)<br/>
-                                <a target="_blank" rel="noopener noreferrer"
-                                   href={csv_to_txt}>CSV
-                                    to TXT
-                                    Converter</a> (Java)<br/>
+                                    Dockerised React Website</a> (React, TypeScript, Docker, Docker-Compose, PHP, HTML &
+                                SCSS)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={ciphertext_decrypt}>Ciphertext
                                     Decryption</a> (Java)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={iot_device}>IoT BLE &
-                                    Motion Detection
-                                    Device</a> (C++)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={iot_device}>IoT BLE & Motion
+                                    Detection Device</a> (C++)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={git_bisect}>Git
-                                    Bisect</a> (Java)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={timestamp_media}>Timestamp
-                                    Media</a> (AppleScript)<br/>
+                                    Bisect</a> (Java & Maven)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={csv_to_txt}>CSV to TXT
+                                    Converter</a> (Java)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={iot_server}>IoT Central
                                     Server</a> (Java & JDBC)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={iot_web_app}>IoT
-                                    Admin Web
-                                    App</a> (PHP, HTML, CSS & MySQL)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={sudoku_solver}>Sudoku
-                                    Solver</a> (Java &
-                                JavaFX)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={talks}>Learn:
-                                    Git,
-                                    GitHub and JetBrains IDEs</a> (Markdown) (Talks aimed at Year 1 and 2
-                                undergraduates)
+                                    Solver</a> (Java & JavaFX)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={iot_web_app}>IoT Admin Web
+                                    App</a> (PHP, HTML, CSS & MySQL)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={timestamp_media}>Timestamp
+                                    Media</a> (AppleScript)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={my_first_website}>My First
+                                    Website</a> (PHP, HTML, CSS, JavaScript & jQuery)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={talks}>Learn: Git, GitHub and
+                                    JetBrains IDEs</a> (Markdown) (Talks aimed at Year 1 and 2 undergraduates)
                             </td>
                         </tr>
                         <tr>

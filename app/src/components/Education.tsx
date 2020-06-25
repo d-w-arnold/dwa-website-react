@@ -27,7 +27,7 @@ function Education() {
                     <table className="marginBottom2">
                         <tbody>
                         <tr>
-                            <td className="jobTitle">BSc Computer Science with a Year in Industry</td>
+                            <td className="jobTitle">BSc Computer Science with a Year in Industry - First Class Honours</td>
                         </tr>
                         <tr>
                             <td className="jobDates">Sep. 2016 - Jun. 2020</td>
@@ -36,36 +36,30 @@ function Education() {
                     </table>
 
                     <div className="uniCourseDetails">
-                        <p>•&nbsp;&nbsp;Year 3: (Predicted: 1st)</p>
+                        <p>•&nbsp;&nbsp;Year 3: 82%</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;<span className="iconPaper" aria-hidden="true"/><a
                             className="link-color"
                             target="_blank"
                             rel="noopener noreferrer"
                             href={report_path}>Research
                             Project</a> - "Quantum Cryptography: Security for
-                            the Post-Quantum world": (Predicted: 1st)</p>
+                            the Post-Quantum world": 1st class</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;Awarded: Most Exciting Idea for
                             Global Outreach - Sponsored by <a className="link-color" target="_blank"
                                                               rel="noopener noreferrer"
                                                               href="https://www.tmlep.com/">TMLEP</a></p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Computer Networks and Communication (Java): 92%
-                            Coursework</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Computer Security and Cryptography (Java): 89%
-                            Coursework</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Computer Networks and Communication (Java): 88%</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Computer Security and Cryptography (Java): 92%</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Internet of Things (C++, Java, PHP, HTML, CSS &
                             MySQL):
                             70%</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Programming Language Implementation (OCaml & C):
-                            89%
-                            Coursework</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Programming Language Implementation (OCaml & C): 88%</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Programming Languages: Application and Design
                             (Java,
                             Rust &
-                            Haskell): 84% Coursework</p>
+                            Haskell): 88%</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;(Masters) Data Mining and Knowledge Discovery
-                            (R):
-                            77%
-                            Coursework</p>
+                            (R): 82%</p>
                         <p>•&nbsp;&nbsp;Year 2: 78%</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Algorithms, Correctness and Efficiency (Java):
                             80%</p>
