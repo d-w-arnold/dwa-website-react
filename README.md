@@ -31,7 +31,7 @@ Build this project for production.
 ## Run PHP API with Docker
 First you need Docker installed in you machine. Once you have Docker installed, please navigate to project root directory and run:
 
-`docker-compose up -d`
+### `docker-compose up -d`
  
 Api will run in `localhost:8080`
 
