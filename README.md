@@ -4,7 +4,7 @@
 
 Please clone this repo and in the project root directory, please run (requires Docker):
 
-`docker-compose up -d`
+### `docker-compose up -d`
 
 Frontend (react app) will run in `localhost:3000`
 
