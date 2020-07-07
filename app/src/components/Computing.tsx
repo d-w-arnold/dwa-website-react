@@ -14,7 +14,7 @@ function Computing() {
     let talks = 'https://github.com/d-w-arnold/Learn_Git_GitHub_JetBrains';
     let cisco_uni_cha = 'https://www.cisco.com/c/m/en_uk/training-events/university-challenge.html';
     let red_bull_careers = 'https://redbullracing.redbull.com/careers';
-    let it_alan = 'http://www.it-alan.co.uk/';
+    let it_alan = 'https://www.it-alan.co.uk/';
     return (
         <React.Fragment>
             <div className="body">
