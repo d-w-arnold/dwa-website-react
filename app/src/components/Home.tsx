@@ -19,6 +19,7 @@ function PPHScript(d: Document, s: any) {
 }
 PPHScript(document, 'script');
 
+// TODO: Home component is the only component to load on reloading the web browser; Education, Computing and Contact not working
 function Home() {
     let uni_of_kent = 'https://www.kent.ac.uk/';
     let research_project = '/research/Quantum_Cryptography-Security_for_the_Post-Quantum_world.pdf';
@@ -34,7 +35,7 @@ function Home() {
                         rel="noopener noreferrer"
                         href={uni_of_kent}>University of
                         Kent</a>. I’m eager to learn new skills and
-                        take on a role where I can contribute to solving real-world challenges. I am highly motivated,
+                        take on a role where I can contribute to solving real-world projects. I am highly motivated,
                         organised, reliable and work well both independently and as part of a team.</p>
                 </div>
                 <div className="spacing2"/>

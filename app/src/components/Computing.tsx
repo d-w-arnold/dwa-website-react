@@ -29,9 +29,9 @@ function Computing() {
                         </tr>
                         <tr>
                             <td className="computingSubTitle">Skills</td>
-                            <td className="computingWriting">UNIX CLI, Git, Java, JavaScript (w/ React, jQuery, AJAX &
-                                Node.js), TypeScript, Docker, PHP, MySQL, HTML, CSS, SCSS, Shell, Erlang, C, C++, Rust,
-                                R, AppleScript, Markdown, LaTeX, JetBrains IDEs, Cryptography, Mathematics
+                            <td className="computingWriting">UNIX CLI, Git, Java, C, C++, Python, JavaScript (w/ React,
+                                jQuery, AJAX & Node.js), TypeScript, Docker, PHP, MySQL, HTML, CSS, SCSS, Shell, Erlang,
+                                Rust, R, AppleScript, Markdown, LaTeX, JetBrains IDEs, Cryptography, Mathematics
                             </td>
                         </tr>
                         <tr>
@@ -48,16 +48,20 @@ function Computing() {
                                     Bisect</a> (Java & Maven)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={csv_to_txt}>CSV to TXT
                                     Converter</a> (Java)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={iot_server}>IoT Central
-                                    Server</a> (Java & JDBC)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={sudoku_solver}>Sudoku
                                     Solver</a> (Java & JavaFX)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={iot_server}>IoT Central
+                                    Server</a> (Java & JDBC)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={iot_server}>Local News Web
+                                    Crawler</a> (Python)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={iot_server}>Sudoku
+                                    Solver</a> (Python)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={iot_web_app}>IoT Admin Web
                                     App</a> (PHP, HTML, CSS & MySQL)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={timestamp_media}>Timestamp
-                                    Media</a> (AppleScript)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={my_first_website}>My First
                                     Website</a> (PHP, HTML, CSS, JavaScript & jQuery)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={timestamp_media}>Timestamp
+                                    Media</a> (AppleScript)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={talks}>Learn: Git, GitHub and
                                     JetBrains IDEs</a> (Markdown) (Talks aimed at Year 1 and 2 undergraduates)
                             </td>
