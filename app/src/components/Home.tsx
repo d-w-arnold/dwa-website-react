@@ -30,7 +30,7 @@ function Home() {
             <div className="body">
                 <p className="title">Welcome!</p>
                 <div className="writing roboto">
-                    <p>Hello there, I’m a computer science graduate with a first class honours degree from the <a
+                    <p>Hello there, I’m a computer science graduate with a first-class honours degree from the <a
                         className="link-color" target="_blank"
                         rel="noopener noreferrer"
                         href={uni_of_kent}>University of

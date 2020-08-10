@@ -2,17 +2,35 @@ import React from "react";
 
 function Computing() {
     let dwa_website_react = 'https://github.com/d-w-arnold/dwa_website_react';
+    let my_first_openAPI = 'https://github.com/d-w-arnold/online_test_DWP';
+    let cv_visualisation = 'https://github.com/d-w-arnold/technical_challenge_D3.js';
     let my_first_website = 'https://github.com/d-w-arnold/deltawhiskeyalpha.com';
-    let csv_to_txt = 'https://github.com/d-w-arnold/Reflective-Journal_CSV-to-TXT-Converter';
-    let ciphertext_decrypt = 'https://github.com/d-w-arnold/CO634-Assignment-2';
-    let iot_device = 'https://github.com/d-w-arnold/CO657-IoT_Device';
-    let git_bisect = 'https://github.com/d-w-arnold/CO663-Git_Bisect';
-    let timestamp_media = 'https://github.com/d-w-arnold/AppleScript_Timestamp-Media';
-    let iot_server = 'https://github.com/d-w-arnold/CO657-IoT_Server';
     let iot_web_app = 'https://github.com/d-w-arnold/CO657-IoT_Admin_Web_App';
-    let sudoku_solver = 'https://github.com/d-w-arnold/Java_Sudoku-Solver';
-    let talks = 'https://github.com/d-w-arnold/Learn_Git_GitHub_JetBrains';
+
+    let ciphertext_decrypt = 'https://github.com/d-w-arnold/CO634-Assignment-2';
+    let git_bisect = 'https://github.com/d-w-arnold/CO663-Git_Bisect';
+    let iot_server = 'https://github.com/d-w-arnold/CO657-IoT_Server';
+    let simple_data_link_protocol = 'https://github.com/d-w-arnold/CO633-Computer_Networks_Assignments';
+    let csv_to_txt = 'https://github.com/d-w-arnold/Reflective-Journal_CSV-to-TXT-Converter';
+    let sudoku_solver_java = 'https://github.com/d-w-arnold/Java_Sudoku-Solver';
+
+    let command_line_address_book = 'https://github.com/d-w-arnold/Command_Line_Address_Book';
+    let iot_device = 'https://github.com/d-w-arnold/CO657-IoT_Device';
+    let c_test_bench = 'https://github.com/d-w-arnold/C_Test_Bench';
+    let coderbyte_online_test = 'https://github.com/d-w-arnold/online_test_PetaGene_C';
+
+    let news_web_crawler = 'https://github.com/d-w-arnold/local_news-data_collection';
+    let sudoku_solver_python = 'https://github.com/d-w-arnold/Python_Sudoku-Solver';
+
+    let simple_tcp_packets = 'https://github.com/d-w-arnold/CO545-Assignment-4';
+    let cipher_quiz = 'https://github.com/d-w-arnold/Gambit_Cipher_Quiz';
+
+    let randomiser = 'https://github.com/d-w-arnold/Fast_Food_Ranker';
+    let timestamp_media = 'https://github.com/d-w-arnold/AppleScript_Timestamp-Media';
+
     let cisco_uni_cha = 'https://www.cisco.com/c/m/en_uk/training-events/university-challenge.html';
+    let talks = 'https://github.com/d-w-arnold/Learn_Git_GitHub_JetBrains';
+
     let red_bull_careers = 'https://redbullracing.redbull.com/careers';
     let it_alan = 'https://www.it-alan.co.uk/';
     return (
@@ -25,54 +43,52 @@ function Computing() {
                         <tbody>
                         <tr>
                             <td className="computingSubTitle">OS's</td>
-                            <td className="computingWriting">Mac OS, iOS, Windows 7/10, Ubuntu</td>
+                            <td className="computingWriting">Mac OS, iOS, Ubuntu, Windows 7/10</td>
                         </tr>
                         <tr>
                             <td className="computingSubTitle">Skills</td>
-                            <td className="computingWriting">UNIX CLI, Git, Java, C, C++, Python, JavaScript (w/ React,
-                                jQuery, AJAX & Node.js), TypeScript, Docker, PHP, MySQL, HTML, CSS, SCSS, Shell, Erlang,
-                                Rust, R, AppleScript, Markdown, LaTeX, JetBrains IDEs, Cryptography, Mathematics
+                            <td className="computingWriting">Unix CLI, Git, JetBrains IDEs, Java, C, C++, Python, Erlang, JavaScript (w/ React,
+                                jQuery, AJAX & Node.js), TypeScript, Docker, PHP, MySQL, HTML, SCSS, Shell, Rust, R, AppleScript, Markdown, LaTeX, Cryptography, Mathematics
                             </td>
                         </tr>
                         <tr>
                             <td className="computingSubTitle">Projects</td>
                             <td className="computingWriting"> {/*rel="noopener noreferrer"*/}
-                                <a target="_blank" rel="noopener noreferrer" href={dwa_website_react}>My First
-                                    Dockerised React Website</a> (React, TypeScript, Docker, Docker-Compose, PHP, HTML &
-                                SCSS)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={ciphertext_decrypt}>Ciphertext
-                                    Decryption</a> (Java)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={iot_device}>IoT BLE & Motion
-                                    Detection Device</a> (C++)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={git_bisect}>Git
-                                    Bisect</a> (Java & Maven)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={csv_to_txt}>CSV to TXT
-                                    Converter</a> (Java)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={sudoku_solver}>Sudoku
-                                    Solver</a> (Java & JavaFX)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={iot_server}>IoT Central
-                                    Server</a> (Java & JDBC)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={iot_server}>Local News Web
-                                    Crawler</a> (Python)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={iot_server}>Sudoku
-                                    Solver</a> (Python)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={iot_web_app}>IoT Admin Web
-                                    App</a> (PHP, HTML, CSS & MySQL)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={my_first_website}>My First
-                                    Website</a> (PHP, HTML, CSS, JavaScript & jQuery)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={timestamp_media}>Timestamp
-                                    Media</a> (AppleScript)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={talks}>Learn: Git, GitHub and
-                                    JetBrains IDEs</a> (Markdown) (Talks aimed at Year 1 and 2 undergraduates)
+                                <a target="_blank" rel="noopener noreferrer" href={dwa_website_react}>My First Dockerised React Website</a> (React, TypeScript, Docker, Docker-Compose, PHP & SCSS)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={my_first_openAPI}>My First OpenAPI</a> (Java, OpenAPI & Docker-Compose)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={cv_visualisation}>CV Visualisation</a> (React, D3.js, TypeScript & SCSS)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={my_first_website}>My First Website</a> (PHP, HTML, CSS & jQuery)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={iot_web_app}>IoT Admin Web App</a> (PHP, MySQL & CSS)<br/>
+
+                                <a target="_blank" rel="noopener noreferrer" href={ciphertext_decrypt}>Ciphertext Decryption</a> (Java)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={git_bisect}>Git Bisect</a> (Java & Maven)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={iot_server}>IoT Server</a> (Java & JDBC)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={simple_data_link_protocol}>Simple Data-Link Protocol</a> (Java)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={csv_to_txt}>CSV to TXT Converter</a> (Java)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={sudoku_solver_java}>Sudoku Solver</a> (Java & JavaFX)<br/>
+
+                                <a target="_blank" rel="noopener noreferrer" href={command_line_address_book}>Command-Line Address Book</a> (C)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={iot_device}>IoT BLE & Motion Detection</a> (C++)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={c_test_bench}>C Test Bench</a> (C)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={coderbyte_online_test}>Coderbyte Online Test</a> (C++)<br/>
+
+                                <a target="_blank" rel="noopener noreferrer" href={news_web_crawler}>News Web Crawler</a> (Python)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={sudoku_solver_python}>Sudoku Solver</a> (Python)<br/>
+
+                                <a target="_blank" rel="noopener noreferrer" href={simple_tcp_packets}>Simple TCP Packets</a> (Erlang)<br/>
+
+                                <a target="_blank" rel="noopener noreferrer" href={cipher_quiz}>Cipher Quiz</a> (C++, Python & Erlang)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={randomiser}>Randomiser</a> (Shell)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={timestamp_media}>Timestamp Media</a> (AppleScript)<br/>
                             </td>
                         </tr>
                         <tr>
                             <td className="computingSubTitle">Events</td>
-                            <td className="computingWriting"><a
-                                target="_blank" rel="noopener noreferrer"
-                                href={cisco_uni_cha}>2017
-                                Cisco
-                                University Challenge</a></td>
+                            <td className="computingWriting">
+                                <a target="_blank" rel="noopener noreferrer" href={cisco_uni_cha}>2017 Cisco University Challenge</a><br/>
+
+                                <a target="_blank" rel="noopener noreferrer" href={talks}>Learn: Git, GitHub and JetBrains IDEs</a> (University talks)
+                            </td>
                         </tr>
                         </tbody>
                     </table>
