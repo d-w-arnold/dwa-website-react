@@ -1,25 +1,5 @@
 import React from "react";
 
-function PPHScript(d: Document, s: any) {
-    var useSSL = 'https:' === document.location.protocol;
-    var where = d.getElementsByTagName(s)[0];
-    var js = d.createElement(s);
-    if (window.innerWidth > 600) {
-        js.src = (useSSL ? 'https:' : 'http:') + '//www.peopleperhour.com/hire/2209121290/4399933.js?width=300&height=135&orientation=vertical&theme=dark&rnd=' + parseInt(String(Math.random() * 10000), 10);
-    } else {
-        js.src = (useSSL ? 'https:' : 'http:') + '//www.peopleperhour.com/hire/2209121290/4399933.js?width=240&height=135&orientation=vertical&theme=dark&rnd=' + parseInt(String(Math.random() * 10000), 10);
-    }
-    try {
-        where.parentNode.insertBefore(js, where);
-    } catch (e) {
-        if (typeof console !== 'undefined' && console.log && e.stack) {
-            console.log(e.stack);
-        }
-    }
-}
-PPHScript(document, 'script');
-
-// TODO: Home component is the only component to load on reloading the web browser; Education, Computing and Contact not working
 function Home() {
     let uni_of_kent = 'https://www.kent.ac.uk/';
     let research_project = '/research/Quantum_Cryptography-Security_for_the_Post-Quantum_world.pdf';
@@ -38,8 +18,7 @@ function Home() {
                         take on a role where I can contribute to solving real-world projects. I am highly motivated,
                         organised, reliable and work well both independently and as part of a team.</p>
                 </div>
-                <div className="spacing2"/>
-                <div id="pph-hireme"/> {/*TODO: Widget disappears when opening CV then returning to Home component*/}
+                <div className="spacing4"/>
                 <p className="title">Quantum Cryptography: Security for the Post-Quantum world</p>
                 <div className="writing roboto">
                     <p>As part of my final year of university, I undertook a research project
