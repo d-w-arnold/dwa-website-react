@@ -33,7 +33,7 @@ function Computing() {
     let cisco_uni_cha = 'https://www.cisco.com/c/m/en_uk/training-events/university-challenge.html';
     let talks = 'https://github.com/d-w-arnold/Learn_Git_GitHub_JetBrains';
     // Experience
-    let peach_media = 'https://www.peachvideo.com/en-gb/media/';
+    let peach = 'https://www.peachvideo.com/en-gb/';
     let red_bull_careers = 'https://redbullracing.redbull.com/careers';
     return (
         <React.Fragment>
@@ -131,7 +131,7 @@ function Computing() {
                         <tbody>
                         <tr>
                             <td className="employerName"><span className="iconLap" aria-hidden="true"/><b><a
-                                target="_blank" rel="noopener noreferrer" href={peach_media}>Peach Media</a></b></td>
+                                target="_blank" rel="noopener noreferrer" href={peach}>Peach</a></b></td>
                             <td className="location">London, U.K.</td>
                         </tr>
                         </tbody>
