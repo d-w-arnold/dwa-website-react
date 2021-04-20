@@ -5,27 +5,30 @@ function Computing() {
     let ciphertext_decrypt = 'https://github.com/d-w-arnold/CO634-Assignment-2';
     let git_bisect = 'https://github.com/d-w-arnold/CO663-Git_Bisect';
     let iot_server = 'https://github.com/d-w-arnold/CO657-IoT_Server';
-    let data_link_protocol = 'https://github.com/d-w-arnold/CO633-Computer_Networks_Assignments';
-    let light_controller = 'https://github.com/d-w-arnold/Fairy_Lights_Controller';
-    let csv_to_txt = 'https://github.com/d-w-arnold/Reflective-Journal_CSV-to-TXT-Converter';
+    let countdown_game = 'https://github.com/d-w-arnold/Java_countdown';
     let sudoku_solver_java = 'https://github.com/d-w-arnold/Java_Sudoku-Solver';
+    let csv_to_txt = 'https://github.com/d-w-arnold/Reflective-Journal_CSV-to-TXT-Converter';
+    let light_controller = 'https://github.com/d-w-arnold/Fairy_Lights_Controller';
+    let data_link_protocol = 'https://github.com/d-w-arnold/CO633-Computer_Networks_Assignments';
     // Python
-    let news_web_crawler = 'https://github.com/d-w-arnold/local_news-data_collection';
     let sudoku_solver_python = 'https://github.com/d-w-arnold/Python_Sudoku-Solver';
+    let news_web_crawler = 'https://github.com/d-w-arnold/local_news-data_collection';
+    // Shell
+    let homebrew_package_auto_upgrade = 'https://github.com/d-w-arnold/check_homebrew_update';
+    // Web Dev
+    let dwa_website_react = 'https://github.com/d-w-arnold/dwa_website_react';
+    let my_first_openAPI = 'https://github.com/d-w-arnold/online_test_DWP';
+    let dwa_website = 'https://github.com/d-w-arnold/deltawhiskeyalpha.com';
+    let cv_visualisation = 'https://github.com/d-w-arnold/technical_challenge_D3.js';
+    let simple_questionnaire = 'https://github.com/d-w-arnold/laravel-test';
+    let iot_web_app = 'https://github.com/d-w-arnold/CO657-IoT_Admin_Web_App';
     // C/C++
-    let cli_address_book = 'https://github.com/d-w-arnold/Command_Line_Address_Book';
     let iot_device = 'https://github.com/d-w-arnold/CO657-IoT_Device';
+    let cli_address_book = 'https://github.com/d-w-arnold/Command_Line_Address_Book';
     // Erlang
     let tcp_packets = 'https://github.com/d-w-arnold/CO545-Assignment-4';
     // Misc.
     let cipher_quiz = 'https://github.com/d-w-arnold/Gambit_Cipher_Quiz';
-    // Web Dev
-    let my_first_openAPI = 'https://github.com/d-w-arnold/online_test_DWP';
-    let cv_visualisation = 'https://github.com/d-w-arnold/technical_challenge_D3.js';
-    let simple_questionnaire = 'https://github.com/d-w-arnold/laravel-test';
-    let dwa_website_react = 'https://github.com/d-w-arnold/dwa_website_react';
-    let iot_web_app = 'https://github.com/d-w-arnold/CO657-IoT_Admin_Web_App';
-    let my_first_website = 'https://github.com/d-w-arnold/deltawhiskeyalpha.com';
     // Non-CV
     let randomiser = 'https://github.com/d-w-arnold/Fast_Food_Ranker';
     let timestamp_media = 'https://github.com/d-w-arnold/AppleScript_Timestamp-Media';
@@ -49,9 +52,9 @@ function Computing() {
                         </tr>
                         <tr>
                             <td className="computingSubTitle">Skills</td>
-                            <td className="computingWriting">Unix CLI, Git, JetBrains IDEs, Java, Python, C, C++,
-                                Erlang, JavaScript (w/ React, jQuery, AJAX & Node.js), TypeScript, Docker, PHP, MySQL,
-                                HTML, SCSS, Shell, Rust, R, AppleScript, Markdown, LaTeX, Cryptography, Mathematics
+                            <td className="computingWriting">Unix CLI, Git, JetBrains IDEs, Java, Python, Shell, Docker,
+                                JavaScript (w/ React, jQuery, AJAX & Node.js), TypeScript, PHP, SQL, HTML, SCSS, C/C++,
+                                Erlang, AppleScript, Markdown, LaTeX, Cryptography, Mathematics
                             </td>
                         </tr>
                         <tr>
@@ -64,42 +67,47 @@ function Computing() {
                                 Maven)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={iot_server}>IoT Server</a> (Java &
                                 JDBC)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={data_link_protocol}>Data-Link
-                                    Protocol</a> (Java)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={light_controller}>Lights
-                                    Controller</a> (Java & JUnit)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={csv_to_txt}>CSV to TXT
-                                    Converter</a> (Java)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={countdown_game}>Countdown
+                                    Game</a> (Java)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={sudoku_solver_java}>Sudoku
                                     Solver</a> (Java & JavaFX)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={csv_to_txt}>CSV to TXT
+                                    Converter</a> (Java)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={light_controller}>Lights
+                                    Controller</a> (Java & JUnit)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={data_link_protocol}>Data-Link
+                                    Protocol</a> (Java)<br/>
                                 {/* Python */}
-                                <a target="_blank" rel="noopener noreferrer" href={news_web_crawler}>News Web
-                                    Crawler</a> (Python)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={sudoku_solver_python}>Sudoku
                                     Solver</a> (Python)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={news_web_crawler}>News Web
+                                    Crawler</a> (Python)<br/>
+                                {/* Shell */}
+                                <a target="_blank" rel="noopener noreferrer" href={homebrew_package_auto_upgrade}>Homebrew
+                                    Package Auto-Upgrade</a> (Shell)<br/>
+                                {/* Web Dev */}
+                                <a target="_blank" rel="noopener noreferrer" href={dwa_website_react}>My Dockerised
+                                    React Website</a> (React, TypeScript, Docker, Docker-Compose, PHP & SCSS)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={my_first_openAPI}>My First
+                                    OpenAPI</a> (Java, OpenAPI & Docker-Compose)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={dwa_website}>My Website</a> (PHP,
+                                HTML, CSS & jQuery)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={cv_visualisation}>CV
+                                    Visualisation</a> (React, D3.js, TypeScript & SCSS)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={simple_questionnaire}>Simple
+                                    Questionnaire</a> (PHP, Laravel & MySQL)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={iot_web_app}>IoT Admin Web
+                                    App</a> (PHP, MySQL & CSS)<br/>
                                 {/* C/C++ */}
-                                <a target="_blank" rel="noopener noreferrer" href={cli_address_book}>CLI
-                                    Address Book</a> (C)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={iot_device}>IoT BLE & Motion
                                     Detection</a> (C++)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={cli_address_book}>CLI
+                                    Address Book</a> (C)<br/>
                                 {/* Erlang */}
                                 <a target="_blank" rel="noopener noreferrer" href={tcp_packets}>TCP Packets</a> (Erlang)<br/>
                                 {/* Misc. */}
                                 <a target="_blank" rel="noopener noreferrer" href={cipher_quiz}>Cipher Quiz</a> (Python,
                                 C++ & Erlang)<br/>
-                                {/* Web Dev */}
-                                <a target="_blank" rel="noopener noreferrer" href={my_first_openAPI}>My First
-                                    OpenAPI</a> (Java, OpenAPI & Docker-Compose)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={cv_visualisation}>CV
-                                    Visualisation</a> (React, D3.js, TypeScript & SCSS)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={simple_questionnaire}>Simple
-                                    Questionnaire</a> (PHP, Laravel & MySQL)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={dwa_website_react}>My First
-                                    Dockerised React Website</a> (React, TypeScript, Docker, Docker-Compose, PHP & SCSS)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={iot_web_app}>IoT Admin Web
-                                    App</a> (PHP, MySQL & CSS)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={my_first_website}>My First
-                                    Website</a> (PHP, HTML, CSS & jQuery)<br/>
                                 {/* Non-CV */}
                                 <a target="_blank" rel="noopener noreferrer"
                                    href={randomiser}>Fast Food Randomiser</a> (Shell)<br/>
