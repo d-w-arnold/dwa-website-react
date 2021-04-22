@@ -30,6 +30,7 @@ function Computing() {
     // Misc.
     let cipher_quiz = 'https://github.com/d-w-arnold/Gambit_Cipher_Quiz';
     // Non-CV
+    let open_all_images = 'https://github.com/d-w-arnold/open_all_images_shell';
     let randomiser = 'https://github.com/d-w-arnold/Fast_Food_Ranker';
     let timestamp_media = 'https://github.com/d-w-arnold/AppleScript_Timestamp-Media';
     // Events
@@ -109,6 +110,8 @@ function Computing() {
                                 <a target="_blank" rel="noopener noreferrer" href={cipher_quiz}>Cipher Quiz</a> (Python,
                                 C++ & Erlang)<br/>
                                 {/* Non-CV */}
+                                <a target="_blank" rel="noopener noreferrer"
+                                   href={open_all_images}>Open All Images</a> (Shell & AppleScript)<br/>
                                 <a target="_blank" rel="noopener noreferrer"
                                    href={randomiser}>Fast Food Randomiser</a> (Shell)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={timestamp_media}>Timestamp
