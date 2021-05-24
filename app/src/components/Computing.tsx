@@ -53,9 +53,9 @@ function Computing() {
                         </tr>
                         <tr>
                             <td className="computingSubTitle">Skills</td>
-                            <td className="computingWriting">Unix CLI, Git, JetBrains IDEs, Java, Python, Shell, Docker,
-                                JavaScript (w/ React, jQuery, AJAX & Node.js), TypeScript, PHP, SQL, HTML, SCSS, C/C++,
-                                Erlang, AppleScript, Markdown, LaTeX, Cryptography, Mathematics
+                            <td className="computingWriting">Unix CLI, Git, JetBrains IDEs, Java, Python (w/ Django),
+                                Shell, Docker, JavaScript (w/ React, jQuery, AJAX & Node.js), TypeScript, PHP, SQL,
+                                HTML, SCSS, C/C++, Erlang, AppleScript, Markdown, LaTeX, Cryptography, Mathematics
                             </td>
                         </tr>
                         <tr>
