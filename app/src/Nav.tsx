@@ -1,3 +1,4 @@
+// @ts-ignore
 import React from "react";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import HOME_COM from './components/Home';

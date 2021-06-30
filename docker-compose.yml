@@ -1,37 +1,37 @@
 version: '2'
 
 services:
-    web:
-        image: nginx:latest
-        container_name: nginx
-        ports:
-            - "8080:80"
-        volumes:
-            - ./api:/api
-            - ./site.conf:/etc/nginx/conf.d/default.conf
-        networks:
-            - code-network
-    php:
-        image: php:fpm
-        container_name: php
-        volumes:
-            - ./api:/api
-        networks:
-            - code-network
-    app:
-        stdin_open: true
-        build:
-            context: ./app
-            dockerfile: ./Dockerfile
-        container_name: react
-        command: npm start
-        volumes:
-            - ./app:/app
-            - /app/node_modules
-        expose:
-            - 3000
-        ports:
-            - "3000:3000"
+  web:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./api:/api
+      - ./site.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - code-network
+  php:
+    image: php:fpm
+    container_name: php
+    volumes:
+      - ./api:/api
+    networks:
+      - code-network
+  app:
+    stdin_open: true
+    build:
+      context: ./app
+      dockerfile: ./Dockerfile
+    container_name: react
+    command: npm start
+    volumes:
+      - ./app:/app
+      - /app/node_modules
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
 networks:
-    code-network:
-        driver: bridge
+  code-network:
+    driver: bridge
