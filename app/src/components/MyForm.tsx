@@ -96,13 +96,13 @@ class MyForm extends Component<MyProps, MyState> {
 
     handleCaptchaResponseChange(response: string | null) {
         this.setState({recaptchaResponse: response});
-        axios({
-            method: "post",
-            url: `${process.env.REACT_APP_API}`,
-            headers: {"content-type": "application/json"},
-            data: this.state
-        })
+        console.log("State pre-POST by axios:\n")
+        console.log(this.state)
+        axios
+            .post(`${process.env.REACT_APP_API}`, this.state)
             .then(result => {
+                console.log("Then:\n")
+                console.log(result)
                 if (result.data.sent) {
                     this.setState({
                         mailSent: result.data.sent,
@@ -116,11 +116,15 @@ class MyForm extends Component<MyProps, MyState> {
                 }
             })
             .catch(error => {
+                console.log("Catch:\n")
+                console.log(error)
                 this.setState({
                     errorMssg: this.props.config.errorMessage,
                     error: error.message
                 });
             });
+        console.log("State post-POST by axios:\n")
+        console.log(this.state)
     }
 
     render() {
