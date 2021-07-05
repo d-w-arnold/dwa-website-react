@@ -46,16 +46,13 @@ class MyForm extends Component<MyProps, MyState> {
         let errors: { fullname: string, emailaddress: string, mssg: string } = this.state.errors;
         switch (name) {
             case 'fullname':
-                errors.fullname =
-                    value.length > 2 ? '' : fullnameErrMsg;
+                errors.fullname = value.length > 2 ? '' : fullnameErrMsg;
                 break;
             case 'emailaddress':
-                errors.emailaddress =
-                    validEmailRegex.test(value) ? '' : emailaddressErrMsg;
+                errors.emailaddress = validEmailRegex.test(value) ? '' : emailaddressErrMsg;
                 break;
             case 'mssg':
-                errors.mssg =
-                    value.length < 1000 ? '' : mssgErrMsg;
+                errors.mssg = value.length < 1000 ? '' : mssgErrMsg;
                 break;
             default:
                 break;
@@ -96,13 +93,8 @@ class MyForm extends Component<MyProps, MyState> {
 
     handleCaptchaResponseChange(response: string | null) {
         this.setState({recaptchaResponse: response});
-        console.log("State pre-POST by axios:\n")
-        console.log(this.state)
-        axios
-            .post(`${process.env.REACT_APP_API}`, this.state)
+        axios.post(this.props.config.api, this.state)
             .then(result => {
-                console.log("Then:\n")
-                console.log(result)
                 if (result.data.sent) {
                     this.setState({
                         mailSent: result.data.sent,
@@ -116,26 +108,21 @@ class MyForm extends Component<MyProps, MyState> {
                 }
             })
             .catch(error => {
-                console.log("Catch:\n")
-                console.log(error)
                 this.setState({
                     errorMssg: this.props.config.errorMessage,
                     error: error.message
                 });
             });
-        console.log("State post-POST by axios:\n")
-        console.log(this.state)
     }
 
     render() {
-        const {successMessage, fieldsConfig} = this.props.config;
+        const {fieldsConfig} = this.props.config;
         let fullnameError = this.state.errors.fullname;
         let emailaddressError = this.state.errors.emailaddress;
         let mssgError = this.state.errors.mssg;
         return (
             <form action="#" id="contact-form" noValidate>
-                {fieldsConfig &&
-                fieldsConfig.map((field: { id: number; type: string; fieldName: string; label: string; klassName: string; }) => {
+                {fieldsConfig && fieldsConfig.map((field: { id: number; type: string; fieldName: string; label: string; klassName: string; }) => {
                     return (
                         <React.Fragment key={field.id}>
                             {field.type !== "textarea" ? (
@@ -190,7 +177,7 @@ class MyForm extends Component<MyProps, MyState> {
                     onChange={(response: string | null) => this.handleCaptchaResponseChange(response)}
                 />
                 <div className="tinySpacing">
-                    {this.state.mailSent && <div className="success">{successMessage}</div>}
+                    {this.state.mailSent && <div className="success">{this.props.config.successMessage}</div>}
                     {this.state.error && <div className="error">{this.state.errorMssg}</div>}
                 </div>
             </form>
