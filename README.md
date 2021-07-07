@@ -1,4 +1,4 @@
-# My React Website ⚛️
+# My React Website ⚛️ 🌎
 
 Please go to the `/app` folder and run the following to install all the nessery npm modules:
 
