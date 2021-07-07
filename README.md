@@ -1,55 +1,21 @@
-# My First Dockerised React Website ⚛️ 🐳
+# My React Website ⚛️
 
-## Usage of complete project.
-
-Please clone this repo and in the project root directory, please run (requires Docker):
-
-### `docker-compose up -d`
-
-Frontend (react app) will run in `localhost:3000`
-
-Api will run in `localhost:8080`
-
----
-
-Alternative (run without Docker): 
+Please go to the `/app` folder and run the following to install all the nessery npm modules:
 
 ### `npm install`
 
-please go to the `/app` folder and run `npm install` to install all the nessery npm modules.
+Then run the react app in the development mode with:
 
 ### `npm start`
 
-Runs the react app in the development mode.
-
 Open <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> to view it in the browser - the web page will reload if you make edits.
+
+To build this project for production:
 
 ### `npm run build`
 
-Build this project for production.
-
-## Run PHP API with Docker
-First you need Docker installed in you machine. Once you have Docker installed, please navigate to project root directory and run:
-
-### `docker-compose up -d`
- 
-Api will run in `localhost:8080`
-
-#### .env
-
-Make sure to change api url in the `.env` file is correct:
+The contact form works by sending JSON to an API Gateway, which then invokes an AWS Lambda function, the URL for this API Gateway is specified in `.env`.
 
 ```dotenv
-$REACT_APP_API = http://localhost:8080/contact/index.php
+$REACT_APP_API = <API_Gateway_URL>
 ```
-
-Change this to whatever you want.
-
-## PHP Settings and Email
-
-Please go to `/api/contact/config.php` and change adminName to your name, and adminEmail to your email - this is the email address emails will be sent to.
-
-When the contact form is submitted, emails will be sent using <a href="https://github.com/SparkPost/php-sparkpost" target="_blank">Sparkpost's client library for PHP</a>. You will need to provide your own Sparkpost API key secret to send emails (see `/api/contact/index.php`, line 4).
-
-
-
