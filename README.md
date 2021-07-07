@@ -14,8 +14,8 @@ To build this project for production:
 
 ### `npm run build`
 
-The contact form works by sending JSON to an API Gateway, which then invokes an AWS Lambda function, the URL for this API Gateway is specified in `.env`.
+The contact form works by sending JSON to an API Gateway, which then invokes an AWS Lambda function, the URL for this API Gateway is specified in `/app/.env`.
 
 ```dotenv
-$REACT_APP_API = <API_Gateway_URL>
+$REACT_APP_API=<API_Gateway_URL>
 ```
