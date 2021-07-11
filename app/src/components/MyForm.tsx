@@ -46,7 +46,7 @@ class MyForm extends Component<MyProps, MyState> {
         let errors: { fullname: string, emailaddress: string, mssg: string } = this.state.errors;
         switch (name) {
             case 'fullname':
-                errors.fullname = value.length > 2 ? '' : fullnameErrMsg;
+                errors.fullname = value.length >= 2 ? '' : fullnameErrMsg;
                 break;
             case 'emailaddress':
                 errors.emailaddress = validEmailRegex.test(value) ? '' : emailaddressErrMsg;
