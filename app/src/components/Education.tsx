@@ -4,7 +4,7 @@ function Education() {
     let report_path = '/research/Quantum_Cryptography-Security_for_the_Post-Quantum_world.pdf';
     let uni_of_kent = 'https://www.kent.ac.uk/';
     let newberry = 'https://www.newberry.edu';
-    let open_uni = 'http://www.open.ac.uk';
+    let open_uni = 'https://www.open.ac.uk';
     let harvey = 'http://www.harveygs.kent.sch.uk';
     return (
         <React.Fragment>
@@ -27,7 +27,9 @@ function Education() {
                     <table className="marginBottom2">
                         <tbody>
                         <tr>
-                            <td className="jobTitle">BSc Computer Science with a Year in Industry (First-Class Honours)</td>
+                            <td className="jobTitle">BSc Computer Science with a Year in Industry (First-Class
+                                Honours)
+                            </td>
                         </tr>
                         <tr>
                             <td className="jobDates">Sep. 2016 - Jun. 2020</td>
@@ -38,44 +40,34 @@ function Education() {
                     <div className="uniCourseDetails">
                         <p>•&nbsp;&nbsp;Year 3: 82%</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;<span className="iconPaper" aria-hidden="true"/><a
-                            className="link-color"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href={report_path}>Research
-                            Project</a> - "Quantum Cryptography: Security for
-                            the Post-Quantum world": 1st class</p>
+                            className="link-color" target="_blank" rel="noopener noreferrer" href={report_path}>Research
+                            Project</a> - "Quantum Cryptography: Security for the Post-Quantum world": 1st class</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;Awarded: Most Exciting Idea for
                             Global Outreach - Sponsored by <a className="link-color" target="_blank"
                                                               rel="noopener noreferrer"
                                                               href="https://www.tmlep.com/">TMLEP</a></p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Computer Networks and Communication (Java): 88%</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Computer Security and Cryptography (Java): 92%</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Internet of Things (C++, Java, PHP, MySQL, HTML & CSS):
-                            70%</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Internet of Things (C++ Arduino, Java, JDBC, MySQL, PHP
+                            & CSS): 70%</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Programming Language Implementation (OCaml & C): 88%</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Programming Languages: Application and Design
-                            (Java,
-                            Rust &
-                            Haskell): 88%</p>
+                            (Java, Rust & Haskell): 88%</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;(Masters) Data Mining and Knowledge Discovery
                             (R): 82%</p>
                         <p>•&nbsp;&nbsp;Year 2: 78%</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Algorithms, Correctness and Efficiency (Java):
                             80%</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Web Development: (HTML, CSS, JavaScript, jQuery,
-                            AJAX &
-                            PHP): 95%</p>
+                            AJAX & PHP): 95%</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Functional and Concurrent Programming (Erlang &
-                            Haskell):
-                            94%</p>
+                            Haskell): 94%</p>
                         <p>•&nbsp;&nbsp;Year 1: 86%</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Introduction to Object-Orientated Programming
                             (Java):
                             97%</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Database and the Web (HTML, CSS, JavaScript,
-                            MySQL &
-                            PHP):
-                            86%</p>
+                            MySQL & PHP): 86%</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Further Object-Orientated Programming (Java):
                             94%</p>
                     </div>
