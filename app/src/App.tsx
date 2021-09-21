@@ -5,19 +5,12 @@ import Nav from './Nav';
 class App extends React.Component {
     render() {
         let cv_path = '/cv/David_W_Arnold-CV-website.pdf';
-        let loading_icon = '/favicon/android-chrome-192x192.png';
         let github = 'https://github.com/d-w-arnold';
         let linkedin = 'https://uk.linkedin.com/in/david-w-arnold';
         let keybase = 'https://keybase.io/d_w_arnold';
         return (
             <React.Fragment>
-                <div id="loader">
-                    <div id="loading">
-                        <img id="loading-icon" src={loading_icon}
-                             alt="Loading ..."/>
-                    </div>
-                </div>
-                <div id="myDiv" className="animate-bottom">
+                <div id="myDiv">
                     <header>
                         <div id="top">
                             <div className="alignRight">
