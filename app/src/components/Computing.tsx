@@ -1,6 +1,9 @@
 import React from "react";
 
 function Computing() {
+    // Certs
+    let aws_cloud_pract = 'https://www.credly.com/badges/56620dbe-7a8a-4213-985b-05269b168480'
+    let hackerrank = 'https://www.hackerrank.com/dwarnold'
     // Java
     let ciphertext_decryption = 'https://github.com/d-w-arnold/ciphertext-decryption';
     let countdown_game = 'https://github.com/d-w-arnold/java-countdown';
@@ -48,8 +51,13 @@ function Computing() {
                     <table className="computingTable">
                         <tbody>
                         <tr>
-                            <td className="computingSubTitle">OS's</td>
-                            <td className="computingWriting">macOS, iOS, Ubuntu, Amazon Linux, Windows 7/10</td>
+                            <td className="computingSubTitle">Certs</td>
+                            <td className="computingWriting">
+                                <a target="_blank" rel="noopener noreferrer" href={aws_cloud_pract}>AWS Certified Cloud
+                                    Practitioner</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={hackerrank}>Hackerrank Problem
+                                    Solving 5-Star</a><br/>
+                            </td>
                         </tr>
                         <tr>
                             <td className="computingSubTitle">Skills</td>
@@ -57,6 +65,10 @@ function Computing() {
                                 Django), Shell, Docker, JavaScript (w/ React, TypeScript, jQuery, AJAX & Node.js), SQL,
                                 PHP, HTML, SCSS, C/C++, Erlang, AppleScript, Markdown, LaTeX, Cryptography, Mathematics
                             </td>
+                        </tr>
+                        <tr>
+                            <td className="computingSubTitle">OS's</td>
+                            <td className="computingWriting">macOS, iOS, Ubuntu, Amazon Linux, Windows 7/10</td>
                         </tr>
                         <tr>
                             <td className="computingSubTitle">Projects</td>
@@ -137,7 +149,7 @@ function Computing() {
                         <tr>
                             <td className="employerName"><span className="iconLap" aria-hidden="true"/><b><a
                                 target="_blank" rel="noopener noreferrer" href={peach}>Peach</a></b></td>
-                            <td className="location">London, U.K.</td>
+                            <td className="location">(Remote) - London, U.K.</td>
                         </tr>
                         </tbody>
                     </table>
@@ -152,6 +164,12 @@ function Computing() {
                         </tr>
                         </tbody>
                     </table>
+
+                    <div className="jobDetails">
+                        <p>•&nbsp;&nbsp;DevOps team member.</p>
+                        <p>•&nbsp;&nbsp;Tech stack: Linux, Git, AWS, Python (w/ Django), Docker, SQL, TeamCity,
+                            Jenkins</p>
+                    </div>
                 </div>
 
                 <div className="spacing2"/>
@@ -181,26 +199,9 @@ function Computing() {
                     </table>
 
                     <div className="jobDetails">
-                        <p>•&nbsp;&nbsp;Achievements:</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Designed and implemented a custom Java program to
-                            improve productivity.</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Project lead the organisation of new starter hardware
-                            and software delivery.</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Volunteered during busy F1 race weekend.</p>
-                        <p>•&nbsp;&nbsp;Responsibilities:</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Supporting, maintaining and optimising internal systems
-                            on an individual and team level.</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Liaising with personnel across all levels of the
-                            business, providing excellent communications to explain procedures in a practical, and
-                            user-friendly way.</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Providing a level-headed and rational approach to
-                            problem solving, resulting in time efficient, cost effective, and creative solutions.</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Acting as first point of contact for business-wide
-                            hardware/software issues, including critical incidents.</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Logging incidents and service requests, as well as
-                            managing response times.</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Identify and propose opportunities to improve existing
-                            processes and systems.</p>
+                        <p>•&nbsp;&nbsp;Project lead the organisation of new starter hardware and software delivery.</p>
+                        <p>•&nbsp;&nbsp;Volunteered during busy F1 race weekend.</p>
+                        <p>•&nbsp;&nbsp;Designed and implemented a custom Java program to improve productivity.</p>
                     </div>
                 </div>
             </div>

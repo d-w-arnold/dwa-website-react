@@ -55,21 +55,9 @@ function Education() {
                             (Java, Rust & Haskell): 88%</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;(Masters) Data Mining and Knowledge Discovery
                             (R): 82%</p>
-                        <p>•&nbsp;&nbsp;Year 2: 78%</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Algorithms, Correctness and Efficiency (Java):
-                            80%</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Web Development: (HTML, CSS, JavaScript, jQuery,
-                            AJAX & PHP): 95%</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Functional and Concurrent Programming (Erlang &
-                            Haskell): 94%</p>
-                        <p>•&nbsp;&nbsp;Year 1: 86%</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Introduction to Object-Orientated Programming
-                            (Java):
-                            97%</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Database and the Web (HTML, CSS, JavaScript,
-                            MySQL & PHP): 86%</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Further Object-Orientated Programming (Java):
-                            94%</p>
+                        <p>•&nbsp;&nbsp;Year 2: 78% (Java, Erlang, JavaScript, jQuery, AJAX, PHP, HTML, CSS &
+                            Haskell)</p>
+                        <p>•&nbsp;&nbsp;Year 1: 86% (Java, JavaScript, MySQL, PHP, HTML & CSS)</p>
                     </div>
                 </div>
 
