@@ -19,7 +19,7 @@ function Home() {
                 <div className="spacing4"/>
                 <p className="title">Quantum Cryptography: Security for the Post-Quantum world</p>
                 <div className="writing roboto">
-                    <p>As part of my final year of university, I undertook a research project titled <a
+                    <p>During my final year as a university undergraduate, I undertook a research project titled <a
                         className="link-color" target="_blank" rel="noopener noreferrer" href={research_project}>"Quantum
                         Cryptography: Security for the Post-Quantum world"</a>. This project set out to survey the field
                         of quantum cryptography, providing a basic insight into various aspects of quantum cryptography
