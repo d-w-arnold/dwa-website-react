@@ -55,7 +55,7 @@ function Computing() {
                             <td className="computingWriting">
                                 <a target="_blank" rel="noopener noreferrer" href={aws_cloud_pract}>AWS Certified Cloud
                                     Practitioner</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={hackerrank}>Hackerrank Problem
+                                <a target="_blank" rel="noopener noreferrer" href={hackerrank}>HackerRank Problem
                                     Solving 5-Star</a><br/>
                             </td>
                         </tr>
