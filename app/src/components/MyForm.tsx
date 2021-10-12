@@ -12,8 +12,8 @@ const mssgErrMsg = 'Please do not exceed 1000 characters in your message, thank 
 type MyProps = any;
 type MyState = {
     recaptchaResponse: string | null;
-    mailSent: boolean;
-    errorMssg: string;
+    sent: boolean;
+    mssg: string;
     error: boolean | null;
     errors: {
         fullname: string;
@@ -29,8 +29,8 @@ class MyForm extends Component<MyProps, MyState> {
         super(props);
         this.state = {
             recaptchaResponse: null,
-            mailSent: false,
-            errorMssg: this.props.errorMessage,
+            sent: false,
+            mssg: this.props.errorMessage,
             error: null,
             errors: {
                 fullname: '',
@@ -58,8 +58,8 @@ class MyForm extends Component<MyProps, MyState> {
                 break;
         }
         this.setState({
-            errorMssg: this.state.errorMssg,
-            mailSent: this.state.mailSent,
+            mssg: this.state.mssg,
+            sent: this.state.sent,
             recaptchaResponse: this.state.recaptchaResponse,
             error: false,
             errors,
@@ -85,7 +85,7 @@ class MyForm extends Component<MyProps, MyState> {
         } else {
             // Invalid Form
             this.setState({
-                errorMssg: 'Please meet the above criteria before submitting this form, thank you.',
+                mssg: 'Please meet the above criteria before submitting this form, thank you.',
                 error: true
             })
         }
@@ -97,19 +97,19 @@ class MyForm extends Component<MyProps, MyState> {
             .then(result => {
                 if (result.data.sent) {
                     this.setState({
-                        mailSent: result.data.sent,
+                        sent: result.data.sent,
                         error: false
                     });
                 } else {
                     this.setState({
-                        errorMssg: result.data.mssg,
+                        mssg: result.data.mssg,
                         error: true
                     });
                 }
             })
             .catch(error => {
                 this.setState({
-                    errorMssg: this.props.config.errorMessage,
+                    mssg: this.props.config.errorMessage,
                     error: error.message
                 });
             });
@@ -177,8 +177,8 @@ class MyForm extends Component<MyProps, MyState> {
                     onChange={(response: string | null) => this.handleCaptchaResponseChange(response)}
                 />
                 <div className="tinySpacing">
-                    {this.state.mailSent && <div className="success">{this.props.config.successMessage}</div>}
-                    {this.state.error && <div className="error">{this.state.errorMssg}</div>}
+                    {this.state.sent && <div className="success">{this.props.config.successMessage}</div>}
+                    {this.state.error && <div className="error">{this.state.mssg}</div>}
                 </div>
             </form>
         );
