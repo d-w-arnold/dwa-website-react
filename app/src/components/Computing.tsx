@@ -17,6 +17,7 @@ function Computing() {
     // Python
     let news_web_crawler = 'https://github.com/d-w-arnold/local-news-data-collection';
     let python_sudoku_solver = 'https://github.com/d-w-arnold/python-sudoku-solver';
+    let python_hackerrank = 'https://github.com/d-w-arnold/python-hackerrank';
     // Shell
     let homebrew_auto_upgrade = 'https://github.com/d-w-arnold/homebrew-auto-upgrade';
     let open_all_images = 'https://github.com/d-w-arnold/macOS-open-all-images';
@@ -56,7 +57,7 @@ function Computing() {
                                 <a target="_blank" rel="noopener noreferrer" href={aws_cloud_pract}>AWS Certified Cloud
                                     Practitioner</a><br/>
                                 <a target="_blank" rel="noopener noreferrer" href={hackerrank}>HackerRank Problem
-                                    Solving 5-Star</a><br/>
+                                    Solving 6-Star</a><br/>
                             </td>
                         </tr>
                         <tr>
@@ -80,7 +81,7 @@ function Computing() {
                                 <a target="_blank" rel="noopener noreferrer" href={homebrew_auto_upgrade}>Homebrew
                                     Package Auto-Upgrade</a> (Shell)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={java_hackerrank}>Java
-                                    Hackerrank</a> (Java & JUnit)<br/>
+                                    HackerRank</a> (Java & JUnit)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={git_bisect}>Git Bisect</a> (Java &
                                 Maven)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={light_controller}>Lights
@@ -95,6 +96,8 @@ function Computing() {
                                     Game</a> (Java)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={csv_to_txt}>CSV to TXT
                                     Converter</a> (Java)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={python_hackerrank}>Python
+                                    HackerRank</a> (Python & UT)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={python_sudoku_solver}>Sudoku
                                     Solver</a> (Python)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={news_web_crawler}>News Web
