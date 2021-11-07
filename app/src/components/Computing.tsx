@@ -27,7 +27,6 @@ function Computing() {
     let dwa_website_react = 'https://github.com/d-w-arnold/dwa-website-react';
     let iot_web_app = 'https://github.com/d-w-arnold/CO657-IoT-admin-web-app';
     let my_first_openAPI = 'https://github.com/d-w-arnold/my-first-openAPI';
-    let simple_questionnaire = 'https://github.com/d-w-arnold/laravel-test';
     // C/C++
     let cli_address_book = 'https://github.com/d-w-arnold/command-line-address-book';
     let iot_device = 'https://github.com/d-w-arnold/bluetooth-IoT-device';
@@ -41,6 +40,7 @@ function Computing() {
     let cisco_uni_cha = 'https://www.cisco.com/c/m/en_uk/training-events/university-challenge.html';
     let talks = 'https://github.com/d-w-arnold/learn-git-gitHub-jetBrains';
     // Experience
+    let sihealth = 'https://www.sihealth.co.uk/';
     let peach = 'https://www.peach.me/en-gb/';
     let red_bull_careers = 'https://www.redbull.com/int-en/redbullracing';
     return (
@@ -102,18 +102,16 @@ function Computing() {
                                     Solver</a> (Python)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={news_web_crawler}>News Web
                                     Crawler</a> (Python)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={iot_device}>IoT BLE Device</a> (C++
-                                Arduino)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={my_first_openAPI}>My First
                                     OpenAPI</a> (Java, OpenAPI & Docker-Compose)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={dwa_website_first}>My First
                                     Website</a> (PHP, HTML, CSS & jQuery)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={cv_visualisation}>CV
                                     Visualisation</a> (React, D3.js, TypeScript & SCSS)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={simple_questionnaire}>Simple
-                                    Questionnaire</a> (MySQL, PHP & Laravel)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={iot_web_app}>IoT Admin Web
                                     App</a> (MySQL, PHP & CSS)<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={iot_device}>IoT BLE Device</a> (C++
+                                Arduino)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={cli_address_book}>CLI
                                     Address Book</a> (C)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={tcp_packets}>TCP Packets</a> (Erlang)<br/>
@@ -145,6 +143,32 @@ function Computing() {
 
                 <p className="title">Experience</p>
 
+                {/* siHealth */}
+                <div className="roboto">
+                    <table className="marginBottom2">
+                        <tbody>
+                        <tr>
+                            <td className="employerName"><span className="iconLap" aria-hidden="true"/><b><a
+                                target="_blank" rel="noopener noreferrer" href={sihealth}>siHealth</a></b></td>
+                            <td className="location">Harwell Campus, Didcot, U.K.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table className="marginBottom2">
+                        <tbody>
+                        <tr>
+                            <td className="jobTitle">DevOps Engineer</td>
+                        </tr>
+                        <tr>
+                            <td className="jobDates">Nov. 2021 - Current</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div className="spacing2"/>
+
                 {/* Peach Media */}
                 <div className="roboto">
                     <table className="marginBottom2">
@@ -163,7 +187,7 @@ function Computing() {
                             <td className="jobTitle">Junior Software Engineer</td>
                         </tr>
                         <tr>
-                            <td className="jobDates">Oct. 2020 - Current</td>
+                            <td className="jobDates">Oct. 2020 - Nov. 2021</td>
                         </tr>
                         </tbody>
                     </table>
