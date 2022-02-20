@@ -165,6 +165,14 @@ function Computing() {
                         </tr>
                         </tbody>
                     </table>
+
+                    <div className="jobDetails">
+                        <p>•&nbsp;&nbsp;Lead the company's transition of cloud resources from Azure to AWS.</p>
+                        <p>•&nbsp;&nbsp;Implemented a new AWS architecture process using AWS Cloud Development Kit (AWS
+                            CDK).</p>
+                        <p>•&nbsp;&nbsp;Tech stack: macOS, Git, AWS, Python3 (w/ PyCharm, AWS CDK, Boto3), Docker,
+                            MySQL</p>
+                    </div>
                 </div>
 
                 <div className="spacing2"/>
