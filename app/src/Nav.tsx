@@ -1,6 +1,6 @@
 // @ts-ignore
 import React from "react";
-import {BrowserRouter as BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import {BrowserRouter, Link, Routes, Route} from "react-router-dom";
 import HOME_COM from './components/Home';
 import EDUCATION_COM from './components/Education';
 import COMPUTING_COM from './components/Computing';
