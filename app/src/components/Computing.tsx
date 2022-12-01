@@ -2,6 +2,7 @@ import React from "react";
 
 function Computing() {
     // Certs
+    let aws_cloud_solu_arch_assoc = 'https://www.credly.com/badges/8847454f-bed9-4f5a-a443-1a26d1cfb2bd'
     let aws_cloud_pract = 'https://www.credly.com/badges/56620dbe-7a8a-4213-985b-05269b168480'
     let hackerrank = 'https://www.hackerrank.com/dwarnold'
     // Java
@@ -54,6 +55,8 @@ function Computing() {
                         <tr>
                             <td className="computingSubTitle">Certs</td>
                             <td className="computingWriting">
+                                <a target="_blank" rel="noopener noreferrer" href={aws_cloud_solu_arch_assoc}>AWS
+                                    Certified Solutions Architect – Associate</a><br/>
                                 <a target="_blank" rel="noopener noreferrer" href={aws_cloud_pract}>AWS Certified Cloud
                                     Practitioner</a><br/>
                                 <a target="_blank" rel="noopener noreferrer" href={hackerrank}>HackerRank Problem
