@@ -65,9 +65,24 @@ function Computing() {
                         </tr>
                         <tr>
                             <td className="computingSubTitle">Skills</td>
-                            <td className="computingWriting">Unix CLI, Git, AWS, JetBrains IDEs, Java, Python (w/
-                                Django), Shell, Docker, JavaScript (w/ React, TypeScript, jQuery, AJAX & Node.js), SQL,
-                                PHP, HTML, SCSS, C/C++, Erlang, AppleScript, Markdown, LaTeX, Cryptography, Mathematics
+                            <td className="computingWriting">
+                                <a target="_blank" rel="noopener noreferrer" href={'https://github.com/aws/aws-cdk'}>AWS
+                                    CDK</a> (AWS Cloud Development Kit),
+                                Python3 (w/ <a target="_blank" rel="noopener noreferrer"
+                                               href={'https://www.jetbrains.com/pycharm/'}>PyCharm</a>, <a
+                                target="_blank" rel="noopener noreferrer"
+                                href={'https://github.com/boto/boto3'}>Boto3</a>),
+                                Unix CLI (w/ <a target="_blank" rel="noopener noreferrer"
+                                                href={'https://github.com/aws/aws-cli'}>AWS CLI</a>),
+                                Git (w/ Bitbucket),
+                                Docker (w/ <a target="_blank" rel="noopener noreferrer"
+                                              href={'https://aws.amazon.com/ecr/'}>AWS ECR</a>),
+                                Shell Scripting,
+                                MySQL,
+                                Markdown,
+                                LaTeX,
+                                Cryptography,
+                                Mathematics
                             </td>
                         </tr>
                         <tr>
@@ -78,7 +93,7 @@ function Computing() {
                             <td className="computingSubTitle">Projects</td>
                             <td className="computingWriting"> {/*rel="noopener noreferrer"*/}
                                 <a target="_blank" rel="noopener noreferrer" href={dwa_website_react}>My React
-                                    Website</a> (React, TypeScript, SCSS & AWS Lambda Python)<br/>
+                                    Website</a> (React, TypeScript, SCSS & AWS Lambda Python3)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={ciphertext_decryption}>Ciphertext
                                     Decryption</a> (Java)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={homebrew_auto_upgrade}>Homebrew
@@ -100,11 +115,11 @@ function Computing() {
                                 <a target="_blank" rel="noopener noreferrer" href={csv_to_txt}>CSV to TXT
                                     Converter</a> (Java)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={python_hackerrank}>Python
-                                    HackerRank</a> (Python & UT)<br/>
+                                    HackerRank</a> (Python3 & UT)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={python_sudoku_solver}>Sudoku
-                                    Solver</a> (Python)<br/>
+                                    Solver</a> (Python3)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={news_web_crawler}>News Web
-                                    Crawler</a> (Python)<br/>
+                                    Crawler</a> (Python3)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={my_first_openAPI}>My First
                                     OpenAPI</a> (Java, OpenAPI & Docker-Compose)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={dwa_website_first}>My First
@@ -118,7 +133,8 @@ function Computing() {
                                 <a target="_blank" rel="noopener noreferrer" href={cli_address_book}>CLI
                                     Address Book</a> (C)<br/>
                                 <a target="_blank" rel="noopener noreferrer" href={tcp_packets}>TCP Packets</a> (Erlang)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={cipher_quiz}>Cipher Quiz</a> (Python,
+                                <a target="_blank" rel="noopener noreferrer" href={cipher_quiz}>Cipher
+                                    Quiz</a> (Python3,
                                 C++ & Erlang)<br/>
                                 <a target="_blank" rel="noopener noreferrer"
                                    href={open_all_images}>Open All Images</a> (Shell & AppleScript)<br/>
@@ -171,10 +187,10 @@ function Computing() {
 
                     <div className="jobDetails">
                         <p>•&nbsp;&nbsp;Lead the company's transition of cloud resources from Azure to AWS.</p>
-                        <p>•&nbsp;&nbsp;Implemented a new AWS architecture process using AWS Cloud Development Kit (AWS
-                            CDK).</p>
-                        <p>•&nbsp;&nbsp;Tech stack: macOS, Git, AWS, Python3 (w/ PyCharm, AWS CDK, Boto3), Docker,
-                            MySQL</p>
+                        <p>•&nbsp;&nbsp;Implemented a new AWS architecture process using AWS CDK (AWS Cloud Development
+                            Kit).</p>
+                        <p>•&nbsp;&nbsp;Tech stack: macOS, AWS CDK, Python3 (w/ PyCharm, Boto3), Unix CLI (w/ AWS CLI),
+                            Git (w/ Bitbucket), Docker (w/ AWS ECR), Shell Scripting, MySQL</p>
                     </div>
                 </div>
 

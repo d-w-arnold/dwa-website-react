@@ -8,19 +8,20 @@ logger = logging.getLogger(__name__)
 
 def recaptcha_verified(event):
     if "recaptchaResponse" in event:
-        payload = {'secret': os.environ["RECAPTCHA_SECRET"], 'response': event["recaptchaResponse"]}
+        payload = {"secret": os.environ["RECAPTCHA_SECRET"], "response": event["recaptchaResponse"]}
         r = requests.post("https://www.google.com/recaptcha/api/siteverify", data=payload)
         logger.info("reCaptcha Response: %s", r.json())
-        return r.json()['success']
+        return r.json()["success"]
     else:
         return False
 
 
 def send_email(event):
-    sns = boto3.client('sns')
+    sns = boto3.client("sns")
     email_body = "Name:\t" + event["fullname"] + "\nEmail:\t" + event["emailaddress"] + "\nMessage:\t" + event["mssg"]
-    sns.publish(TopicArn=os.environ["SNS_TOPIC"], Message=email_body,
-                Subject=f'Website message from: {event["fullname"]}.')
+    sns.publish(
+        TopicArn=os.environ["SNS_TOPIC"], Message=email_body, Subject=f'Website message from: {event["fullname"]}.'
+    )
     return 200, True, "Message sent, I will be in touch!"
 
 
@@ -33,10 +34,10 @@ def send_res(status, sent, mssg):
             "Access-Control-Allow-Methods": "OPTIONS,POST",
             "Access-Control-Allow-Credentials": "true",
             "Access-Control-Allow-Origin": "*",
-            "X-Requested-With": "*"
+            "X-Requested-With": "*",
         },
         "sent": sent,
-        "mssg": mssg
+        "mssg": mssg,
     }
     logger.info("Lambda Response: %s", response)
     return response
@@ -62,4 +63,3 @@ def lambda_handler(event, context):
     else:
         mssg = "Sorry we are having some problems, please try again later."
     return send_res(status, sent, mssg)
-
