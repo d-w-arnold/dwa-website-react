@@ -132,6 +132,7 @@ class MyForm extends Component<MyProps, MyState> {
                                     </div>
                                     <input
                                         type={field.type}
+                                        id={field.fieldName}
                                         name={field.fieldName}
                                         className={field.klassName}
                                         tabIndex={field.id}
@@ -148,6 +149,7 @@ class MyForm extends Component<MyProps, MyState> {
                                         <label htmlFor={field.fieldName}>{field.label}</label>
                                     </div>
                                     <textarea
+                                        id={field.fieldName}
                                         name={field.fieldName}
                                         className={field.klassName}
                                         tabIndex={field.id}
