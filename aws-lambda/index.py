@@ -3,7 +3,7 @@ import logging
 import os
 import sys
 
-from urllib.request import Request, urlopen
+import requests
 
 if "LAMBDA_TASK_ROOT" in os.environ:
     sys.path.insert(0, os.environ["LAMBDA_TASK_ROOT"])
@@ -23,20 +23,15 @@ msg_key = "mssg"
 
 def recaptcha_verified(event):
     if "recaptchaResponse" in event:
-        encoding = "utf-8"
-        with urlopen(
-            url=Request(
-                url="https://www.google.com/recaptcha/api/siteverify",
-                data=json.dumps(
-                    {"secret": os.environ["RECAPTCHA_SECRET"], "response": event["recaptchaResponse"]}
-                ).encode(encoding=encoding),
-                headers={"Content-Type": "application/json"},
-            )
-        ) as res:
-            res_read = res.read()
-            res_json = json.loads(res_read.decode(encoding=encoding))
-            logger.info(f"## reCaptcha Response: {res_json}")
-            return res["success"]
+        res_json = json.loads(
+            requests.post(
+                "https://www.google.com/recaptcha/api/siteverify",
+                data={"secret": os.environ["RECAPTCHA_SECRET"], "response": event["recaptchaResponse"]},
+                headers={"Content-Type": "application/x-www-form-urlencoded"},
+            ).text
+        )
+        logger.info(f"## reCaptcha Response: {res_json}")
+        return res_json["success"]
     return False
 
 
