@@ -1,26 +1,47 @@
-import boto3
+import json
 import logging
 import os
+import sys
+
 import requests
 
-logger = logging.getLogger(__name__)
+if "LAMBDA_TASK_ROOT" in os.environ:
+    sys.path.insert(0, os.environ["LAMBDA_TASK_ROOT"])
+
+# pylint: disable=wrong-import-position
+import boto3
+
+logger = logging.getLogger()
+# logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)  # Enable to log to stdout, and comment line below.
+logger.setLevel(logging.INFO)
+logger.info(f"Boto3 version: {boto3.__version__}")
+
+fullname_key = "fullname"
+email_address_key = "emailaddress"
+msg_key = "mssg"
 
 
 def recaptcha_verified(event):
     if "recaptchaResponse" in event:
-        payload = {"secret": os.environ["RECAPTCHA_SECRET"], "response": event["recaptchaResponse"]}
-        r = requests.post("https://www.google.com/recaptcha/api/siteverify", data=payload)
-        logger.info("reCaptcha Response: %s", r.json())
-        return r.json()["success"]
-    else:
-        return False
+        res_json = json.loads(
+            requests.post(
+                "https://www.google.com/recaptcha/api/siteverify",
+                data={"secret": os.environ["RECAPTCHA_SECRET"], "response": event["recaptchaResponse"]},
+                headers={"Content-Type": "application/x-www-form-urlencoded"},
+            ).text
+        )
+        logger.info(f"## reCaptcha Response: {res_json}")
+        return res_json["success"]
+    return False
 
 
 def send_email(event):
     sns = boto3.client("sns")
-    email_body = "Name:\t" + event["fullname"] + "\nEmail:\t" + event["emailaddress"] + "\nMessage:\t" + event["mssg"]
+    email_body = (
+        "Name:\t" + event[fullname_key] + "\nEmail:\t" + event[email_address_key] + "\nMessage:\t" + event[msg_key]
+    )
     sns.publish(
-        TopicArn=os.environ["SNS_TOPIC"], Message=email_body, Subject=f'Website message from: {event["fullname"]}.'
+        TopicArn=os.environ["SNS_TOPIC"], Message=email_body, Subject=f"Website message from: {event[fullname_key]}."
     )
     return 200, True, "Message sent, I will be in touch!"
 
@@ -37,29 +58,27 @@ def send_res(status, sent, mssg):
             "X-Requested-With": "*",
         },
         "sent": sent,
-        "mssg": mssg,
+        msg_key: mssg,
     }
-    logger.info("Lambda Response: %s", response)
+    logger.info(f"## Lambda Response: {response}")
     return response
 
 
 def lambda_handler(event, context):
-    logger.info("Lambda Event: %s", event)
+    logger.info(f"## EVENT: {event}")
     status = 404
     sent = False
-    mssg = "Message not set."
-    if event or event is not None:
+    msg = "Sorry we are having some problems, please try again later."
+    if event:
+        msg = "reCaptcha check failed, please try again later."
         if recaptcha_verified(event):
-            if "fullname" not in event or "emailaddress" not in event or "mssg" not in event:
-                mssg = "Please make sure to give your name, email address and a message, thank you."
-            elif len(event["fullname"]) == 0 or len(event["emailaddress"]) == 0:
-                mssg = "Please specify at least your name and email address, thank you."
-            elif len(event["mssg"]) > 1000:
-                mssg = "Please do not exceed 1000 characters in your message, thank you."
+            logger.info("## reCaptcha Success")
+            if any(k not in event for k in [fullname_key, email_address_key, msg_key]):
+                msg = "Please make sure to give your name, email address and a message, thank you."
+            elif len(event[fullname_key]) == 0 or len(event[email_address_key]) == 0:
+                msg = "Please specify at least your name and email address, thank you."
+            elif len(event[msg_key]) > 1000:
+                msg = "Please do not exceed 1000 characters in your message, thank you."
             else:
-                status, sent, mssg = send_email(event)
-        else:
-            mssg = "reCaptcha check failed, please try again later."
-    else:
-        mssg = "Sorry we are having some problems, please try again later."
-    return send_res(status, sent, mssg)
+                status, sent, msg = send_email(event)
+    return send_res(status, sent, msg)
