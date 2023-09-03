@@ -1,8 +1,9 @@
-import React, {Component} from "react";
+import React, {Component, RefObject} from "react";
 import PropTypes, {Validator} from "prop-types";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 
+const recaptchaRef: RefObject<any> = React.createRef();
 const validEmailRegex = RegExp(/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i);
 const fullnameErrMsg = 'Please provide a name of at least 2 characters, thank you.';
 const emailaddressErrMsg = 'Please enter a valid email address, thank you.';
@@ -22,8 +23,6 @@ type MyState = {
 };
 
 class MyForm extends Component<MyProps, MyState> {
-    recaptchaRef: any = React.useRef();
-
     static propTypes: { config: Validator<NonNullable<object>> };
 
     constructor(props: MyProps) {
@@ -78,13 +77,23 @@ class MyForm extends Component<MyProps, MyState> {
     };
 
     // TODO: Look into why form won't submit after having just tried to submit just a msg, then populated all fields, and still won't submit.
-    handleFormSubmit = async (e: { preventDefault: () => void; }) => {
+    handleFormSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         if (this.validateForm(this.state.errors)) {
             // Valid Form
-            const token = await this.recaptchaRef.current.executeAsync();
-            this.setState({recaptchaResponse: token});
-            axios.post(this.props.config.api, this.state)
+            recaptchaRef.current.execute();
+        } else {
+            // Invalid Form
+            this.setState({
+                mssg: 'Please meet the above criteria before submitting this form, thank you.',
+                error: true
+            })
+        }
+    };
+
+    handleCaptchaResponseChange(response: string | null) {
+        this.setState({recaptchaResponse: response});
+        axios.post(this.props.config.api, this.state)
             .then(result => {
                 if (result.data.sent) {
                     this.setState({
@@ -104,15 +113,8 @@ class MyForm extends Component<MyProps, MyState> {
                     error: error.message
                 });
             });
-            this.recaptchaRef.current.reset();
-        } else {
-            // Invalid Form
-            this.setState({
-                mssg: 'Please meet the above criteria before submitting this form, thank you.',
-                error: true
-            })
-        }
-    };
+            recaptchaRef.current.reset();
+    }
 
     render() {
         const {fieldsConfig} = this.props.config;
@@ -163,10 +165,11 @@ class MyForm extends Component<MyProps, MyState> {
                     );
                 })}
                 <ReCAPTCHA
-                    ref={this.recaptchaRef}
+                    ref={recaptchaRef}
                     size="invisible"
-                    sitekey={this.props.config.siteKey}
+                    sitekey={this.props.config.sitekey}
                     theme="dark"
+                    onChange={(response: string | null) => this.handleCaptchaResponseChange(response)}
                 />
                 <div className="buttonPlacement">
                     <button
