@@ -3,7 +3,6 @@ import PropTypes, {Validator} from "prop-types";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const recaptchaRef: any = React.useRef();
 const validEmailRegex = RegExp(/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i);
 const fullnameErrMsg = 'Please provide a name of at least 2 characters, thank you.';
 const emailaddressErrMsg = 'Please enter a valid email address, thank you.';
@@ -23,6 +22,8 @@ type MyState = {
 };
 
 class MyForm extends Component<MyProps, MyState> {
+    recaptchaRef: any = React.useRef();
+
     static propTypes: { config: Validator<NonNullable<object>> };
 
     constructor(props: MyProps) {
@@ -81,7 +82,7 @@ class MyForm extends Component<MyProps, MyState> {
         e.preventDefault();
         if (this.validateForm(this.state.errors)) {
             // Valid Form
-            const token = await recaptchaRef.current.executeAsync();
+            const token = await this.recaptchaRef.current.executeAsync();
             this.setState({recaptchaResponse: token});
             axios.post(this.props.config.api, this.state)
             .then(result => {
@@ -103,7 +104,7 @@ class MyForm extends Component<MyProps, MyState> {
                     error: error.message
                 });
             });
-            recaptchaRef.current.reset();
+            this.recaptchaRef.current.reset();
         } else {
             // Invalid Form
             this.setState({
@@ -162,7 +163,7 @@ class MyForm extends Component<MyProps, MyState> {
                     );
                 })}
                 <ReCAPTCHA
-                    ref={recaptchaRef}
+                    ref={this.recaptchaRef}
                     size="invisible"
                     sitekey={this.props.config.siteKey}
                     theme="dark"
