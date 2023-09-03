@@ -13,6 +13,7 @@ import MyForm from "./MyForm";
  */
 const config = {
     api: `${process.env.REACT_APP_API}`,
+    siteKey: `${process.env.REACT_APP_RECAPTCHA_SITEKEY}`,
     successMessage: 'Thank you for contacting me, I\'ll be in touch!',
     errorMessage: 'Sorry we have some problems.',
     fields: {

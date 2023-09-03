@@ -1,9 +1,9 @@
-import React, {Component, RefObject} from "react";
+import React, {Component} from "react";
 import PropTypes, {Validator} from "prop-types";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const recaptchaRef: RefObject<any> = React.createRef();
+const recaptchaRef: any = React.useRef();
 const validEmailRegex = RegExp(/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i);
 const fullnameErrMsg = 'Please provide a name of at least 2 characters, thank you.';
 const emailaddressErrMsg = 'Please enter a valid email address, thank you.';
@@ -77,23 +77,13 @@ class MyForm extends Component<MyProps, MyState> {
     };
 
     // TODO: Look into why form won't submit after having just tried to submit just a msg, then populated all fields, and still won't submit.
-    handleFormSubmit = (e: { preventDefault: () => void; }) => {
+    handleFormSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         if (this.validateForm(this.state.errors)) {
             // Valid Form
-            recaptchaRef.current.execute();
-        } else {
-            // Invalid Form
-            this.setState({
-                mssg: 'Please meet the above criteria before submitting this form, thank you.',
-                error: true
-            })
-        }
-    };
-
-    handleCaptchaResponseChange(response: string | null) {
-        this.setState({recaptchaResponse: response});
-        axios.post(this.props.config.api, this.state)
+            const token = await recaptchaRef.current.executeAsync();
+            this.setState({recaptchaResponse: token});
+            axios.post(this.props.config.api, this.state)
             .then(result => {
                 if (result.data.sent) {
                     this.setState({
@@ -113,7 +103,15 @@ class MyForm extends Component<MyProps, MyState> {
                     error: error.message
                 });
             });
-    }
+            recaptchaRef.current.reset();
+        } else {
+            // Invalid Form
+            this.setState({
+                mssg: 'Please meet the above criteria before submitting this form, thank you.',
+                error: true
+            })
+        }
+    };
 
     render() {
         const {fieldsConfig} = this.props.config;
@@ -121,7 +119,7 @@ class MyForm extends Component<MyProps, MyState> {
         let emailaddressError = this.state.errors.emailaddress;
         let mssgError = this.state.errors.mssg;
         return (
-            <form action="#" id="contact-form" noValidate>
+            <form onSubmit={(e) => this.handleFormSubmit(e)} id="contact-form" noValidate>
                 {fieldsConfig && fieldsConfig.map((field: { id: number; type: string; fieldName: string; label: string; klassName: string; }) => {
                     return (
                         <React.Fragment key={field.id}>
@@ -163,21 +161,19 @@ class MyForm extends Component<MyProps, MyState> {
                         </React.Fragment>
                     );
                 })}
+                <ReCAPTCHA
+                    ref={recaptchaRef}
+                    size="invisible"
+                    sitekey={this.props.config.siteKey}
+                    theme="dark"
+                />
                 <div className="buttonPlacement">
                     <button
                         type="submit"
                         id="button"
-                        onClick={(e) => this.handleFormSubmit(e)}
                         tabIndex={4}>Send Your Message
                     </button>
                 </div>
-                <ReCAPTCHA
-                    ref={recaptchaRef}
-                    size="invisible"
-                    sitekey="6Lcl1rcUAAAAAP9cwFpK09YM8xi3Lhbc0jjgSFWs"
-                    theme="dark"
-                    onChange={(response: string | null) => this.handleCaptchaResponseChange(response)}
-                />
                 <div className="tinySpacing">
                     {this.state.sent && <div className="success">{this.props.config.successMessage}</div>}
                     {this.state.error && <div className="error">{this.state.mssg}</div>}
