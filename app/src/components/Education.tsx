@@ -1,11 +1,19 @@
 import React from "react";
 
 function Education() {
-    let report_path = '/research/Quantum_Cryptography-Security_for_the_Post-Quantum_world.pdf';
-    let uni_of_kent = 'https://www.kent.ac.uk/';
+    let cipher_decrypt = 'https://github.com/d-w-arnold/ciphertext-decryption';
+    let comp_net_com = 'https://www.kent.ac.uk/courses/modules/module/COMP6330';
+    let comp_sci_year_ind = 'https://www.kent.ac.uk/courses/undergraduate/128/computer-science-with-a-year-in-industry';
+    let comp_sec_crypt = 'https://www.kent.ac.uk/courses/modules/module/COMP6340';
+    let data_mining = 'https://www.kent.ac.uk/courses/modules/module/COMP8320';
+    let harvey = 'http://www.harveygs.kent.sch.uk';
+    let iot = 'https://www.kent.ac.uk/courses/modules/module/COMP6570';
     let newberry = 'https://www.newberry.edu';
     let open_uni = 'https://www.open.ac.uk';
-    let harvey = 'http://www.harveygs.kent.sch.uk';
+    let prog_lang_imp = 'https://www.kent.ac.uk/courses/modules/module/COMP6580';
+    let prog_langs_app = 'https://www.kent.ac.uk/courses/modules/module/COMP6630';
+    let research_project = '/research/Quantum_Cryptography-Security_for_the_Post-Quantum_world.pdf';
+    let uni_of_kent = 'https://www.kent.ac.uk/';
     return (
         <React.Fragment>
             <div className="body">
@@ -27,9 +35,7 @@ function Education() {
                     <table className="marginBottom2">
                         <tbody>
                         <tr>
-                            <td className="jobTitle">BSc Computer Science with a Year in Industry (First-Class
-                                Honours)
-                            </td>
+                            <td className="jobTitle">(First-Class Honours) <a className="link-color" target="_blank" rel="noopener noreferrer" href={comp_sci_year_ind}>BSc Computer Science with a Year in Industry</a></td>
                         </tr>
                         <tr>
                             <td className="jobDates">Sep. 2016 - Jun. 2020</td>
@@ -39,25 +45,16 @@ function Education() {
 
                     <div className="uniCourseDetails">
                         <p>•&nbsp;&nbsp;Year 3: 82%</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;<span className="iconPaper" aria-hidden="true"/><a
-                            className="link-color" target="_blank" rel="noopener noreferrer" href={report_path}>Research
-                            Project</a> - "Quantum Cryptography: Security for the Post-Quantum world": 1st class</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;Awarded: Most Exciting Idea for
-                            Global Outreach - Sponsored by <a className="link-color" target="_blank"
-                                                              rel="noopener noreferrer"
-                                                              href="https://www.tmlep.com/">TMLEP</a></p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Computer Networks and Communication (Java): 88%</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Computer Security and Cryptography (Java): 92%</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Internet of Things (C++ Arduino, Java, JDBC, MySQL, PHP
-                            & CSS): 70%</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Programming Language Implementation (OCaml & C): 88%</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;Programming Languages: Application and Design
-                            (Java, Rust & Haskell): 88%</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;(Masters) Data Mining and Knowledge Discovery
-                            (R): 82%</p>
-                        <p>•&nbsp;&nbsp;Year 2: 78% (Java, Erlang, JavaScript, jQuery, AJAX, PHP, HTML, CSS &
-                            Haskell)</p>
-                        <p>•&nbsp;&nbsp;Year 1: 86% (Java, JavaScript, MySQL, PHP, HTML & CSS)</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;(First-Class) <span className="iconPaper" aria-hidden="true"/>Research Project - <a className="link-color" target="_blank" rel="noopener noreferrer" href={research_project}>"Quantum Cryptography: Security for the Post-Quantum world"</a></p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;Awarded: Most Exciting Idea for Global Outreach - Sponsored by <a className="link-color" target="_blank" rel="noopener noreferrer" href="https://www.tmlep.com/">TMLEP</a></p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;92% <a className="link-color" target="_blank" rel="noopener noreferrer" href={comp_sec_crypt}>Computer Security and Cryptography</a> [ Java ] - Featuring my <a className="link-color" target="_blank" rel="noopener noreferrer" href={cipher_decrypt}>favourite assignment</a> ^_^</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;88% <a className="link-color" target="_blank" rel="noopener noreferrer" href={comp_net_com}>Computer Networks and Communication</a> [ Java ]</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;88% <a className="link-color" target="_blank" rel="noopener noreferrer" href={prog_lang_imp}>Programming Language Implementation</a> [ OCaml | C ]</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;88% <a className="link-color" target="_blank" rel="noopener noreferrer" href={prog_langs_app}>Programming Languages: Applications and Design</a> [ Java | Rust | Haskell ]</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;82% <a className="link-color" target="_blank" rel="noopener noreferrer" href={data_mining}>(Masters) Data Mining and Knowledge Discovery</a> [ R ]</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;–&nbsp;&nbsp;70% <a className="link-color" target="_blank" rel="noopener noreferrer" href={iot}>Internet of Things</a> [ C++ Arduino | Java | JDBC | MySQL | PHP | CSS ]</p>
+                        <p>•&nbsp;&nbsp;Year 2: 78% [ Java | Erlang | JavaScript | jQuery | AJAX | PHP | HTML | CSS | Haskell ]</p>
+                        <p>•&nbsp;&nbsp;Year 1: 86% [ Java | JavaScript | MySQL | PHP | HTML | CSS ]</p>
                     </div>
                 </div>
 
@@ -92,7 +89,7 @@ function Education() {
                             College NCAA (National Collegiate Athletic Association) golf team while studying as
                             a
                             Mathematics Major.</p>
-                        <p>•&nbsp;&nbsp;My GPA (Grade Point Average) for the time I was there was 3.80/4.00
+                        <p>•&nbsp;&nbsp;My GPA (Grade Point Average) for the time I was there was 3.8/4.0
                             (A-Grade).</p>
                     </div>
                 </div>
@@ -107,7 +104,7 @@ function Education() {
                             <td className="employerName"><span className="iconUni" aria-hidden="true"/><b><a
                                 target="_blank" rel="noopener noreferrer" href={open_uni}>The Open University</a></b>
                             </td>
-                            <td className="location">Milton Keynes, U.K.</td>
+                            <td className="location">(Remote) - Milton Keynes, U.K.</td>
                         </tr>
                         </tbody>
                     </table>
@@ -158,14 +155,6 @@ function Education() {
                         </tr>
                         </tbody>
                     </table>
-
-                    <div className="uniCourseDetails">
-                        <p>•&nbsp;&nbsp;(A-Grade): Mathematics, Science, Additional Science, English, Design &
-                            Technology: Resistant Materials, BTEC Level 2 Certificate in Sport - Distinction*</p>
-                        <p>•&nbsp;&nbsp;(B-Grade): Physical Education, English Literature, Geography, Media
-                            Studies</p>
-                        <p>•&nbsp;&nbsp;(C-Grade): Business Studies, Statistics</p>
-                    </div>
                 </div>
             </div>
         </React.Fragment>

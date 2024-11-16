@@ -1,22 +1,25 @@
 import React from "react";
 
 function Experience() {
-    // Experience
-    let sihealth = 'https://www.sihealth.co.uk/';
+    let aws_cdk = 'https://github.com/aws/aws-cdk';
+    let aws_cli = 'https://aws.amazon.com/cli/';
+    let boto3 = 'https://github.com/boto/boto3';
     let peach = 'https://www.peach.me/en-gb/';
     let red_bull_careers = 'https://www.redbull.com/int-en/redbullracing';
+    let sat_data_sys = '/diagram/Satellite_Data_Acquisition_System.png';
+    let sihealth = 'https://www.sihealth.co.uk/';
     return (
         <React.Fragment>
             <div className="body">
                 <p className="title">Experience</p>
 
-                {/* siHealth */}
+                {/* siHealth Ltd. */}
                 <div className="roboto">
                     <table className="marginBottom2">
                         <tbody>
                         <tr>
                             <td className="employerName"><span className="iconLap" aria-hidden="true"/><b><a
-                                target="_blank" rel="noopener noreferrer" href={sihealth}>siHealth</a></b></td>
+                                target="_blank" rel="noopener noreferrer" href={sihealth}>siHealth Ltd.</a></b></td>
                             <td className="location">Harwell Campus, Didcot, U.K.</td>
                         </tr>
                         </tbody>
@@ -34,11 +37,15 @@ function Experience() {
                     </table>
 
                     <div className="jobDetails">
-                        <p>•&nbsp;&nbsp;Lead the company's transition of cloud resources from Azure to AWS.</p>
-                        <p>•&nbsp;&nbsp;Implemented a new AWS architecture process using AWS CDK (AWS Cloud Development
-                            Kit).</p>
-                        <p>•&nbsp;&nbsp;Tech stack: macOS, AWS CDK, Python3 (PyCharm, Boto3), Unix CLI (AWS CLI),
-                            Git (Bitbucket), Docker (AWS ECR), Shell Scripting, MySQL</p>
+                        <p>•&nbsp;&nbsp;All-in-one: Cloud Engineer / Cloud Architect / DevOps</p>
+                        <p>•&nbsp;&nbsp;Tech Stack: [ macOS | <a className="link-color" target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS Cloud Development Kit (CDK)</a> | Python3 | PyCharm | <a className="link-color" target="_blank" rel="noopener noreferrer" href={boto3}>Boto3 - AWS SDK for Python</a> | Unix CLI | Git | <a className="link-color" target="_blank" rel="noopener noreferrer" href={aws_cli}>AWS CLI</a> | Shell (Bash) Scripting | Docker | MySQL | Atlassian ]</p><br/>
+                        <p>•&nbsp;&nbsp;Lead the company's migration of cloud resources from Azure to AWS.</p>
+                        <p>•&nbsp;&nbsp;Implemented a new Infrastructure as Code (IaC) process using <a className="link-color" target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS CDK</a>.</p>
+                        <p>•&nbsp;&nbsp;Main responsibilities:</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;Development/provisioning of new cloud resources (via IaC and/or scripts) to support multiple active projects.</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;Oversee all CI/CD processes.</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;Provide internal support to technical team members using cloud resources.</p>
+                        <p>•&nbsp;&nbsp;Solely architected and implemented new IaC for an in-house <a className="link-color" target="_blank" rel="noopener noreferrer" href={sat_data_sys}>'Satellite Data Acquisition System'</a>, for serving live data to company products.</p>
                     </div>
                 </div>
 
@@ -49,8 +56,7 @@ function Experience() {
                     <table className="marginBottom2">
                         <tbody>
                         <tr>
-                            <td className="employerName"><span className="iconLap" aria-hidden="true"/><b><a
-                                target="_blank" rel="noopener noreferrer" href={peach}>Peach</a></b></td>
+                            <td className="employerName"><span className="iconLap" aria-hidden="true"/><b><a target="_blank" rel="noopener noreferrer" href={peach}>Peach</a></b></td>
                             <td className="location">(Remote) - London, U.K.</td>
                         </tr>
                         </tbody>
@@ -69,8 +75,7 @@ function Experience() {
 
                     <div className="jobDetails">
                         <p>•&nbsp;&nbsp;DevOps team member.</p>
-                        <p>•&nbsp;&nbsp;Tech stack: Linux, Git, AWS, Python (inc. Django), Docker, SQL, TeamCity,
-                            Jenkins</p>
+                        <p>•&nbsp;&nbsp;Tech Stack: [ Linux | Git | AWS | Python (inc. Django) | Docker | SQL | TeamCity | Jenkins ]</p>
                     </div>
                 </div>
 
@@ -103,7 +108,6 @@ function Experience() {
                     <div className="jobDetails">
                         <p>•&nbsp;&nbsp;Project lead the organisation of new starter hardware and software delivery.</p>
                         <p>•&nbsp;&nbsp;Volunteered during busy F1 race weekend.</p>
-                        <p>•&nbsp;&nbsp;Designed and implemented a custom Java program to improve productivity.</p>
                     </div>
                 </div>
             </div>

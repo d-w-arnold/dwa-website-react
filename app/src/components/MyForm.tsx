@@ -76,7 +76,6 @@ class MyForm extends Component<MyProps, MyState> {
         return valid;
     };
 
-    // TODO: Look into why form won't submit after having just tried to submit just a msg, then populated all fields, and still won't submit.
     handleFormSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         if (this.validateForm(this.state.errors)) {
