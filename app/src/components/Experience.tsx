@@ -43,9 +43,9 @@ function Experience() {
                         <p>•&nbsp;&nbsp;Implemented a new Infrastructure as Code (IaC) process using <a className="link-color" target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS CDK</a>.</p>
                         <p>•&nbsp;&nbsp;Main responsibilities:</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;Development/provisioning of new cloud resources (via IaC and/or scripts) to support multiple active projects.</p>
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;Oversee all CI/CD processes.</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;Oversee all Continuous Integration/Continuous Delivery (CI/CD) processes.</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;Provide internal support to technical team members using cloud resources.</p>
-                        <p>•&nbsp;&nbsp;Solely architected and implemented new IaC for an in-house <a className="link-color" target="_blank" rel="noopener noreferrer" href={sat_data_sys}>'Satellite Data Acquisition System'</a>, for serving live data to company products.</p>
+                        <p>•&nbsp;&nbsp;Solely architected and implemented new IaC for an in-house <a className="link-color" target="_blank" rel="noopener noreferrer" href={sat_data_sys}>Satellite Data Acquisition System</a>, for serving live data to company products.</p>
                     </div>
                 </div>
 
