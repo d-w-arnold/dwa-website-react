@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 function Education() {
     let cipher_decrypt = 'https://github.com/d-w-arnold/ciphertext-decryption';
@@ -18,6 +19,14 @@ function Education() {
         <React.Fragment>
             <div className="body">
                 <p className="title">Education</p>
+
+                <div className="roboto">
+                    <div className="uniCourseDetails">
+                        NB. See my AWS certificates in the <Link className="link-color" to="/computing">Computing Skills</Link> section.
+                    </div>
+                </div>
+
+                <div className="spacing4"/>
 
                 {/*University of Kent*/}
                 <div className="roboto">

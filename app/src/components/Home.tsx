@@ -42,7 +42,7 @@ function Home() {
                     <p>This research project set out to survey the field of Quantum Cryptography, providing a basic insight into various aspects of Quantum Cryptography - all of which could be very important regarding our online security in the future! Aimed at people in industry concerned with security.</p>
                 </div>
                 <div className="spacing4"/>
-                <p className="title">Past Life</p>
+                <p className="title">Early Life</p>
                 <div className="writing roboto">
                     <p>Before I was a Software Engineer, I trained as a professional golfer.</p>
                     <div className="spacing2"/>
@@ -54,7 +54,7 @@ function Home() {
                     <div className="spacing2"/>
                     <p>One of my latest best rounds of golf was in the <a className="link-color" target="_blank" rel="noopener noreferrer" href={kent_am_champ_2015}>Kent Amateur Championship 2015</a>.</p>
                     <div className="spacing2"/>
-                    <p>Aged 19 with a handicap of [-1], I relinquished my amateur status and turned professional, briefly participating on the <a className="link-color" target="_blank" rel="noopener noreferrer" href={euro_pro}>EuroPro UK Golf Tour</a>.</p>
+                    <p>Aged 19 with a handicap of [-1], I relinquished my amateur status and turned professional, participating on the <a className="link-color" target="_blank" rel="noopener noreferrer" href={euro_pro}>EuroPro UK Golf Tour</a>.</p>
                     <div className="spacing2"/>
                     <p>In late 2016, I hung up my golf clubs to study Computer Science. Golf remains a passion of mine, and will remain a lifetime hobby.</p>
                 </div>
