@@ -6,8 +6,8 @@ class App extends React.Component {
     render() {
         let cv_path = '/cv/David_W_Arnold-CV-website.pdf';
         let github = 'https://github.com/d-w-arnold';
-        let linkedin = 'https://uk.linkedin.com/in/david-w-arnold';
         let keybase = 'https://keybase.io/d_w_arnold';
+        let linkedin = 'https://uk.linkedin.com/in/david-w-arnold';
         return (
             <React.Fragment>
                 <div id="myDiv">

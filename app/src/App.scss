@@ -93,6 +93,10 @@ table {
   width: 100%;
 }
 
+table tr td {
+  vertical-align: text-top;
+}
+
 table tr td a {
   color: $link;
 }

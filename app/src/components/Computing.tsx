@@ -2,261 +2,172 @@ import React from "react";
 
 function Computing() {
     // Certs
-    let aws_cloud_solu_arch_assoc = 'https://www.credly.com/badges/8847454f-bed9-4f5a-a443-1a26d1cfb2bd'
-    let aws_cloud_pract = 'https://www.credly.com/badges/56620dbe-7a8a-4213-985b-05269b168480'
-    let hackerrank = 'https://www.hackerrank.com/dwarnold'
-    // Java
-    let ciphertext_decryption = 'https://github.com/d-w-arnold/ciphertext-decryption';
-    let countdown_game = 'https://github.com/d-w-arnold/java-countdown';
-    let csv_to_txt = 'https://github.com/d-w-arnold/reflective-journal-CSV-to-TXT-converter';
-    let data_link_protocol = 'https://github.com/d-w-arnold/CO633-computer-networks-assignments';
-    let git_bisect = 'https://github.com/d-w-arnold/CO663-git-bisect';
-    let iot_server = 'https://github.com/d-w-arnold/CO657-IoT-server';
-    let java_hackerrank = 'https://github.com/d-w-arnold/java-hackerrank';
-    let java_sudoku_solver = 'https://github.com/d-w-arnold/java-sudoku-solver';
-    let light_controller = 'https://github.com/d-w-arnold/fairy-lights-controller';
-    // Python
-    let news_web_crawler = 'https://github.com/d-w-arnold/local-news-data-collection';
-    let python_sudoku_solver = 'https://github.com/d-w-arnold/python-sudoku-solver';
-    let python_hackerrank = 'https://github.com/d-w-arnold/python-hackerrank';
-    // Shell
-    let homebrew_auto_upgrade = 'https://github.com/d-w-arnold/homebrew-auto-upgrade';
-    let open_all_images = 'https://github.com/d-w-arnold/macOS-open-all-images';
-    // Web Dev
-    let cv_visualisation = 'https://github.com/d-w-arnold/technical-challenge-D3.js';
-    let dwa_website_first = 'https://github.com/d-w-arnold/dwa-website-first';
+    let aws_csa_a = 'https://www.credly.com/badges/8847454f-bed9-4f5a-a443-1a26d1cfb2bd';
+    let aws_ccp = 'https://www.credly.com/badges/56620dbe-7a8a-4213-985b-05269b168480';
+    let hackerrank_profile = 'https://www.hackerrank.com/dwarnold';
+    // Tech stack
+    let aws_cdk = 'https://github.com/aws/aws-cdk';
+    let pycharm = 'https://www.jetbrains.com/pycharm/';
+    let boto3 = 'https://github.com/boto/boto3';
+    let oh_my_zsh = 'https://ohmyz.sh/';
+    let homebrew = 'https://brew.sh/';
+    let git = 'https://git-scm.com/';
+    let aws_cli = 'https://aws.amazon.com/cli/';
+    let ecr = 'https://aws.amazon.com/ecr/';
+    let docker_compose = 'https://docs.docker.com/compose/';
+    let bitbucket = 'https://www.atlassian.com/software/bitbucket/';
+    let jira = 'https://www.atlassian.com/software/jira/';
+    let confluence = 'https://www.atlassian.com/software/confluence/';
+    let markdown = 'https://www.markdownguide.org/getting-started/';
+    let latex = 'https://www.latex-project.org/';
+    let cryptography = 'https://www.geeksforgeeks.org/cryptography-and-its-types/';
+    // AWS Tech Stack
+    let certificate_manager = 'https://aws.amazon.com/certificate-manager/';
+    let amazon_mq = 'https://aws.amazon.com/amazon-mq/';
+    let amplify = 'https://aws.amazon.com/amplify/';
+    let cloudformation = 'https://aws.amazon.com/cloudformation/';
+    let cloudfront = 'https://aws.amazon.com/cloudfront/';
+    let cloudwatch = 'https://aws.amazon.com/cloudwatch/';
+    let codeartifact = 'https://aws.amazon.com/codeartifact/';
+    let codebuild = 'https://aws.amazon.com/codebuild/';
+    let codepipeline = 'https://aws.amazon.com/codepipeline/';
+    let dynamodb = 'https://aws.amazon.com/dynamodb/';
+    let ec2 = 'https://aws.amazon.com/ec2/';
+    let ecs = 'https://aws.amazon.com/ecs/';
+    let efs = 'https://aws.amazon.com/efs/';
+    let elasticache = 'https://aws.amazon.com/elasticache/';
+    let eventbridge = 'https://aws.amazon.com/eventbridge/';
+    let iam = 'https://aws.amazon.com/iam/';
+    let kms = 'https://aws.amazon.com/kms/';
+    let lambda = 'https://aws.amazon.com/lambda/';
+    let rds = 'https://aws.amazon.com/rds/';
+    let route53 = 'https://aws.amazon.com/route53/';
+    let s3 = 'https://aws.amazon.com/s3/';
+    let ses = 'https://aws.amazon.com/ses/';
+    let sns = 'https://aws.amazon.com/sns/';
+    let systems_manager = 'https://aws.amazon.com/systems-manager/';
+    let secrets_manager = 'https://aws.amazon.com/secrets-manager/';
+    let step_functions = 'https://aws.amazon.com/step-functions/';
+    let waf = 'https://aws.amazon.com/waf/';
+    // GitHub repos
+    let aws_cdk_examples = 'https://github.com/d-w-arnold/aws-cdk-examples';
+    let aws_ec2_examples = 'https://github.com/d-w-arnold/aws-ec2-examples';
+    let aws_lambda_examples = 'https://github.com/d-w-arnold/aws-lambda-examples';
+    let aws_scripts_examples = 'https://github.com/d-w-arnold/aws-scripts-examples';
+    let cipher_decrypt = 'https://github.com/d-w-arnold/ciphertext-decryption';
     let dwa_website_react = 'https://github.com/d-w-arnold/dwa-website-react';
-    let iot_web_app = 'https://github.com/d-w-arnold/CO657-IoT-admin-web-app';
-    let my_first_openAPI = 'https://github.com/d-w-arnold/my-first-openAPI';
-    // C/C++
-    let cli_address_book = 'https://github.com/d-w-arnold/command-line-address-book';
-    let iot_device = 'https://github.com/d-w-arnold/bluetooth-IoT-device';
-    // Misc.
-    let cipher_quiz = 'https://github.com/d-w-arnold/gambit-cipher-quiz';
-    let tcp_packets = 'https://github.com/d-w-arnold/CO545-assignment-4';
-    // Non-CV
-    let fast_food_randomiser = 'https://github.com/d-w-arnold/fast-food-randomiser';
+    let homebrew_auto = 'https://github.com/d-w-arnold/homebrew-auto-upgrade';
+    let ipsec_vpn_server = 'https://github.com/d-w-arnold/aws-cdk-examples/tree/main/cdk-sih/cdk_sih/ipsec_vpn';
+    let open_all_images = 'https://github.com/d-w-arnold/macOS-open-all-images';
+    let openvpn_vpn_server = 'https://github.com/d-w-arnold/aws-cdk-examples/tree/main/cdk-sih/cdk_sih/internal_domain/openvpn_vpn';
+    let proxy_server = 'https://github.com/d-w-arnold/aws-cdk-examples/tree/main/cdk-sih/cdk_sih/proxy';
+    let pypi_server = 'https://github.com/d-w-arnold/aws-cdk-examples/tree/main/cdk-sih/cdk_sih/internal_domain/pypi';
+    let python_hackerrank = 'https://github.com/d-w-arnold/python-hackerrank';
+    let sudoku_solver = 'https://github.com/d-w-arnold/python-sudoku-solver';
     let timestamp_media = 'https://github.com/d-w-arnold/appleScript-timestamp-media';
     // Events
     let cisco_uni_cha = 'https://www.cisco.com/c/m/en_uk/training-events/university-challenge.html';
-    let talks = 'https://github.com/d-w-arnold/learn-git-gitHub-jetBrains';
-    // Experience
-    let sihealth = 'https://www.sihealth.co.uk/';
-    let peach = 'https://www.peach.me/en-gb/';
-    let red_bull_careers = 'https://www.redbull.com/int-en/redbullracing';
     return (
         <React.Fragment>
             <div className="body">
-                <p className="title">Computing</p>
+                <p className="title">Computing Skills</p>
 
                 <div className="roboto">
                     <table className="computingTable">
                         <tbody>
                         <tr>
-                            <td className="computingSubTitle">Certs</td>
+                            <td className="computingSubTitle">Certificates</td>
                             <td className="computingWriting">
-                                <a target="_blank" rel="noopener noreferrer" href={aws_cloud_solu_arch_assoc}>AWS
-                                    Certified Solutions Architect – Associate</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={aws_cloud_pract}>AWS Certified Cloud
-                                    Practitioner</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={hackerrank}>HackerRank Problem
-                                    Solving 6-Star</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={aws_csa_a}>AWS CSA-A (Certified Solutions Architect – Associate)</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={aws_ccp}>AWS CCP (Certified Cloud Practitioner)</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={hackerrank_profile}>HackerRank Problem Solving 6-Star (Badge)</a><br/>
                             </td>
                         </tr>
                         <tr>
-                            <td className="computingSubTitle">Skills</td>
+                            <td className="computingSubTitle">Operating Systems</td>
                             <td className="computingWriting">
-                                <a target="_blank" rel="noopener noreferrer" href={'https://github.com/aws/aws-cdk'}>AWS
-                                    CDK</a> (AWS Cloud Development Kit),
-                                Python3 (w/ <a target="_blank" rel="noopener noreferrer"
-                                               href={'https://www.jetbrains.com/pycharm/'}>PyCharm</a>, <a
-                                target="_blank" rel="noopener noreferrer"
-                                href={'https://github.com/boto/boto3'}>Boto3</a>),
-                                Unix CLI (w/ <a target="_blank" rel="noopener noreferrer"
-                                                href={'https://github.com/aws/aws-cli'}>AWS CLI</a>),
-                                Git (w/ Bitbucket),
-                                Docker (w/ <a target="_blank" rel="noopener noreferrer"
-                                              href={'https://aws.amazon.com/ecr/'}>AWS ECR</a>),
-                                Shell Scripting,
-                                MySQL,
-                                Markdown,
-                                LaTeX,
-                                Cryptography,
-                                Mathematics
+                                macOS<br/>
+                                Amazon Linux 2<br/>
+                                Ubuntu 22.04<br/>
+                                iOS<br/>
                             </td>
                         </tr>
                         <tr>
-                            <td className="computingSubTitle">OS's</td>
-                            <td className="computingWriting">macOS, iOS, Ubuntu, Amazon Linux, Windows 7/10</td>
+                            <td className="computingSubTitle">Tech Stack</td>
+                            <td className="computingWriting">
+                                <a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS Cloud Development Kit (CDK)</a>*<br/>
+                                Python3 [ <a target="_blank" rel="noopener noreferrer" href={pycharm}>PyCharm</a> | <a target="_blank" rel="noopener noreferrer" href={boto3}>Boto3 - AWS SDK for Python</a> ]<br/>
+                                Unix CLI [ <a target="_blank" rel="noopener noreferrer" href={oh_my_zsh}>oh-my-zsh</a> | <a target="_blank" rel="noopener noreferrer" href={homebrew}>Homebrew</a> | <a target="_blank" rel="noopener noreferrer" href={git}>Git</a> | <a target="_blank" rel="noopener noreferrer" href={aws_cli}>AWS CLI</a> ]<br/>
+                                Shell (Bash) Scripting<br/>
+                                Docker [ <a target="_blank" rel="noopener noreferrer" href={ecr}>AWS ECR - Elastic Container Registry</a> | <a target="_blank" rel="noopener noreferrer" href={docker_compose}>Docker Compose</a> ]<br/>
+                                MySQL<br/>
+                                Atlassian [ <a target="_blank" rel="noopener noreferrer" href={bitbucket}>Bitbucket</a> | <a target="_blank" rel="noopener noreferrer" href={jira}>Jira</a> | <a target="_blank" rel="noopener noreferrer" href={confluence}>Confluence</a> ]<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={markdown}>Markdown</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={latex}>LaTeX</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={cryptography}>Cryptography</a><br/>
+                            </td>
                         </tr>
                         <tr>
                             <td className="computingSubTitle">Projects</td>
-                            <td className="computingWriting"> {/*rel="noopener noreferrer"*/}
-                                <a target="_blank" rel="noopener noreferrer" href={dwa_website_react}>My React
-                                    Website</a> (React, TypeScript, SCSS & AWS Lambda Python3)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={ciphertext_decryption}>Ciphertext
-                                    Decryption</a> (Java)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={homebrew_auto_upgrade}>Homebrew
-                                    Package Auto-Upgrade</a> (Shell)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={java_hackerrank}>Java
-                                    HackerRank</a> (Java & JUnit)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={git_bisect}>Git Bisect</a> (Java &
-                                Maven)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={light_controller}>Lights
-                                    Controller</a> (Java & JUnit)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={java_sudoku_solver}>Sudoku
-                                    Solver</a> (Java & JavaFX)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={iot_server}>IoT Server</a> (Java &
-                                JDBC)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={data_link_protocol}>Data-Link
-                                    Protocol</a> (Java)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={countdown_game}>Countdown CLI
-                                    Game</a> (Java)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={csv_to_txt}>CSV to TXT
-                                    Converter</a> (Java)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={python_hackerrank}>Python
-                                    HackerRank</a> (Python3 & UT)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={python_sudoku_solver}>Sudoku
-                                    Solver</a> (Python3)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={news_web_crawler}>News Web
-                                    Crawler</a> (Python3)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={my_first_openAPI}>My First
-                                    OpenAPI</a> (Java, OpenAPI & Docker-Compose)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={dwa_website_first}>My First
-                                    Website</a> (PHP, HTML, CSS & jQuery)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={cv_visualisation}>CV
-                                    Visualisation</a> (React, D3.js, TypeScript & SCSS)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={iot_web_app}>IoT Admin Web
-                                    App</a> (MySQL, PHP & CSS)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={iot_device}>IoT BLE Device</a> (C++
-                                Arduino)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={cli_address_book}>CLI
-                                    Address Book</a> (C)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={tcp_packets}>TCP Packets</a> (Erlang)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={cipher_quiz}>Cipher
-                                    Quiz</a> (Python3,
-                                C++ & Erlang)<br/>
-                                <a target="_blank" rel="noopener noreferrer"
-                                   href={open_all_images}>Open All Images</a> (Shell & AppleScript)<br/>
-                                <a target="_blank" rel="noopener noreferrer"
-                                   href={fast_food_randomiser}>Fast Food Randomiser</a> (Shell)<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={timestamp_media}>Timestamp
-                                    Media</a> (AppleScript)<br/>
+                            <td className="computingWriting">
+                                <a target="_blank" rel="noopener noreferrer" href={aws_cdk_examples}>AWS CDK Examples</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS CDK</a>* ]<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={ipsec_vpn_server}>IPsec VPN Server</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS CDK</a>* ]<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={openvpn_vpn_server}>OpenVPN VPN Server</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS CDK</a>* ]<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={proxy_server}>Proxy Server</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS CDK</a>* ]<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={pypi_server}>PyPi Server</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS CDK</a>* ]<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={aws_scripts_examples}>AWS Scripts Examples</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={boto3}>Boto3 - AWS SDK for Python</a> | Shell | <a target="_blank" rel="noopener noreferrer" href={aws_cli}>AWS CLI</a> ]<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={aws_lambda_examples}>AWS Lambda Examples</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={boto3}>Boto3 - AWS SDK for Python</a> | JavaScript ]<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={aws_ec2_examples}>AWS EC2 Examples</a> [ Shell ]<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={dwa_website_react}>My React Website</a> [ React | TypeScript | Python3 - <a target="_blank" rel="noopener noreferrer" href={'https://aws.amazon.com/lambda/'}>AWS Lambda (Functions)</a> | SCSS ]<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={python_hackerrank}>HackerRank Problem Solving Solutions</a> [ Python3 ]<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={sudoku_solver}>Sudoku Solver</a> [ Python3 ]<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={cipher_decrypt}>Ciphertext Decryption</a> [ Java ]<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={homebrew_auto}>Homebrew Package Auto-Upgrade Tool</a> [ Shell ]<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={open_all_images}>Open All Images</a> [ Shell | AppleScript ]<br/>
+                                <a target="_blank" rel="noopener noreferrer" href={timestamp_media}>Timestamp Media</a> [ AppleScript ]<br/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="computingSubTitle">*AWS Tech Stack</td>
+                            <td className="computingWriting">
+                                <a target="_blank" rel="noopener noreferrer" href={certificate_manager}>ACM - Certificate Manager</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={amazon_mq}>AmazonMQ</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={amplify}>Amplify (Apps)</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={cloudformation}>CloudFormation</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={cloudfront}>CloudFront</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={cloudwatch}>CloudWatch (Alarms, Log Groups, Metrics)</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={codeartifact}>CodeArtifact</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={codebuild}>CodeBuild</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={codepipeline}>CodePipeline (inc. CodeConnections, formerly CodeStar Connections)</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={dynamodb}>DynamoDB</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={ec2}>EC2 - Elastic Compute Cloud (ALBs & NLBs, Security Groups, ASGs, Launch Templates, Volumes, Elastic IPs)</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={ecr}>ECR - Elastic Container Registry</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={ecs}>ECS - Elastic Container Service (Fargate)</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={efs}>EFS - Elastic File System</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={elasticache}>ElastiCache (Redis OSS)</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={eventbridge}>EventBridge (Buses, Rules)</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={iam}>IAM - Identity & Access Management (User Groups, Roles, Policies)</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={kms}>KMS - Key Management Service</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={lambda}>Lambda (Functions)</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={rds}>RDS - Relational Database Service (Databases, Proxies)</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={route53}>Route53 (Hosted Zones, Domain Management)</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={s3}>S3 - Simple Storage Service (Buckets, Lifecycle Rules)</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={ses}>SES - Simple Email Service</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={sns}>SNS - Simple Notification Service (Topics, Mobile Push Notifications)</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={systems_manager}>SSM - Systems Manager (Parameter Store)</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={secrets_manager}>Secrets Manager</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={step_functions}>Step Functions (State Machines)</a><br/>
+                                <a target="_blank" rel="noopener noreferrer" href={waf}>WAF - Web Application Firewall (Web ACLs)</a><br/>
                             </td>
                         </tr>
                         <tr>
                             <td className="computingSubTitle">Events</td>
                             <td className="computingWriting">
-                                <a target="_blank" rel="noopener noreferrer" href={cisco_uni_cha}>2017 Cisco University
-                                    Challenge</a><br/>
-
-                                <a target="_blank" rel="noopener noreferrer" href={talks}>Learn: Git, GitHub and
-                                    JetBrains IDEs</a> (University talks)
+                                <a target="_blank" rel="noopener noreferrer" href={cisco_uni_cha}>2017 Cisco University Challenge</a><br/>
                             </td>
                         </tr>
                         </tbody>
                     </table>
-                </div>
-
-                <div className="spacing6"/>
-
-                <p className="title">Experience</p>
-
-                {/* siHealth */}
-                <div className="roboto">
-                    <table className="marginBottom2">
-                        <tbody>
-                        <tr>
-                            <td className="employerName"><span className="iconLap" aria-hidden="true"/><b><a
-                                target="_blank" rel="noopener noreferrer" href={sihealth}>siHealth</a></b></td>
-                            <td className="location">Harwell Campus, Didcot, U.K.</td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-                    <table className="marginBottom2">
-                        <tbody>
-                        <tr>
-                            <td className="jobTitle">DevOps Engineer</td>
-                        </tr>
-                        <tr>
-                            <td className="jobDates">Nov. 2021 - Current</td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-                    <div className="jobDetails">
-                        <p>•&nbsp;&nbsp;Lead the company's transition of cloud resources from Azure to AWS.</p>
-                        <p>•&nbsp;&nbsp;Implemented a new AWS architecture process using AWS CDK (AWS Cloud Development
-                            Kit).</p>
-                        <p>•&nbsp;&nbsp;Tech stack: macOS, AWS CDK, Python3 (w/ PyCharm, Boto3), Unix CLI (w/ AWS CLI),
-                            Git (w/ Bitbucket), Docker (w/ AWS ECR), Shell Scripting, MySQL</p>
-                    </div>
-                </div>
-
-                <div className="spacing2"/>
-
-                {/* Peach Media */}
-                <div className="roboto">
-                    <table className="marginBottom2">
-                        <tbody>
-                        <tr>
-                            <td className="employerName"><span className="iconLap" aria-hidden="true"/><b><a
-                                target="_blank" rel="noopener noreferrer" href={peach}>Peach</a></b></td>
-                            <td className="location">(Remote) - London, U.K.</td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-                    <table className="marginBottom2">
-                        <tbody>
-                        <tr>
-                            <td className="jobTitle">Junior Software Engineer</td>
-                        </tr>
-                        <tr>
-                            <td className="jobDates">Oct. 2020 - Nov. 2021</td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-                    <div className="jobDetails">
-                        <p>•&nbsp;&nbsp;DevOps team member.</p>
-                        <p>•&nbsp;&nbsp;Tech stack: Linux, Git, AWS, Python (w/ Django), Docker, SQL, TeamCity,
-                            Jenkins</p>
-                    </div>
-                </div>
-
-                <div className="spacing2"/>
-
-                {/* Red Bull */}
-                <div className="roboto">
-                    <table className="marginBottom2">
-                        <tbody>
-                        <tr>
-                            <td className="employerName"><span className="iconLap" aria-hidden="true"/><b><a
-                                target="_blank" rel="noopener noreferrer" href={red_bull_careers}>Red Bull Technology /
-                                Red Bull Racing</a></b></td>
-                            <td className="location">Milton Keynes, U.K.</td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-                    <table className="marginBottom2">
-                        <tbody>
-                        <tr>
-                            <td className="jobTitle">IT Student Placement</td>
-                        </tr>
-                        <tr>
-                            <td className="jobDates">Jun. 2018 - Jun. 2019</td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-                    <div className="jobDetails">
-                        <p>•&nbsp;&nbsp;Project lead the organisation of new starter hardware and software delivery.</p>
-                        <p>•&nbsp;&nbsp;Volunteered during busy F1 race weekend.</p>
-                        <p>•&nbsp;&nbsp;Designed and implemented a custom Java program to improve productivity.</p>
-                    </div>
                 </div>
             </div>
         </React.Fragment>

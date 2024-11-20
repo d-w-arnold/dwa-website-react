@@ -16,17 +16,18 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 logger.info(f"Boto3 version: {boto3.__version__}")
 
+recaptcha_response_key = "recaptchaResponse"
 fullname_key = "fullname"
 email_address_key = "emailaddress"
 msg_key = "mssg"
 
 
 def recaptcha_verified(event):
-    if "recaptchaResponse" in event:
+    if recaptcha_response_key in event:
         res_json = json.loads(
             requests.post(
                 "https://www.google.com/recaptcha/api/siteverify",
-                data={"secret": os.environ["RECAPTCHA_SECRET"], "response": event["recaptchaResponse"]},
+                data={"secret": os.environ["RECAPTCHA_SECRET"], "response": event[recaptcha_response_key]},
                 headers={"Content-Type": "application/x-www-form-urlencoded"},
             ).text
         )

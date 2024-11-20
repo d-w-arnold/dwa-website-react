@@ -76,7 +76,6 @@ class MyForm extends Component<MyProps, MyState> {
         return valid;
     };
 
-    // TODO: Look into why form won't submit after having just tried to submit just a msg, then populated all fields, and still won't submit.
     handleFormSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         if (this.validateForm(this.state.errors)) {
@@ -113,6 +112,7 @@ class MyForm extends Component<MyProps, MyState> {
                     error: error.message
                 });
             });
+            recaptchaRef.current.reset();
     }
 
     render() {
@@ -121,7 +121,7 @@ class MyForm extends Component<MyProps, MyState> {
         let emailaddressError = this.state.errors.emailaddress;
         let mssgError = this.state.errors.mssg;
         return (
-            <form action="#" id="contact-form" noValidate>
+            <form onSubmit={(e) => this.handleFormSubmit(e)} id="contact-form" noValidate>
                 {fieldsConfig && fieldsConfig.map((field: { id: number; type: string; fieldName: string; label: string; klassName: string; }) => {
                     return (
                         <React.Fragment key={field.id}>
@@ -163,21 +163,20 @@ class MyForm extends Component<MyProps, MyState> {
                         </React.Fragment>
                     );
                 })}
+                <ReCAPTCHA
+                    ref={recaptchaRef}
+                    size="invisible"
+                    sitekey={this.props.config.sitekey}
+                    theme="dark"
+                    onChange={(response: string | null) => this.handleCaptchaResponseChange(response)}
+                />
                 <div className="buttonPlacement">
                     <button
                         type="submit"
                         id="button"
-                        onClick={(e) => this.handleFormSubmit(e)}
                         tabIndex={4}>Send Your Message
                     </button>
                 </div>
-                <ReCAPTCHA
-                    ref={recaptchaRef}
-                    size="invisible"
-                    sitekey="6Lcl1rcUAAAAAP9cwFpK09YM8xi3Lhbc0jjgSFWs"
-                    theme="dark"
-                    onChange={(response: string | null) => this.handleCaptchaResponseChange(response)}
-                />
                 <div className="tinySpacing">
                     {this.state.sent && <div className="success">{this.props.config.successMessage}</div>}
                     {this.state.error && <div className="error">{this.state.mssg}</div>}

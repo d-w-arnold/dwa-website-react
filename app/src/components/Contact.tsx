@@ -13,6 +13,7 @@ import MyForm from "./MyForm";
  */
 const config = {
     api: `${process.env.REACT_APP_API}`,
+    sitekey: `${process.env.REACT_APP_RECAPTCHA_SITEKEY}`,
     successMessage: 'Thank you for contacting me, I\'ll be in touch!',
     errorMessage: 'Sorry we have some problems.',
     fields: {
@@ -49,8 +50,6 @@ const config = {
 }
 
 function Contact() {
-    // let github = 'https://github.com/d-w-arnold';
-    // let keybase = 'https://keybase.io/d_w_arnold';
     return (
         <React.Fragment>
             <div className="body">
