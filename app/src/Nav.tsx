@@ -1,5 +1,3 @@
-// @ts-ignore
-import React from "react";
 import {BrowserRouter, Link, Routes, Route} from "react-router-dom";
 import COMPUTING_COM from './components/Computing';
 import CONTACT_COM from './components/Contact';
@@ -7,7 +5,7 @@ import EDUCATION_COM from './components/Education';
 import EXPERIENCE_COM from './components/Experience';
 import HOME_COM from './components/Home';
 
-const BasicExample = () => (
+const Nav = () => (
     <BrowserRouter>
         <nav>
             <ul>
@@ -19,7 +17,7 @@ const BasicExample = () => (
             </ul>
         </nav>
         <Routes>
-            <Route exact path="/" element={<Home/>}/>
+            <Route path="/" element={<Home/>}/>
             <Route path="/computing" element={<ComputingSkills />}/>
             <Route path="/experience" element={<Experience />}/>
             <Route path="/education" element={<Education />}/>
@@ -48,4 +46,4 @@ const Contact = () => (
     <CONTACT_COM/>
 );
 
-export default BasicExample;
+export default Nav;

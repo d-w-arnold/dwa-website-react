@@ -1,19 +1,16 @@
 import React from "react";
-import MyForm from "./MyForm";
-// import GITHUB_ICON from '../icons/github_white.png';
-// import KEYBASE_ICON from '../icons/keybase-tile.svg';
+import MyForm, {type FormConfig} from "./MyForm";
 
-/**
- * @config preparing config prop.
- * api: url for the server endpoint
- * successMessage: message will show in the UI when mail is successfully sent.
- * errorMessage: message will show in the UI when mail is not sent.
- * fields: this is the name of each field. This should be exact order of the fieldsConfig and fieldsConfig.fieldName should be the same
- * fieldsConfig = settings for each input/textarea field
+/*
+ * Config consumed by the contact form component.
+ * - api: server endpoint URL
+ * - successMessage/errorMessage: submission feedback
+ * - fields: initial field values
+ * - fieldsConfig: rendering details for each input/textarea
  */
-const config = {
-    api: `${process.env.REACT_APP_API}`,
-    sitekey: `${process.env.REACT_APP_RECAPTCHA_SITEKEY}`,
+const config: FormConfig = {
+    api: import.meta.env.VITE_API ?? '',
+    sitekey: import.meta.env.VITE_RECAPTCHA_SITEKEY ?? '',
     successMessage: 'Thank you for contacting me, I\'ll be in touch!',
     errorMessage: 'Sorry we have some problems.',
     fields: {
@@ -47,7 +44,7 @@ const config = {
             klassName: 'mssg-field response'
         }
     ]
-}
+};
 
 function Contact() {
     return (

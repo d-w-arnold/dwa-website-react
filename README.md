@@ -1,21 +1,34 @@
 # My React Website ⚛️ 🌎
 
-Please go to the `/app` folder and run the following to install all the nessery npm modules:
+Go to the `app` folder and install dependencies:
 
-### `npm install`
+```bash
+npm install
+```
 
-Then run the react app in the development mode with:
+Start the development server:
 
-### `npm start`
+```bash
+npm start
+```
 
-Open <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> to view it in the browser - the web page will reload if you make edits.
+The local site runs at <http://localhost:3000>.
 
-To build this project for production:
+Create a production build:
 
-### `npm run build`
+```bash
+npm run build
+```
 
-The contact form works by sending JSON to an API Gateway, which then invokes an AWS Lambda function, the URL for this API Gateway is specified in `/app/.env`.
+Run the test suite:
+
+```bash
+npm test
+```
+
+The contact form sends JSON to an API Gateway endpoint configured in `app/.env`.
 
 ```dotenv
-$REACT_APP_API=<API_Gateway_URL>
+VITE_API=<API_Gateway_URL>
+VITE_RECAPTCHA_SITEKEY=<RECAPTCHA_SITE_KEY>
 ```
