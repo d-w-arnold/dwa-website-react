@@ -17,7 +17,6 @@ const profileHighlights = [
 function App() {
     return (
         <div id="myDiv" className="appShell">
-            <a className="skipLink roboto" href="#main-content">Skip to content</a>
             <header className="siteHeader entryCard">
                 <div className="siteHeaderTop">
                     <div className="alignLeft">

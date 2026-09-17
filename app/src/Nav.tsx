@@ -31,7 +31,7 @@ const Nav = () => (
                 ))}
             </ul>
         </nav>
-        <main id="main-content" className="pageContent" tabIndex={-1}>
+        <main className="pageContent">
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/computing" element={<Computing />}/>
