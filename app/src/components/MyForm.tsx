@@ -240,13 +240,15 @@ function MyForm({config}: MyProps) {
                     </div>
                 );
             })}
-            <ReCAPTCHA
-                ref={recaptchaRef}
-                size="invisible"
-                sitekey={config.sitekey}
-                theme="dark"
-                onChange={handleCaptchaResponseChange}
-            />
+            {config.sitekey ? (
+                <ReCAPTCHA
+                    ref={recaptchaRef}
+                    size="invisible"
+                    sitekey={config.sitekey}
+                    theme="dark"
+                    onChange={handleCaptchaResponseChange}
+                />
+            ) : null}
             <div className="buttonPlacement">
                 <button
                     type="submit"

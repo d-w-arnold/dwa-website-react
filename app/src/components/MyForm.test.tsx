@@ -67,6 +67,15 @@ describe('MyForm', () => {
         vi.clearAllMocks();
     });
 
+    test('renders safely without a recaptcha site key and keeps submission unavailable', () => {
+        render(<MyForm config={{...config, sitekey: ''}} />);
+
+        expect(screen.queryByTestId('recaptcha')).not.toBeInTheDocument();
+        expect(screen.getByRole('button', {name: /send your message/i})).toBeDisabled();
+        expect(screen.getByText(/the contact form is temporarily unavailable/i)).toBeInTheDocument();
+        expect(mockedAxios.post).not.toHaveBeenCalled();
+    });
+
     test('shows validation feedback and avoids sending invalid submissions', async () => {
         const user = userEvent.setup();
         render(<MyForm config={config} />);
