@@ -1,9 +1,11 @@
 @use "./shared.scss" as *;
 
-a {
-  color: $writing;
-  text-underline-offset: 0.14em;
-  text-decoration-thickness: 0.08em;
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -11,7 +13,7 @@ body {
   min-height: 100vh;
   padding: 2rem 1.25rem 3rem;
   background:
-    radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 30%),
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.14), transparent 30%),
     linear-gradient(180deg, $background-accent 0%, $background 38%, #0f172a 100%);
   color: $writing;
   font-family: Georgia, "Times New Roman", serif;
@@ -23,8 +25,10 @@ body {
   width: 100%;
 }
 
-html * {
-  box-sizing: border-box;
+a {
+  color: inherit;
+  text-underline-offset: 0.14em;
+  text-decoration-thickness: 0.08em;
 }
 
 a:focus-visible,
@@ -38,15 +42,42 @@ textarea:focus-visible {
 %faIconBase {
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
-  text-rendering: auto;
   padding-right: 10px;
+  text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.skipLink {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 20;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: $writing;
+  color: #082f49;
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skipLink:focus {
+  top: 1rem;
+}
+
 .appShell {
+  position: relative;
   width: min(1100px, 100%);
   margin: 0 auto;
+}
+
+.entryCard {
+  border: 1px solid $border;
+  border-radius: 24px;
+  background: linear-gradient(180deg, $panel 0%, $panel-strong 100%);
+  box-shadow: 0 18px 40px $shadow;
+  backdrop-filter: blur(10px);
 }
 
 .siteHeader {
@@ -54,9 +85,9 @@ textarea:focus-visible {
   padding: 1.5rem;
 }
 
-#top {
+.siteHeaderTop {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
 }
@@ -71,7 +102,22 @@ textarea:focus-visible {
 }
 
 .alignRight {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#delta {
+  margin: 0;
+}
+
+.brandMark {
+  display: inline-flex;
+  align-items: center;
+  color: $writing;
+  font-size: clamp(2.4rem, 8vw, 4rem);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
 }
 
 .socialLinks {
@@ -105,52 +151,35 @@ textarea:focus-visible {
   border-color: rgba(56, 189, 248, 0.3);
 }
 
-#cv {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.75rem;
-  padding: 0.55rem 1rem;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  background: linear-gradient(135deg, $link 0%, #0ea5e9 100%);
-  color: #082f49;
-  font: 600 0.92rem/1.2 'Roboto', sans-serif;
-  letter-spacing: 0.02em;
-  text-decoration: none;
-  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.22);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-}
-
-#cv:hover,
-#cv:focus-visible {
-  transform: translateY(-1px);
-  filter: brightness(1.05);
-  box-shadow: 0 14px 30px rgba(14, 165, 233, 0.28);
-}
-
-#delta {
-  margin: 0;
-  font-size: clamp(2.6rem, 8vw, 4rem);
-  line-height: 1;
-}
-
-#delta a {
-  color: $writing;
-  text-decoration: none;
-}
-
-.siteIdentity {
-  margin-top: 1rem;
-  padding-top: 1rem;
+.siteHero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(250px, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
   border-top: 1px solid $border;
 }
 
-#myName {
+.siteIdentity {
+  text-align: left;
+}
+
+.heroEyebrow,
+.pageEyebrow,
+.siteNavLabel {
   margin: 0;
-  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  color: $link;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+#myName {
+  margin: 0.5rem 0 0;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 500;
-  line-height: 1.2;
-  text-align: right;
+  line-height: 1.15;
 }
 
 #myName a {
@@ -159,25 +188,133 @@ textarea:focus-visible {
 }
 
 .heroIntro {
-  margin-top: 0.6rem;
+  margin: 0.75rem 0 0;
+  color: $writing;
+  font-size: 1.05rem;
+}
+
+.heroSummary,
+.pageSummary,
+.note,
+.writing,
+.uniCourseDetails,
+.jobDetails,
+.skillList {
   color: $muted;
   font-size: 1rem;
-  text-align: right;
+}
+
+.heroSummary {
+  max-width: 42rem;
+  margin: 0.85rem 0 0;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.heroAction,
+#button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.9rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: linear-gradient(135deg, $link 0%, #0ea5e9 100%);
+  color: #082f49;
+  font: 700 0.98rem/1.1 "Roboto", sans-serif;
+  text-decoration: none;
+  box-shadow: 0 14px 30px rgba(14, 165, 233, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+}
+
+.heroAction:hover,
+.heroAction:focus-visible,
+#button:hover,
+#button:focus-visible {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 16px 35px rgba(14, 165, 233, 0.28);
+}
+
+.heroActionSecondary,
+.heroActionGhost {
+  box-shadow: none;
+  color: $writing;
+}
+
+.heroActionSecondary {
+  border-color: rgba(56, 189, 248, 0.18);
+  background: rgba(56, 189, 248, 0.14);
+}
+
+.heroActionGhost {
+  border-color: $border;
+  background: rgba(255, 255, 255, 0.03);
+  color: $muted;
+}
+
+.heroActionGhost:hover,
+.heroActionGhost:focus-visible {
+  color: $writing;
+}
+
+#button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  transform: none;
+  box-shadow: none;
+}
+
+.heroStats {
+  display: grid;
+  gap: 0.85rem;
+  align-content: start;
+}
+
+.heroStat {
+  padding: 1rem 1.1rem;
+}
+
+.heroStatValue {
+  margin: 0;
+  color: $writing;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.heroStatLabel {
+  margin: 0.4rem 0 0;
+  color: $muted;
+  font-size: 0.95rem;
 }
 
 .siteNav {
   margin-bottom: 1.5rem;
-  padding: 0.85rem;
+  padding: 1rem 1.1rem;
+}
+
+.siteNavLabel {
+  margin-bottom: 0.85rem;
 }
 
 .siteNav ul {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  justify-content: center;
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
+}
+
+.siteNav li {
+  list-style: none;
 }
 
 .siteNavLink {
@@ -189,7 +326,7 @@ textarea:focus-visible {
   border: 1px solid transparent;
   border-radius: 999px;
   color: $muted;
-  font: 600 0.98rem/1.2 'Roboto', sans-serif;
+  font: 600 0.98rem/1.2 "Roboto", sans-serif;
   text-decoration: none;
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
@@ -212,37 +349,79 @@ textarea:focus-visible {
   display: block;
 }
 
-.entryCard {
-  border: 1px solid $border;
-  border-radius: 20px;
-  background: linear-gradient(180deg, $panel 0%, $panel-strong 100%);
-  box-shadow: 0 18px 40px $shadow;
-  backdrop-filter: blur(10px);
-}
-
 .body {
   width: min(960px, 100%);
   margin: 0 auto 2rem;
 }
 
+.homeSection,
+.pageIntro,
+.skillSection,
+.contactSidebar,
+.contactPanel,
+.stackedCards > .entryCard {
+  padding: 1.35rem 1.45rem;
+}
+
+.homeSection + .homeSection,
+.pageIntro + .stackedCards,
+.pageIntro + .skillsGrid,
+.pageIntro + .contactLayout {
+  margin-top: 1rem;
+}
+
+.homeSection {
+  margin-bottom: 1rem;
+}
+
+.homeSectionFeatured {
+  border-color: rgba(56, 189, 248, 0.28);
+  background:
+    linear-gradient(180deg, rgba(30, 41, 59, 0.92) 0%, rgba(15, 23, 42, 0.92) 100%),
+    linear-gradient(135deg, rgba(56, 189, 248, 0.12), transparent 55%);
+}
+
 .title {
-  margin: 0 0 1.5rem;
+  margin: 0 0 1rem;
   font-size: clamp(1.8rem, 4vw, 2.4rem);
   font-weight: 500;
   line-height: 1.2;
+  color: $writing;
+}
+
+.pageTitle {
+  margin-bottom: 0.75rem;
+}
+
+.pageIntro {
+  margin-bottom: 1rem;
+}
+
+.pageSummary {
+  margin: 0;
+  max-width: 44rem;
+}
+
+.pageMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pageMetaItem {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid rgba(56, 189, 248, 0.16);
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.08);
+  color: $writing;
+  font-size: 0.92rem;
 }
 
 .roboto {
-  font-family: 'Roboto', sans-serif;
-}
-
-.writing,
-.uniCourseDetails,
-.jobDetails,
-.skillList,
-.note {
-  color: $muted;
-  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
 }
 
 .writing p,
@@ -274,6 +453,11 @@ table tr td a:focus-visible,
   text-decoration-color: $link-hover;
 }
 
+.stackedCards {
+  display: grid;
+  gap: 1rem;
+}
+
 .entryHeader {
   display: flex;
   justify-content: space-between;
@@ -281,30 +465,34 @@ table tr td a:focus-visible,
   gap: 1rem;
 }
 
+.marginBottom2 {
+  margin-bottom: 1.25rem;
+}
+
 .entryMeta {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: 0.35rem;
 }
 
 .employerName {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  color: $writing;
 }
 
 .jobTitle {
   margin: 0.45rem 0 0;
-  font-size: 1.02rem;
   color: $writing;
+  font-size: 1.02rem;
 }
 
 .jobDates,
 .location {
   margin: 0;
-  font-size: 0.95rem;
   color: $muted;
+  font-size: 0.95rem;
   text-align: right;
 }
 
@@ -335,18 +523,14 @@ table tr td a:focus-visible,
   gap: 1rem;
 }
 
-.skillSection {
-  padding: 1.3rem 1.35rem;
-}
-
 .skillSectionWide {
   grid-column: 1 / -1;
 }
 
 .skillTitle {
   margin: 0 0 1rem;
-  font-size: 1.15rem;
   color: $writing;
+  font-size: 1.1rem;
 }
 
 .skillList,
@@ -368,8 +552,19 @@ table tr td a:focus-visible,
   break-inside: avoid;
 }
 
-.contact-details .right {
-  max-width: 760px;
+.contactLayout {
+  display: grid;
+  grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.contactChecklist {
+  color: $muted;
+}
+
+.contactPanel form {
+  margin-top: 0.25rem;
 }
 
 form {
@@ -380,8 +575,29 @@ form {
   margin-bottom: 1rem;
 }
 
-.tinySpacing {
-  padding: 0 0 0.45rem;
+.fieldHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+label {
+  color: $writing;
+  font-weight: 600;
+}
+
+.fieldHint {
+  margin: 0 0 0.55rem;
+  color: $muted;
+  font-size: 0.92rem;
+}
+
+.fieldCounter {
+  color: $muted;
+  font-size: 0.85rem;
+  white-space: nowrap;
 }
 
 .response {
@@ -391,8 +607,17 @@ form {
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.96);
   color: #111827;
-  font: 400 1rem/1.5 'Roboto', sans-serif;
+  font: 400 1rem/1.5 "Roboto", sans-serif;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+textarea.response {
+  resize: vertical;
+  min-height: 9rem;
+}
+
+.response::placeholder {
+  color: #64748b;
 }
 
 .response:hover {
@@ -404,49 +629,50 @@ form {
   box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.12);
 }
 
-#button {
-  min-width: 13rem;
-  padding: 0.9rem 1.25rem;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  background: linear-gradient(135deg, $link 0%, #0ea5e9 100%);
-  color: #082f49;
-  font: 700 1rem/1.1 'Roboto', sans-serif;
-  cursor: pointer;
-  box-shadow: 0 14px 30px rgba(14, 165, 233, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
-}
-
-#button:hover,
-#button:focus-visible {
-  transform: translateY(-1px);
-  filter: brightness(1.05);
-  box-shadow: 0 16px 35px rgba(14, 165, 233, 0.28);
-}
-
-#button:disabled {
-  cursor: not-allowed;
-  opacity: 0.65;
-  transform: none;
-  box-shadow: none;
+.inlineError {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: $error;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .buttonPlacement {
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   text-align: center;
 }
 
-.error {
-  color: $error;
+.statusStack {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
 
+.statusPanel {
+  padding: 0.85rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  font: 600 0.95rem/1.5 "Roboto", sans-serif;
+}
+
+.statusPanel.success,
 .success {
   color: $success;
 }
 
-.statusMessage {
-  font-size: 0.95rem;
-  font-weight: 600;
+.statusPanel.success {
+  background: rgba(74, 222, 128, 0.1);
+  border-color: rgba(74, 222, 128, 0.22);
+}
+
+.statusPanel.error,
+.error {
+  color: $error;
+}
+
+.statusPanel.error {
+  background: rgba(251, 191, 36, 0.1);
+  border-color: rgba(251, 191, 36, 0.18);
 }
 
 .note {
@@ -457,15 +683,6 @@ form {
   text-align: center;
 }
 
-.computingSubTitle,
-.computingTable,
-.computingWriting,
-.logos,
-.spacing6,
-table {
-  /* retained for compatibility with older markup if reintroduced */
-}
-
 .spacing2 {
   margin-bottom: 1rem;
 }
@@ -474,23 +691,17 @@ table {
   margin-bottom: 1.5rem;
 }
 
-span.error {
-  display: inline-block;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-span.iconUni::before {
+.iconUni::before {
   content: "\f19c";
   @extend %faIconBase;
 }
 
-span.iconPaper::before {
+.iconPaper::before {
   content: "\f1ea";
   @extend %faIconBase;
 }
 
-span.iconLap::before {
+.iconLap::before {
   content: "\f109";
   @extend %faIconBase;
 }
@@ -500,59 +711,62 @@ span.iconLap::before {
     padding: 1.5rem 1rem 2.5rem;
   }
 
+  .siteHero,
+  .contactLayout,
   .entryHeader {
+    grid-template-columns: 1fr;
     flex-direction: column;
   }
 
   .entryMeta,
   .location,
-  .jobDates,
-  .heroIntro,
-  #myName {
+  .jobDates {
+    align-items: flex-start;
     text-align: left;
   }
 
-  .siteIdentity {
-    margin-top: 0.75rem;
-  }
-
-  .skillListCompact {
-    columns: 1;
+  .heroStats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media only screen and (max-width: 680px) {
-  #top {
+  .siteHeader,
+  .siteNav,
+  .pageIntro,
+  .homeSection,
+  .skillSection,
+  .contactSidebar,
+  .contactPanel,
+  .stackedCards > .entryCard {
+    border-radius: 20px;
+  }
+
+  .siteHeaderTop,
+  .heroActions {
     flex-direction: column;
     align-items: stretch;
   }
 
   .alignRight,
-  .alignLeft {
-    text-align: left;
-  }
-
   .socialLinks {
     justify-content: flex-start;
   }
 
   .siteNav ul {
-    justify-content: stretch;
-  }
-
-  .siteNav li {
-    width: 100%;
+    flex-direction: column;
   }
 
   .siteNavLink {
     width: 100%;
   }
 
-  .siteHeader,
-  .siteNav,
-  .entryCard,
-  .skillSection {
-    border-radius: 18px;
+  .heroStats {
+    grid-template-columns: 1fr;
+  }
+
+  .skillListCompact {
+    columns: 1;
   }
 }
 
@@ -562,15 +776,22 @@ span.iconLap::before {
   }
 
   .siteHeader,
-  .entryCard,
-  .skillSection {
+  .siteNav {
     padding: 1rem;
   }
 
-  #cv,
+  .homeSection,
+  .pageIntro,
+  .skillSection,
+  .contactSidebar,
+  .contactPanel,
+  .stackedCards > .entryCard {
+    padding: 1rem;
+  }
+
+  .heroAction,
   #button {
     width: 100%;
-    justify-content: center;
   }
 
   .socialLinks {
@@ -580,5 +801,11 @@ span.iconLap::before {
   .iconLink {
     width: 2.55rem;
     height: 2.55rem;
+  }
+
+  .fieldHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
   }
 }

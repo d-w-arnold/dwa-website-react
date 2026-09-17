@@ -23,6 +23,9 @@ export type FieldConfig = {
     type: 'text' | 'email' | 'textarea';
     isRequired: boolean;
     klassName: string;
+    placeholder?: string;
+    description?: string;
+    autoComplete?: string;
 };
 
 export type FormConfig = {
@@ -180,12 +183,23 @@ function MyForm({config}: MyProps) {
             {config.fieldsConfig.map((field) => {
                 const fieldError = errors[field.fieldName];
                 const errorId = `${field.fieldName}-error`;
+                const hintId = field.description ? `${field.fieldName}-hint` : undefined;
+                const describedBy = [hintId, fieldError ? errorId : undefined].filter(Boolean).join(' ') || undefined;
+                const currentLength = values[field.fieldName].length;
 
                 return (
                     <div key={field.id} className="formField">
-                        <div className="tinySpacing">
+                        <div className="fieldHeader">
                             <label htmlFor={field.fieldName}>{field.label}</label>
+                            {field.type === 'textarea' ? (
+                                <span className="fieldCounter" aria-live="polite">{currentLength}/1000</span>
+                            ) : null}
                         </div>
+
+                        {field.description ? (
+                            <p id={hintId} className="fieldHint">{field.description}</p>
+                        ) : null}
+
                         {field.type !== 'textarea' ? (
                             <input
                                 type={field.type}
@@ -196,8 +210,10 @@ function MyForm({config}: MyProps) {
                                 required={field.isRequired}
                                 value={values[field.fieldName]}
                                 onChange={handleInputChange}
+                                placeholder={field.placeholder}
+                                autoComplete={field.autoComplete}
                                 aria-invalid={fieldError.length > 0}
-                                aria-describedby={fieldError ? errorId : undefined}
+                                aria-describedby={describedBy}
                                 disabled={isSubmitting}
                             />
                         ) : (
@@ -211,13 +227,15 @@ function MyForm({config}: MyProps) {
                                 onChange={handleInputChange}
                                 rows={6}
                                 maxLength={1000}
+                                placeholder={field.placeholder}
+                                autoComplete={field.autoComplete}
                                 aria-invalid={fieldError.length > 0}
-                                aria-describedby={fieldError ? errorId : undefined}
+                                aria-describedby={describedBy}
                                 disabled={isSubmitting}
                             />
                         )}
                         {fieldError.length > 0 && (
-                            <span id={errorId} className="tinySpacing error" role="alert">{fieldError}</span>
+                            <span id={errorId} className="inlineError" role="alert">{fieldError}</span>
                         )}
                     </div>
                 );
@@ -239,12 +257,13 @@ function MyForm({config}: MyProps) {
                     {isSubmitting ? 'Sending...' : 'Send Your Message'}
                 </button>
             </div>
-            <div className="tinySpacing" aria-live="polite">
-                {sent && <div className="success" role="status">{statusMessage}</div>}
+
+            <div className="statusStack" aria-live="polite">
+                {sent && <div className="statusPanel success" role="status">{statusMessage}</div>}
                 {!isFormConfigured && !statusMessage && (
-                    <div className="error" role="status">{formUnavailableErrMsg}</div>
+                    <div className="statusPanel error" role="status">{formUnavailableErrMsg}</div>
                 )}
-                {error && <div className="error" role="alert">{statusMessage}</div>}
+                {error && <div className="statusPanel error" role="alert">{statusMessage}</div>}
             </div>
         </form>
     );
