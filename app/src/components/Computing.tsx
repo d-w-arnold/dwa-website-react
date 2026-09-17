@@ -65,107 +65,109 @@ function Computing() {
     const timestamp_media = 'https://github.com/d-w-arnold/appleScript-timestamp-media';
     // Events
     const cisco_uni_cha = 'https://www.cisco.com/c/m/en_uk/training-events/university-challenge.html';
+
     return (
         <div className="body">
-                <h2 className="title">Computing Skills</h2>
+            <h2 className="title">Computing Skills</h2>
 
-                <div className="roboto">
-                    <table className="computingTable">
-                        <tbody>
-                        <tr>
-                            <td className="computingSubTitle">Certificates</td>
-                            <td className="computingWriting">
-                                <a target="_blank" rel="noopener noreferrer" href={aws_csa_a}>AWS CSA-A (Certified Solutions Architect – Associate)</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={aws_ccp}>AWS CCP (Certified Cloud Practitioner)</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={hackerrank_profile}>HackerRank Problem Solving 6-Star (Badge)</a><br/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="computingSubTitle">Operating Systems</td>
-                            <td className="computingWriting">
-                                macOS<br/>
-                                Amazon Linux 2<br/>
-                                Ubuntu 22.04<br/>
-                                iOS<br/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="computingSubTitle">Tech Stack</td>
-                            <td className="computingWriting">
-                                <a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS Cloud Development Kit (CDK)</a>*<br/>
-                                Python3 [ <a target="_blank" rel="noopener noreferrer" href={pycharm}>PyCharm</a> | <a target="_blank" rel="noopener noreferrer" href={boto3}>Boto3 - AWS SDK for Python</a> ]<br/>
-                                Unix CLI [ <a target="_blank" rel="noopener noreferrer" href={oh_my_zsh}>oh-my-zsh</a> | <a target="_blank" rel="noopener noreferrer" href={homebrew}>Homebrew</a> | <a target="_blank" rel="noopener noreferrer" href={git}>Git</a> | <a target="_blank" rel="noopener noreferrer" href={aws_cli}>AWS CLI</a> ]<br/>
-                                Shell (Bash) Scripting<br/>
-                                Docker [ <a target="_blank" rel="noopener noreferrer" href={ecr}>AWS ECR - Elastic Container Registry</a> | <a target="_blank" rel="noopener noreferrer" href={docker_compose}>Docker Compose</a> ]<br/>
-                                MySQL<br/>
-                                Atlassian [ <a target="_blank" rel="noopener noreferrer" href={bitbucket}>Bitbucket</a> | <a target="_blank" rel="noopener noreferrer" href={jira}>Jira</a> | <a target="_blank" rel="noopener noreferrer" href={confluence}>Confluence</a> ]<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={markdown}>Markdown</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={latex}>LaTeX</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={cryptography}>Cryptography</a><br/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="computingSubTitle">Projects</td>
-                            <td className="computingWriting">
-                                <a target="_blank" rel="noopener noreferrer" href={aws_cdk_examples}>AWS CDK Examples</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS CDK</a>* ]<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={ipsec_vpn_server}>IPsec VPN Server</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS CDK</a>* ]<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={openvpn_vpn_server}>OpenVPN VPN Server</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS CDK</a>* ]<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={proxy_server}>Proxy Server</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS CDK</a>* ]<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={pypi_server}>PyPi Server</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS CDK</a>* ]<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={aws_scripts_examples}>AWS Scripts Examples</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={boto3}>Boto3 - AWS SDK for Python</a> | Shell | <a target="_blank" rel="noopener noreferrer" href={aws_cli}>AWS CLI</a> ]<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={aws_lambda_examples}>AWS Lambda Examples</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={boto3}>Boto3 - AWS SDK for Python</a> | JavaScript ]<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={aws_ec2_examples}>AWS EC2 Examples</a> [ Shell ]<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={dwa_website_react}>My React Website</a> [ React | TypeScript | Python3 - <a target="_blank" rel="noopener noreferrer" href={'https://aws.amazon.com/lambda/'}>AWS Lambda (Functions)</a> | SCSS ]<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={python_hackerrank}>HackerRank Problem Solving Solutions</a> [ Python3 ]<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={sudoku_solver}>Sudoku Solver</a> [ Python3 ]<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={cipher_decrypt}>Ciphertext Decryption</a> [ Java ]<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={homebrew_auto}>Homebrew Package Auto-Upgrade Tool</a> [ Shell ]<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={open_all_images}>Open All Images</a> [ Shell | AppleScript ]<br/>
-                                <a target="_blank" rel="noopener noreferrer" href={timestamp_media}>Timestamp Media</a> [ AppleScript ]<br/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="computingSubTitle">*AWS Tech Stack</td>
-                            <td className="computingWriting">
-                                <a target="_blank" rel="noopener noreferrer" href={certificate_manager}>ACM - Certificate Manager</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={amazon_mq}>AmazonMQ</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={amplify}>Amplify (Apps)</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={cloudformation}>CloudFormation</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={cloudfront}>CloudFront</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={cloudwatch}>CloudWatch (Alarms, Log Groups, Metrics)</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={codeartifact}>CodeArtifact</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={codebuild}>CodeBuild</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={codepipeline}>CodePipeline (inc. CodeConnections, formerly CodeStar Connections)</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={dynamodb}>DynamoDB</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={ec2}>EC2 - Elastic Compute Cloud (ALBs & NLBs, Security Groups, ASGs, Launch Templates, Volumes, Elastic IPs)</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={ecr}>ECR - Elastic Container Registry</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={ecs}>ECS - Elastic Container Service (Fargate)</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={efs}>EFS - Elastic File System</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={elasticache}>ElastiCache (Redis OSS)</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={eventbridge}>EventBridge (Buses, Rules)</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={iam}>IAM - Identity & Access Management (User Groups, Roles, Policies)</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={kms}>KMS - Key Management Service</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={lambda}>Lambda (Functions)</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={rds}>RDS - Relational Database Service (Databases, Proxies)</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={route53}>Route53 (Hosted Zones, Domain Management)</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={s3}>S3 - Simple Storage Service (Buckets, Lifecycle Rules)</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={ses}>SES - Simple Email Service</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={sns}>SNS - Simple Notification Service (Topics, Mobile Push Notifications)</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={systems_manager}>SSM - Systems Manager (Parameter Store)</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={secrets_manager}>Secrets Manager</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={step_functions}>Step Functions (State Machines)</a><br/>
-                                <a target="_blank" rel="noopener noreferrer" href={waf}>WAF - Web Application Firewall (Web ACLs)</a><br/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="computingSubTitle">Events</td>
-                            <td className="computingWriting">
-                                <a target="_blank" rel="noopener noreferrer" href={cisco_uni_cha}>2017 Cisco University Challenge</a><br/>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div className="skillsGrid roboto">
+                <section className="skillSection entryCard">
+                    <h3 className="skillTitle">Certificates</h3>
+                    <ul className="skillList">
+                        <li><a target="_blank" rel="noopener noreferrer" href={aws_csa_a}>AWS CSA-A (Certified Solutions Architect – Associate)</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={aws_ccp}>AWS CCP (Certified Cloud Practitioner)</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={hackerrank_profile}>HackerRank Problem Solving 6-Star (Badge)</a></li>
+                    </ul>
+                </section>
+
+                <section className="skillSection entryCard">
+                    <h3 className="skillTitle">Operating Systems</h3>
+                    <ul className="skillList">
+                        <li>macOS</li>
+                        <li>Amazon Linux 2</li>
+                        <li>Ubuntu 22.04</li>
+                        <li>iOS</li>
+                    </ul>
+                </section>
+
+                <section className="skillSection entryCard skillSectionWide">
+                    <h3 className="skillTitle">Tech Stack</h3>
+                    <ul className="skillList">
+                        <li><a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS Cloud Development Kit (CDK)</a>*</li>
+                        <li>Python3 [ <a target="_blank" rel="noopener noreferrer" href={pycharm}>PyCharm</a> | <a target="_blank" rel="noopener noreferrer" href={boto3}>Boto3 - AWS SDK for Python</a> ]</li>
+                        <li>Unix CLI [ <a target="_blank" rel="noopener noreferrer" href={oh_my_zsh}>oh-my-zsh</a> | <a target="_blank" rel="noopener noreferrer" href={homebrew}>Homebrew</a> | <a target="_blank" rel="noopener noreferrer" href={git}>Git</a> | <a target="_blank" rel="noopener noreferrer" href={aws_cli}>AWS CLI</a> ]</li>
+                        <li>Shell (Bash) Scripting</li>
+                        <li>Docker [ <a target="_blank" rel="noopener noreferrer" href={ecr}>AWS ECR - Elastic Container Registry</a> | <a target="_blank" rel="noopener noreferrer" href={docker_compose}>Docker Compose</a> ]</li>
+                        <li>MySQL</li>
+                        <li>Atlassian [ <a target="_blank" rel="noopener noreferrer" href={bitbucket}>Bitbucket</a> | <a target="_blank" rel="noopener noreferrer" href={jira}>Jira</a> | <a target="_blank" rel="noopener noreferrer" href={confluence}>Confluence</a> ]</li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={markdown}>Markdown</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={latex}>LaTeX</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={cryptography}>Cryptography</a></li>
+                    </ul>
+                </section>
+
+                <section className="skillSection entryCard skillSectionWide">
+                    <h3 className="skillTitle">Projects</h3>
+                    <ul className="skillList">
+                        <li><a target="_blank" rel="noopener noreferrer" href={aws_cdk_examples}>AWS CDK Examples</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS CDK</a>* ]</li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={ipsec_vpn_server}>IPsec VPN Server</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS CDK</a>* ]</li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={openvpn_vpn_server}>OpenVPN VPN Server</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS CDK</a>* ]</li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={proxy_server}>Proxy Server</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS CDK</a>* ]</li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={pypi_server}>PyPi Server</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={aws_cdk}>AWS CDK</a>* ]</li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={aws_scripts_examples}>AWS Scripts Examples</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={boto3}>Boto3 - AWS SDK for Python</a> | Shell | <a target="_blank" rel="noopener noreferrer" href={aws_cli}>AWS CLI</a> ]</li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={aws_lambda_examples}>AWS Lambda Examples</a> [ Python3 | <a target="_blank" rel="noopener noreferrer" href={boto3}>Boto3 - AWS SDK for Python</a> | JavaScript ]</li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={aws_ec2_examples}>AWS EC2 Examples</a> [ Shell ]</li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={dwa_website_react}>My React Website</a> [ React | TypeScript | Python3 - <a target="_blank" rel="noopener noreferrer" href={lambda}>AWS Lambda (Functions)</a> | SCSS ]</li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={python_hackerrank}>HackerRank Problem Solving Solutions</a> [ Python3 ]</li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={sudoku_solver}>Sudoku Solver</a> [ Python3 ]</li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={cipher_decrypt}>Ciphertext Decryption</a> [ Java ]</li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={homebrew_auto}>Homebrew Package Auto-Upgrade Tool</a> [ Shell ]</li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={open_all_images}>Open All Images</a> [ Shell | AppleScript ]</li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={timestamp_media}>Timestamp Media</a> [ AppleScript ]</li>
+                    </ul>
+                </section>
+
+                <section className="skillSection entryCard skillSectionWide">
+                    <h3 className="skillTitle">*AWS Tech Stack</h3>
+                    <ul className="skillList skillListCompact">
+                        <li><a target="_blank" rel="noopener noreferrer" href={certificate_manager}>ACM - Certificate Manager</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={amazon_mq}>AmazonMQ</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={amplify}>Amplify (Apps)</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={cloudformation}>CloudFormation</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={cloudfront}>CloudFront</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={cloudwatch}>CloudWatch (Alarms, Log Groups, Metrics)</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={codeartifact}>CodeArtifact</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={codebuild}>CodeBuild</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={codepipeline}>CodePipeline (inc. CodeConnections, formerly CodeStar Connections)</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={dynamodb}>DynamoDB</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={ec2}>EC2 - Elastic Compute Cloud (ALBs & NLBs, Security Groups, ASGs, Launch Templates, Volumes, Elastic IPs)</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={ecr}>ECR - Elastic Container Registry</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={ecs}>ECS - Elastic Container Service (Fargate)</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={efs}>EFS - Elastic File System</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={elasticache}>ElastiCache (Redis OSS)</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={eventbridge}>EventBridge (Buses, Rules)</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={iam}>IAM - Identity & Access Management (User Groups, Roles, Policies)</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={kms}>KMS - Key Management Service</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={lambda}>Lambda (Functions)</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={rds}>RDS - Relational Database Service (Databases, Proxies)</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={route53}>Route53 (Hosted Zones, Domain Management)</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={s3}>S3 - Simple Storage Service (Buckets, Lifecycle Rules)</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={ses}>SES - Simple Email Service</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={sns}>SNS - Simple Notification Service (Topics, Mobile Push Notifications)</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={systems_manager}>SSM - Systems Manager (Parameter Store)</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={secrets_manager}>Secrets Manager</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={step_functions}>Step Functions (State Machines)</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href={waf}>WAF - Web Application Firewall (Web ACLs)</a></li>
+                    </ul>
+                </section>
+
+                <section className="skillSection entryCard">
+                    <h3 className="skillTitle">Events</h3>
+                    <ul className="skillList">
+                        <li><a target="_blank" rel="noopener noreferrer" href={cisco_uni_cha}>2017 Cisco University Challenge</a></li>
+                    </ul>
+                </section>
+            </div>
         </div>
     );
 }
