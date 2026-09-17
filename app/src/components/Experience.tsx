@@ -1,5 +1,5 @@
 import {experienceEntries} from '../content/siteContent';
-import EntryCard from './EntryCard';
+import TimelineCard from './TimelineCard';
 import PageIntro from './PageIntro';
 
 function Experience() {
@@ -15,9 +15,9 @@ function Experience() {
                 ]}
             />
 
-            <div className="stackedCards">
-                {experienceEntries.map((entry) => (
-                    <EntryCard key={`${entry.organization.name}-${entry.dateRange}`} entry={entry}/>
+            <div className="timelineCards entryCard">
+                {experienceEntries.map((entry, index) => (
+                    <TimelineCard key={`${entry.organization.name}-${entry.dateRange}`} entry={entry} index={index}/>
                 ))}
             </div>
         </div>

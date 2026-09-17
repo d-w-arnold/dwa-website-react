@@ -1,0 +1,119 @@
+@use "../shared.scss" as *;
+
+.title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: $writing;
+}
+
+.pageTitle {
+  margin-bottom: 0.75rem;
+}
+
+.pageIntro {
+  margin-bottom: 1rem;
+}
+
+.pageEyebrow {
+  margin: 0;
+  color: $link;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pageSummary {
+  margin: 0;
+  color: $muted;
+  font-size: 1rem;
+  max-width: 44rem;
+  line-height: 1.7;
+}
+
+.pageMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pageMetaItem {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid rgba(56, 189, 248, 0.16);
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.08);
+  color: $writing;
+  font-size: 0.92rem;
+  transition: all 0.3s ease;
+}
+
+.pageMetaItem:hover {
+  border-color: rgba(56, 189, 248, 0.28);
+  background: rgba(56, 189, 248, 0.14);
+  transform: translateY(-1px);
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.writing,
+.uniCourseDetails,
+.jobDetails,
+.skillList {
+  color: $muted;
+  font-size: 1rem;
+}
+
+.writing p,
+.uniCourseDetails p,
+.jobDetails p,
+.detailList li,
+.nestedDetailList li,
+.skillList li {
+  line-height: 1.7;
+  transition: color 0.3s ease;
+}
+
+.link-color,
+table tr td a,
+.skillList a,
+.employerName a {
+  color: $link;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.link-color:hover,
+.link-color:focus-visible,
+table tr td a:hover,
+table tr td a:focus-visible,
+.skillList a:hover,
+.skillList a:focus-visible,
+.employerName a:hover,
+.employerName a:focus-visible {
+  color: $link-hover;
+  text-decoration-color: $link-hover;
+}
+
+.note {
+  opacity: 0.95;
+}
+
+.center {
+  text-align: center;
+}
+
+.spacing2 {
+  margin-bottom: 1rem;
+}
+
+.spacing4 {
+  margin-bottom: 1.5rem;
+}
+

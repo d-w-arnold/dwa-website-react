@@ -1,5 +1,5 @@
 import {educationEntries, educationNote} from '../content/siteContent';
-import EntryCard from './EntryCard';
+import TimelineCard from './TimelineCard';
 import PageIntro from './PageIntro';
 import RichText from './RichText';
 
@@ -24,9 +24,9 @@ function Education() {
 
             <div className="spacing4"/>
 
-            <div className="stackedCards">
-                {educationEntries.map((entry) => (
-                    <EntryCard key={`${entry.organization.name}-${entry.dateRange}`} entry={entry}/>
+            <div className="timelineCards entryCard">
+                {educationEntries.map((entry, index) => (
+                    <TimelineCard key={`${entry.organization.name}-${entry.dateRange}`} entry={entry} index={index}/>
                 ))}
             </div>
         </div>
