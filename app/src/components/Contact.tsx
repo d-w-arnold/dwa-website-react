@@ -48,7 +48,7 @@ const config: FormConfig = {
 function Contact() {
     return (
         <div className="body">
-            <p id="contactTitle" className="title">Contact</p>
+            <h2 id="contactTitle" className="title">Contact</h2>
 
             <div className="roboto">
                 <div className="contact-details">
@@ -60,5 +60,6 @@ function Contact() {
         </div>
     );
 }
+
 
 export default Contact;

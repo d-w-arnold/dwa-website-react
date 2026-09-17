@@ -12,12 +12,12 @@ function Home() {
     const uni_of_kent = 'https://www.kent.ac.uk/';
     return (
         <div className="body">
-                <p className="title">Welcome!</p>
+                <h2 className="title">Welcome!</h2>
                 <div className="writing roboto">
                     <p>I'm a Software Engineer (specialty: AWS Cloud Engineer), and a First-Class Honours Computer Science graduate from the <a className="link-color" target="_blank" rel="noopener noreferrer" href={uni_of_kent}>University of Kent</a>.</p>
                 </div>
                 <div className="spacing4"/>
-                <p className="title">About Me</p>
+                <h2 className="title">About Me</h2>
                 <div className="writing roboto">
                     <p>My personality type is: <a className="link-color" target="_blank" rel="noopener noreferrer" href={istj}>Logistician (ISTJ)</a></p>
                     <div className="spacing2"/>
@@ -32,14 +32,14 @@ function Home() {
                     <p>Also, you'll find me regularly updating my Japanese <a className="link-color" target="_blank" rel="noopener noreferrer" href={mal}>Watch and Reading Lists</a>.</p>
                 </div>
                 <div className="spacing4"/>
-                <p className="title">My Dissertation (Undergraduate)</p>
+                <h2 className="title">My Dissertation (Undergraduate)</h2>
                 <div className="writing roboto">
                     <p><span className="iconPaper" aria-hidden="true"/>Research Project - <a className="link-color" target="_blank" rel="noopener noreferrer" href={research_project}>"Quantum Cryptography: Security for the Post-Quantum world"</a></p>
                     <div className="spacing2"/>
                     <p>This research project set out to survey the field of Quantum Cryptography, providing a basic insight into various aspects of Quantum Cryptography - all of which could be very important regarding our online security in the future! Aimed at people in industry concerned with security.</p>
                 </div>
                 <div className="spacing4"/>
-                <p className="title">Early Life</p>
+                <h2 className="title">Early Life</h2>
                 <div className="writing roboto">
                     <p>Before I was a Software Engineer, I trained as a professional golfer.</p>
                     <div className="spacing2"/>

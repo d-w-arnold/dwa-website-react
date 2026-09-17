@@ -67,7 +67,7 @@ function Computing() {
     const cisco_uni_cha = 'https://www.cisco.com/c/m/en_uk/training-events/university-challenge.html';
     return (
         <div className="body">
-                <p className="title">Computing Skills</p>
+                <h2 className="title">Computing Skills</h2>
 
                 <div className="roboto">
                     <table className="computingTable">

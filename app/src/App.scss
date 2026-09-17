@@ -231,6 +231,26 @@ table tr td a:focus-visible {
   font-size: 18pt;
 }
 
+.entryCard {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.entryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.entryMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
 .error {
   color: $error;
 }
@@ -278,6 +298,26 @@ table tr td a:focus-visible {
   margin-bottom: 0.75rem;
 }
 
+.detailList,
+.nestedDetailList {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.detailList li,
+.nestedDetailList li {
+  margin-bottom: 0.6rem;
+}
+
+.detailList li:last-child,
+.nestedDetailList li:last-child {
+  margin-bottom: 0;
+}
+
+.nestedDetailList {
+  margin-top: 0.6rem;
+}
+
 .location {
   font-size: 14pt;
   text-align: right;
@@ -289,6 +329,10 @@ table tr td a:focus-visible {
 
 .marginBottom2 {
   margin-bottom: 2%;
+}
+
+.note {
+  opacity: 0.92;
 }
 
 .response {
@@ -361,6 +405,15 @@ table tr td a:focus-visible {
     margin: 0 auto 6%;
     text-align: left;
   }
+
+  .entryHeader {
+    flex-direction: column;
+  }
+
+  .entryMeta,
+  .location {
+    text-align: left;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -392,6 +445,10 @@ table tr td a:focus-visible {
   .alignRight {
     text-align: right;
     width: 100%;
+  }
+
+  .entryCard {
+    padding: 1rem;
   }
 
   .iconLink {
