@@ -1,16 +1,13 @@
-import React from "react";
-
 function Experience() {
-    let aws_cdk = 'https://github.com/aws/aws-cdk';
-    let aws_cli = 'https://aws.amazon.com/cli/';
-    let boto3 = 'https://github.com/boto/boto3';
-    let peach = 'https://www.peach.me/en-gb/';
-    let red_bull_careers = 'https://www.redbull.com/int-en/redbullracing';
-    let sat_data_sys = '/diagram/Satellite_Data_Acquisition_System.png';
-    let sihealth = 'https://www.sihealth.co.uk/';
+    const aws_cdk = 'https://github.com/aws/aws-cdk';
+    const aws_cli = 'https://aws.amazon.com/cli/';
+    const boto3 = 'https://github.com/boto/boto3';
+    const peach = 'https://www.peach.me/en-gb/';
+    const red_bull_careers = 'https://www.redbull.com/int-en/redbullracing';
+    const sat_data_sys = '/diagram/Satellite_Data_Acquisition_System.png';
+    const sihealth = 'https://www.sihealth.co.uk/';
     return (
-        <React.Fragment>
-            <div className="body">
+        <div className="body">
                 <p className="title">Experience</p>
 
                 {/* siHealth Ltd. */}
@@ -110,8 +107,7 @@ function Experience() {
                         <p>•&nbsp;&nbsp;Volunteered during busy F1 race weekend.</p>
                     </div>
                 </div>
-            </div>
-        </React.Fragment>
+        </div>
     );
 }
 

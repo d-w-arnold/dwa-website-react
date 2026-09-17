@@ -1,23 +1,21 @@
-import React from "react";
 import {Link} from "react-router-dom";
 
 function Education() {
-    let cipher_decrypt = 'https://github.com/d-w-arnold/ciphertext-decryption';
-    let comp_net_com = 'https://www.kent.ac.uk/courses/modules/module/COMP6330';
-    let comp_sci_year_ind = 'https://www.kent.ac.uk/courses/undergraduate/128/computer-science-with-a-year-in-industry';
-    let comp_sec_crypt = 'https://www.kent.ac.uk/courses/modules/module/COMP6340';
-    let data_mining = 'https://www.kent.ac.uk/courses/modules/module/COMP8320';
-    let harvey = 'http://www.harveygs.kent.sch.uk';
-    let iot = 'https://www.kent.ac.uk/courses/modules/module/COMP6570';
-    let newberry = 'https://www.newberry.edu';
-    let open_uni = 'https://www.open.ac.uk';
-    let prog_lang_imp = 'https://www.kent.ac.uk/courses/modules/module/COMP6580';
-    let prog_langs_app = 'https://www.kent.ac.uk/courses/modules/module/COMP6630';
-    let research_project = '/research/Quantum_Cryptography-Security_for_the_Post-Quantum_world.pdf';
-    let uni_of_kent = 'https://www.kent.ac.uk/';
+    const cipher_decrypt = 'https://github.com/d-w-arnold/ciphertext-decryption';
+    const comp_net_com = 'https://www.kent.ac.uk/courses/modules/module/COMP6330';
+    const comp_sci_year_ind = 'https://www.kent.ac.uk/courses/undergraduate/128/computer-science-with-a-year-in-industry';
+    const comp_sec_crypt = 'https://www.kent.ac.uk/courses/modules/module/COMP6340';
+    const data_mining = 'https://www.kent.ac.uk/courses/modules/module/COMP8320';
+    const harvey = 'http://www.harveygs.kent.sch.uk';
+    const iot = 'https://www.kent.ac.uk/courses/modules/module/COMP6570';
+    const newberry = 'https://www.newberry.edu';
+    const open_uni = 'https://www.open.ac.uk';
+    const prog_lang_imp = 'https://www.kent.ac.uk/courses/modules/module/COMP6580';
+    const prog_langs_app = 'https://www.kent.ac.uk/courses/modules/module/COMP6630';
+    const research_project = '/research/Quantum_Cryptography-Security_for_the_Post-Quantum_world.pdf';
+    const uni_of_kent = 'https://www.kent.ac.uk/';
     return (
-        <React.Fragment>
-            <div className="body">
+        <div className="body">
                 <p className="title">Education</p>
 
                 <div className="roboto">
@@ -165,8 +163,7 @@ function Education() {
                         </tbody>
                     </table>
                 </div>
-            </div>
-        </React.Fragment>
+        </div>
     );
 }
 

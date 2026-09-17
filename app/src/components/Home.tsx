@@ -1,20 +1,17 @@
-import React from "react";
-
 function Home() {
-    let cadwell_park = 'https://youtu.be/W9OdNDSdbCs';
-    let euro_pro = 'https://www.europrotour.com/';
-    let istj = 'https://www.16personalities.com/istj-personality';
-    let jun_open_2011 = 'https://www.howdidido.com/Directory/Result?sectionId=4658&compNumber=663';
-    let kent_am_champ_2014 = 'https://www.kentgolf.org/competition.php?compid=441';
-    let kent_am_champ_2015 = 'https://www.kentgolf.org/viewround.php?roundid=18996';
-    let kent_golf = 'https://www.kentgolf.org/';
-    let lake_district = 'https://www.visitlakedistrict.com/';
-    let mal = 'https://myanimelist.net/profile/dw_arnie';
-    let research_project = '/research/Quantum_Cryptography-Security_for_the_Post-Quantum_world.pdf';
-    let uni_of_kent = 'https://www.kent.ac.uk/';
+    const cadwell_park = 'https://youtu.be/W9OdNDSdbCs';
+    const euro_pro = 'https://www.europrotour.com/';
+    const istj = 'https://www.16personalities.com/istj-personality';
+    const jun_open_2011 = 'https://www.howdidido.com/Directory/Result?sectionId=4658&compNumber=663';
+    const kent_am_champ_2014 = 'https://www.kentgolf.org/competition.php?compid=441';
+    const kent_am_champ_2015 = 'https://www.kentgolf.org/viewround.php?roundid=18996';
+    const kent_golf = 'https://www.kentgolf.org/';
+    const lake_district = 'https://www.visitlakedistrict.com/';
+    const mal = 'https://myanimelist.net/profile/dw_arnie';
+    const research_project = '/research/Quantum_Cryptography-Security_for_the_Post-Quantum_world.pdf';
+    const uni_of_kent = 'https://www.kent.ac.uk/';
     return (
-        <React.Fragment>
-            <div className="body">
+        <div className="body">
                 <p className="title">Welcome!</p>
                 <div className="writing roboto">
                     <p>I'm a Software Engineer (specialty: AWS Cloud Engineer), and a First-Class Honours Computer Science graduate from the <a className="link-color" target="_blank" rel="noopener noreferrer" href={uni_of_kent}>University of Kent</a>.</p>
@@ -58,8 +55,7 @@ function Home() {
                     <div className="spacing2"/>
                     <p>In late 2016, I hung up my golf clubs to study Computer Science. Golf remains a passion of mine, and will remain a lifetime hobby.</p>
                 </div>
-            </div>
-        </React.Fragment>
+        </div>
     );
 }
 

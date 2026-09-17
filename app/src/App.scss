@@ -2,33 +2,59 @@
 
 a {
   color: $writing;
-  text-decoration: none;
+  text-underline-offset: 0.14em;
+  text-decoration-thickness: 0.08em;
 }
 
 body {
-  padding: 2% 5% 2% 5%;
+  padding: 2% 5%;
   background-color: $background;
   color: $writing;
-  text-align: center;
   font-size: 16pt;
   -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
 }
 
+header,
+nav {
+  text-align: center;
+}
+
 form {
-  margin: 0 !important;
+  margin: 0;
 }
 
 html * {
   margin: 0;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #7dd3fc;
+  outline-offset: 3px;
+}
+
+%faIconBase {
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  padding-right: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 li a {
   display: block;
   text-align: center;
   font-family: serif !important;
+  text-decoration: none;
 }
 
-li a:hover {
+li a:hover,
+li a:focus-visible,
+p b a:hover,
+p b a:focus-visible {
   text-decoration: underline;
 }
 
@@ -43,15 +69,12 @@ nav ul {
   margin: 0;
   display: flex;
   justify-content: space-around;
+  gap: 1rem;
   text-align: center;
 }
 
 p {
   margin: 0;
-}
-
-p b a:hover {
-  text-decoration: underline;
 }
 
 span.error {
@@ -61,32 +84,17 @@ span.error {
 
 span.iconUni::before {
   content: "\f19c";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  padding-right: 10px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @extend %faIconBase;
 }
 
 span.iconPaper::before {
   content: "\f1ea";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  padding-right: 10px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @extend %faIconBase;
 }
 
 span.iconLap::before {
   content: "\f109";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  padding-right: 10px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @extend %faIconBase;
 }
 
 table {
@@ -94,14 +102,16 @@ table {
 }
 
 table tr td {
-  vertical-align: text-top;
+  vertical-align: top;
 }
 
 table tr td a {
   color: $link;
+  text-decoration: underline;
 }
 
-table tr td a:hover {
+table tr td a:hover,
+table tr td a:focus-visible {
   text-decoration: underline;
   color: $writing;
   text-decoration-color: $writing;
@@ -110,14 +120,23 @@ table tr td a:hover {
 #button {
   text-align: center;
   background-color: $writing;
+  color: $background;
   font-size: 14pt;
   padding: 2% 3%;
   margin-top: 2%;
   border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+#button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
 }
 
 #contactTitle {
-  margin-bottom: 2% !important;
+  margin-bottom: 2%;
 }
 
 #cv {
@@ -127,10 +146,13 @@ table tr td a:hover {
   border-radius: 20px;
   background-color: $icon;
   color: $background;
-  vertical-align: text-top;
+  vertical-align: top;
+  display: inline-block;
+  text-decoration: none;
 }
 
-#cv:hover {
+#cv:hover,
+#cv:focus-visible {
   background-color: $writing;
 }
 
@@ -139,59 +161,36 @@ table tr td a:hover {
   font-size: 60pt;
 }
 
-#github {
-  width: 50%;
-  float: left;
-}
-
-#github:hover {
-  transform: scale(1.2);
-}
-
-#keybase {
-  width: 50%;
-  float: right;
-}
-
-#keybase:hover {
-  transform: scale(1.2);
-}
-
-#message {
-  resize: none;
-}
-
 #myName {
   font-size: 22pt;
   padding-bottom: 1%;
   border-bottom: solid $writing;
   font-weight: normal;
   text-align: right;
-  margin: 0 !important;
-}
-
-#pph-hireme {
-  padding-bottom: 2%;
+  margin: 0;
 }
 
 #top {
-  height: 40pt
+  min-height: 40pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .alignLeft {
-  width: 50%;
-  float: left;
+  flex: 1;
   text-align: left;
 }
 
 .alignRight {
-  width: 50%;
-  float: right;
+  flex: 1;
   text-align: right;
 }
 
 .body {
-  margin: 0 15% 6% 15%;
+  max-width: 960px;
+  margin: 0 auto 6%;
   text-align: left;
 }
 
@@ -212,7 +211,7 @@ table tr td a:hover {
 
 .computingTable {
   border-spacing: 0 15px;
-  margin: -15px 0 -15px 0;
+  margin: -15px 0;
 }
 
 .computingWriting {
@@ -221,17 +220,11 @@ table tr td a:hover {
 }
 
 .contact-details {
-  display: flex;
-  flex-direction: row;
-}
-
-.contact-details .left {
-  padding-top: 2%;
+  display: block;
 }
 
 .contact-details .right {
-  flex: 1;
-  padding-left: 3%;
+  max-width: 720px;
 }
 
 .employerName {
@@ -246,9 +239,12 @@ table tr td a:hover {
   font-size: 20pt;
   margin-right: 2%;
   color: $icon;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.iconLink:hover {
+.iconLink:hover,
+.iconLink:focus-visible {
   color: $writing;
 }
 
@@ -268,12 +264,18 @@ table tr td a:hover {
 
 .link-color {
   color: $link;
+  text-decoration: underline;
 }
 
-.link-color:hover {
+.link-color:hover,
+.link-color:focus-visible {
   text-decoration: underline;
   color: $writing;
   text-decoration-color: $writing;
+}
+
+.formField {
+  margin-bottom: 0.75rem;
 }
 
 .location {
@@ -294,6 +296,10 @@ table tr td a:hover {
   box-sizing: border-box;
   padding: 2%;
   font-size: 16px;
+  border: 1px solid #5b6672;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #111827;
 }
 
 .roboto {
@@ -347,46 +353,25 @@ table tr td a:hover {
 }
 
 @media only screen and (max-width: 800px) {
-
   li a {
-    display: block;
-    text-align: center;
-    font-family: serif !important;
     padding: 2%;
   }
 
   .body {
-    margin: 0 0 6% 0;
+    margin: 0 auto 6%;
     text-align: left;
-  }
-
-  .contact-details {
-    flex-direction: column;
-  }
-
-  .contact-details .left {
-    text-align: center;
-    padding-top: 0 !important;
-  }
-
-  .contact-details .right {
-    padding-left: 0 !important;
   }
 }
 
 @media only screen and (max-width: 600px) {
-
-  ul {
+  nav ul {
     flex-direction: column;
   }
 
   #cv {
-    font-family: 'Roboto', sans-serif !important;
     font-size: 8pt;
     padding: 1.4% 2%;
-    border-radius: 20px;
     background-color: $writing;
-    color: $background;
     vertical-align: super;
   }
 
@@ -394,50 +379,32 @@ table tr td a:hover {
     text-align: center;
   }
 
-  #pph-hireme {
-    padding-bottom: 0 !important;
-  }
-
   #top {
-    height: 80pt !important;
+    min-height: auto;
+    flex-direction: column-reverse;
   }
 
   .alignLeft {
     text-align: center;
-    float: none;
-    width: auto;
-    height: auto;
+    width: 100%;
   }
 
   .alignRight {
     text-align: right;
-    float: none;
-    width: auto;
-    height: auto;
-  }
-
-  .buttonPlacement {
-    text-align: left;
+    width: 100%;
   }
 
   .iconLink {
     font-size: 16pt;
     margin-right: 4%;
-    float: left;
   }
 
   .statusMessage {
     text-align: center;
   }
 
-  span.iconUni::before {
-    display: none !important;
-  }
-
-  span.iconPaper::before {
-    display: none !important;
-  }
-
+  span.iconUni::before,
+  span.iconPaper::before,
   span.iconLap::before {
     display: none !important;
   }

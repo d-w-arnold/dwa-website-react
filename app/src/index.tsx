@@ -1,8 +1,19 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
+import {StrictMode} from 'react';
+import {createRoot} from 'react-dom/client';
+import {BrowserRouter} from 'react-router-dom';
 import App from './App';
 
-const container =  document.getElementById('root');
-const root = createRoot(container!); // createRoot(container) if NOT using TypeScript
-root.render(<React.StrictMode><App/></React.StrictMode>);
+const container = document.getElementById('root');
+
+if (!container) {
+	throw new Error('Root container was not found.');
+}
+
+createRoot(container).render(
+	<StrictMode>
+		<BrowserRouter>
+			<App/>
+		</BrowserRouter>
+	</StrictMode>
+);
 

@@ -1,12 +1,12 @@
-import React, {Component} from "react";
+import {useMemo, useRef, useState, type ChangeEvent, type FormEvent} from "react";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const recaptchaRef = React.createRef<ReCAPTCHA>();
 const validEmailRegex = RegExp(/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i);
 const fullnameErrMsg = 'Please provide a name of at least 2 characters, thank you.';
 const emailaddressErrMsg = 'Please enter a valid email address, thank you.';
 const mssgErrMsg = 'Please do not exceed 1000 characters in your message, thank you.';
+const formUnavailableErrMsg = 'The contact form is temporarily unavailable. Please try again later.';
 
 export type FormValues = {
     fullname: string;
@@ -40,207 +40,214 @@ type MyProps = {
 
 type FormErrors = Record<FieldName, string>;
 
-type MyState = FormValues & {
-    recaptchaResponse: string | null;
-    sent: boolean;
-    error: boolean;
-    statusMessage: string;
-    errors: FormErrors;
+type ApiResponse = {
+    sent?: boolean;
+    mssg?: string;
 };
 
-class MyForm extends Component<MyProps, MyState> {
-    constructor(props: MyProps) {
-        super(props);
-        this.state = {
-            ...props.config.fields,
-            recaptchaResponse: null,
-            sent: false,
-            error: false,
-            statusMessage: '',
-            errors: {
-                fullname: '',
-                emailaddress: '',
-                mssg: '',
-            }
-        };
-    }
+const createEmptyErrors = (): FormErrors => ({
+    fullname: '',
+    emailaddress: '',
+    mssg: '',
+});
 
-    getFieldError = (name: FieldName, value: string) => {
-        switch (name) {
-            case 'fullname':
-                return value.trim().length >= 2 ? '' : fullnameErrMsg;
-            case 'emailaddress':
-                return validEmailRegex.test(value) ? '' : emailaddressErrMsg;
-            case 'mssg':
-                return value.length > 0 && value.length <= 1000 ? '' : mssgErrMsg;
-            default:
-                return '';
-        }
+const getFieldError = (name: FieldName, value: string) => {
+    switch (name) {
+        case 'fullname':
+            return value.trim().length >= 2 ? '' : fullnameErrMsg;
+        case 'emailaddress':
+            return validEmailRegex.test(value) ? '' : emailaddressErrMsg;
+        case 'mssg':
+            return value.trim().length > 0 && value.length <= 1000 ? '' : mssgErrMsg;
+        default:
+            return '';
+    }
+};
+
+function MyForm({config}: MyProps) {
+    const recaptchaRef = useRef<ReCAPTCHA | null>(null);
+    const [values, setValues] = useState<FormValues>(config.fields);
+    const [sent, setSent] = useState(false);
+    const [error, setError] = useState(false);
+    const [statusMessage, setStatusMessage] = useState('');
+    const [errors, setErrors] = useState<FormErrors>(createEmptyErrors);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const isFormConfigured = useMemo(() => Boolean(config.api && config.sitekey), [config.api, config.sitekey]);
+
+    const validateForm = () => {
+        const nextErrors: FormErrors = {
+            fullname: getFieldError('fullname', values.fullname),
+            emailaddress: getFieldError('emailaddress', values.emailaddress),
+            mssg: getFieldError('mssg', values.mssg),
+        };
+
+        setErrors(nextErrors);
+        return Object.values(nextErrors).every((value) => value.length === 0);
     };
 
-    handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = e.target;
+
         if (!['fullname', 'emailaddress', 'mssg'].includes(name)) {
             return;
         }
 
         const fieldName = name as FieldName;
 
-        this.setState(prevState => ({
+        setValues((prevState) => ({
             ...prevState,
             [fieldName]: value,
-            sent: false,
-            error: false,
-            statusMessage: '',
-            errors: {
-                ...prevState.errors,
-                [fieldName]: this.getFieldError(fieldName, value),
-            },
+        }));
+        setSent(false);
+        setError(false);
+        setStatusMessage('');
+        setErrors((prevState) => ({
+            ...prevState,
+            [fieldName]: getFieldError(fieldName, value),
         }));
     };
 
-    validateForm = () => {
-        const errors: FormErrors = {
-            fullname: this.getFieldError('fullname', this.state.fullname),
-            emailaddress: this.getFieldError('emailaddress', this.state.emailaddress),
-            mssg: this.getFieldError('mssg', this.state.mssg),
-        };
-
-        this.setState({errors});
-
-        return Object.values(errors).every((value) => value.length === 0);
-    };
-
-    handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        if (this.validateForm()) {
-            recaptchaRef.current?.execute();
-        } else {
-            this.setState({
-                statusMessage: 'Please meet the above criteria before submitting this form, thank you.',
-                error: true
-            });
-        }
-    };
-
-    handleCaptchaResponseChange = async (response: string | null) => {
+    const handleCaptchaResponseChange = async (response: string | null) => {
         if (!response) {
-            this.setState({
-                error: true,
-                statusMessage: this.props.config.errorMessage,
-            });
+            setSent(false);
+            setError(true);
+            setStatusMessage(config.errorMessage);
+            setIsSubmitting(false);
             return;
         }
 
-        this.setState({recaptchaResponse: response});
-
         try {
-            const result = await axios.post(this.props.config.api, {
-                fullname: this.state.fullname,
-                emailaddress: this.state.emailaddress,
-                mssg: this.state.mssg,
+            const result = await axios.post<ApiResponse>(config.api, {
+                fullname: values.fullname.trim(),
+                emailaddress: values.emailaddress.trim(),
+                mssg: values.mssg.trim(),
                 recaptchaResponse: response,
             });
 
             if (result.data.sent) {
-                this.setState({
-                    sent: true,
-                    error: false,
-                    statusMessage: '',
-                });
-
+                setValues(config.fields);
+                setErrors(createEmptyErrors());
+                setSent(true);
+                setError(false);
+                setStatusMessage(config.successMessage);
                 return;
             }
 
-            this.setState({
-                sent: false,
-                error: true,
-                statusMessage: result.data.mssg ?? this.props.config.errorMessage,
-            });
-        } catch {
-            this.setState({
-                sent: false,
-                error: true,
-                statusMessage: this.props.config.errorMessage,
-            });
+            setSent(false);
+            setError(true);
+            setStatusMessage(result.data.mssg ?? config.errorMessage);
+        } catch (requestError) {
+            const apiMessage = axios.isAxiosError<ApiResponse>(requestError)
+                ? requestError.response?.data?.mssg
+                : undefined;
+
+            setSent(false);
+            setError(true);
+            setStatusMessage(apiMessage ?? config.errorMessage);
         } finally {
             recaptchaRef.current?.reset();
+            setIsSubmitting(false);
         }
     };
 
-    render() {
-        const {fieldsConfig} = this.props.config;
-        const fullnameError = this.state.errors.fullname;
-        const emailaddressError = this.state.errors.emailaddress;
-        const mssgError = this.state.errors.mssg;
-        return (
-            <form onSubmit={this.handleFormSubmit} id="contact-form" noValidate>
-                {fieldsConfig && fieldsConfig.map((field) => {
-                    return (
-                        <React.Fragment key={field.id}>
-                            {field.type !== "textarea" ? (
-                                <React.Fragment>
-                                    <div className="tinySpacing">
-                                        <label htmlFor={field.fieldName}>{field.label}</label>
-                                    </div>
-                                    <input
-                                        type={field.type}
-                                        id={field.fieldName}
-                                        name={field.fieldName}
-                                        className={field.klassName}
-                                        tabIndex={field.id}
-                                        required={field.isRequired}
-                                        value={this.state[field.fieldName]}
-                                        onChange={this.handleInputChange}
-                                    />
-                                    {field.fieldName === "fullname" && fullnameError.length > 0 &&
-                                    <span className="tinySpacing error">{fullnameError}</span>}
-                                    {field.fieldName === "emailaddress" && emailaddressError.length > 0 &&
-                                    <span className="tinySpacing error">{emailaddressError}</span>}
-                                </React.Fragment>
-                            ) : (
-                                <React.Fragment>
-                                    <div className="tinySpacing">
-                                        <label htmlFor={field.fieldName}>{field.label}</label>
-                                    </div>
-                                    <textarea
-                                        id={field.fieldName}
-                                        name={field.fieldName}
-                                        className={field.klassName}
-                                        tabIndex={field.id}
-                                        required={field.isRequired}
-                                        value={this.state[field.fieldName]}
-                                        onChange={this.handleInputChange}
-                                        rows={6}
-                                    />
-                                    {mssgError.length > 0 &&
-                                    <span className="tinySpacing error">{mssgError}</span>}
-                                </React.Fragment>
-                            )}
-                        </React.Fragment>
-                    );
-                })}
-                <ReCAPTCHA
-                    ref={recaptchaRef}
-                    size="invisible"
-                    sitekey={this.props.config.sitekey}
-                    theme="dark"
-                    onChange={this.handleCaptchaResponseChange}
-                />
-                <div className="buttonPlacement">
-                    <button
-                        type="submit"
-                        id="button"
-                        tabIndex={4}>Send Your Message
-                    </button>
-                </div>
-                <div className="tinySpacing">
-                    {this.state.sent && <div className="success">{this.props.config.successMessage}</div>}
-                    {this.state.error && <div className="error">{this.state.statusMessage}</div>}
-                </div>
-            </form>
-        );
-    }
+    const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        if (!isFormConfigured) {
+            setSent(false);
+            setError(true);
+            setStatusMessage(formUnavailableErrMsg);
+            return;
+        }
+
+        if (!validateForm()) {
+            setSent(false);
+            setError(true);
+            setStatusMessage('Please meet the above criteria before submitting this form, thank you.');
+            return;
+        }
+
+        setSent(false);
+        setError(false);
+        setStatusMessage('');
+        setIsSubmitting(true);
+        recaptchaRef.current?.execute();
+    };
+
+    return (
+        <form onSubmit={handleFormSubmit} id="contact-form" noValidate>
+            {config.fieldsConfig.map((field) => {
+                const fieldError = errors[field.fieldName];
+                const errorId = `${field.fieldName}-error`;
+
+                return (
+                    <div key={field.id} className="formField">
+                        <div className="tinySpacing">
+                            <label htmlFor={field.fieldName}>{field.label}</label>
+                        </div>
+                        {field.type !== 'textarea' ? (
+                            <input
+                                type={field.type}
+                                id={field.fieldName}
+                                name={field.fieldName}
+                                className={field.klassName}
+                                tabIndex={field.id}
+                                required={field.isRequired}
+                                value={values[field.fieldName]}
+                                onChange={handleInputChange}
+                                aria-invalid={fieldError.length > 0}
+                                aria-describedby={fieldError ? errorId : undefined}
+                                disabled={isSubmitting}
+                            />
+                        ) : (
+                            <textarea
+                                id={field.fieldName}
+                                name={field.fieldName}
+                                className={field.klassName}
+                                tabIndex={field.id}
+                                required={field.isRequired}
+                                value={values[field.fieldName]}
+                                onChange={handleInputChange}
+                                rows={6}
+                                maxLength={1000}
+                                aria-invalid={fieldError.length > 0}
+                                aria-describedby={fieldError ? errorId : undefined}
+                                disabled={isSubmitting}
+                            />
+                        )}
+                        {fieldError.length > 0 && (
+                            <span id={errorId} className="tinySpacing error" role="alert">{fieldError}</span>
+                        )}
+                    </div>
+                );
+            })}
+            <ReCAPTCHA
+                ref={recaptchaRef}
+                size="invisible"
+                sitekey={config.sitekey}
+                theme="dark"
+                onChange={handleCaptchaResponseChange}
+            />
+            <div className="buttonPlacement">
+                <button
+                    type="submit"
+                    id="button"
+                    tabIndex={4}
+                    disabled={isSubmitting || !isFormConfigured}
+                >
+                    {isSubmitting ? 'Sending...' : 'Send Your Message'}
+                </button>
+            </div>
+            <div className="tinySpacing" aria-live="polite">
+                {sent && <div className="success" role="status">{statusMessage}</div>}
+                {!isFormConfigured && !statusMessage && (
+                    <div className="error" role="status">{formUnavailableErrMsg}</div>
+                )}
+                {error && <div className="error" role="alert">{statusMessage}</div>}
+            </div>
+        </form>
+    );
 }
 
 export default MyForm;

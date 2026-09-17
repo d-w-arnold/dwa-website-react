@@ -1,75 +1,72 @@
-import React from "react";
-
 function Computing() {
     // Certs
-    let aws_csa_a = 'https://www.credly.com/badges/8847454f-bed9-4f5a-a443-1a26d1cfb2bd';
-    let aws_ccp = 'https://www.credly.com/badges/56620dbe-7a8a-4213-985b-05269b168480';
-    let hackerrank_profile = 'https://www.hackerrank.com/dwarnold';
+    const aws_csa_a = 'https://www.credly.com/badges/8847454f-bed9-4f5a-a443-1a26d1cfb2bd';
+    const aws_ccp = 'https://www.credly.com/badges/56620dbe-7a8a-4213-985b-05269b168480';
+    const hackerrank_profile = 'https://www.hackerrank.com/dwarnold';
     // Tech stack
-    let aws_cdk = 'https://github.com/aws/aws-cdk';
-    let pycharm = 'https://www.jetbrains.com/pycharm/';
-    let boto3 = 'https://github.com/boto/boto3';
-    let oh_my_zsh = 'https://ohmyz.sh/';
-    let homebrew = 'https://brew.sh/';
-    let git = 'https://git-scm.com/';
-    let aws_cli = 'https://aws.amazon.com/cli/';
-    let ecr = 'https://aws.amazon.com/ecr/';
-    let docker_compose = 'https://docs.docker.com/compose/';
-    let bitbucket = 'https://www.atlassian.com/software/bitbucket/';
-    let jira = 'https://www.atlassian.com/software/jira/';
-    let confluence = 'https://www.atlassian.com/software/confluence/';
-    let markdown = 'https://www.markdownguide.org/getting-started/';
-    let latex = 'https://www.latex-project.org/';
-    let cryptography = 'https://www.geeksforgeeks.org/cryptography-and-its-types/';
+    const aws_cdk = 'https://github.com/aws/aws-cdk';
+    const pycharm = 'https://www.jetbrains.com/pycharm/';
+    const boto3 = 'https://github.com/boto/boto3';
+    const oh_my_zsh = 'https://ohmyz.sh/';
+    const homebrew = 'https://brew.sh/';
+    const git = 'https://git-scm.com/';
+    const aws_cli = 'https://aws.amazon.com/cli/';
+    const ecr = 'https://aws.amazon.com/ecr/';
+    const docker_compose = 'https://docs.docker.com/compose/';
+    const bitbucket = 'https://www.atlassian.com/software/bitbucket/';
+    const jira = 'https://www.atlassian.com/software/jira/';
+    const confluence = 'https://www.atlassian.com/software/confluence/';
+    const markdown = 'https://www.markdownguide.org/getting-started/';
+    const latex = 'https://www.latex-project.org/';
+    const cryptography = 'https://www.geeksforgeeks.org/cryptography-and-its-types/';
     // AWS Tech Stack
-    let certificate_manager = 'https://aws.amazon.com/certificate-manager/';
-    let amazon_mq = 'https://aws.amazon.com/amazon-mq/';
-    let amplify = 'https://aws.amazon.com/amplify/';
-    let cloudformation = 'https://aws.amazon.com/cloudformation/';
-    let cloudfront = 'https://aws.amazon.com/cloudfront/';
-    let cloudwatch = 'https://aws.amazon.com/cloudwatch/';
-    let codeartifact = 'https://aws.amazon.com/codeartifact/';
-    let codebuild = 'https://aws.amazon.com/codebuild/';
-    let codepipeline = 'https://aws.amazon.com/codepipeline/';
-    let dynamodb = 'https://aws.amazon.com/dynamodb/';
-    let ec2 = 'https://aws.amazon.com/ec2/';
-    let ecs = 'https://aws.amazon.com/ecs/';
-    let efs = 'https://aws.amazon.com/efs/';
-    let elasticache = 'https://aws.amazon.com/elasticache/';
-    let eventbridge = 'https://aws.amazon.com/eventbridge/';
-    let iam = 'https://aws.amazon.com/iam/';
-    let kms = 'https://aws.amazon.com/kms/';
-    let lambda = 'https://aws.amazon.com/lambda/';
-    let rds = 'https://aws.amazon.com/rds/';
-    let route53 = 'https://aws.amazon.com/route53/';
-    let s3 = 'https://aws.amazon.com/s3/';
-    let ses = 'https://aws.amazon.com/ses/';
-    let sns = 'https://aws.amazon.com/sns/';
-    let systems_manager = 'https://aws.amazon.com/systems-manager/';
-    let secrets_manager = 'https://aws.amazon.com/secrets-manager/';
-    let step_functions = 'https://aws.amazon.com/step-functions/';
-    let waf = 'https://aws.amazon.com/waf/';
+    const certificate_manager = 'https://aws.amazon.com/certificate-manager/';
+    const amazon_mq = 'https://aws.amazon.com/amazon-mq/';
+    const amplify = 'https://aws.amazon.com/amplify/';
+    const cloudformation = 'https://aws.amazon.com/cloudformation/';
+    const cloudfront = 'https://aws.amazon.com/cloudfront/';
+    const cloudwatch = 'https://aws.amazon.com/cloudwatch/';
+    const codeartifact = 'https://aws.amazon.com/codeartifact/';
+    const codebuild = 'https://aws.amazon.com/codebuild/';
+    const codepipeline = 'https://aws.amazon.com/codepipeline/';
+    const dynamodb = 'https://aws.amazon.com/dynamodb/';
+    const ec2 = 'https://aws.amazon.com/ec2/';
+    const ecs = 'https://aws.amazon.com/ecs/';
+    const efs = 'https://aws.amazon.com/efs/';
+    const elasticache = 'https://aws.amazon.com/elasticache/';
+    const eventbridge = 'https://aws.amazon.com/eventbridge/';
+    const iam = 'https://aws.amazon.com/iam/';
+    const kms = 'https://aws.amazon.com/kms/';
+    const lambda = 'https://aws.amazon.com/lambda/';
+    const rds = 'https://aws.amazon.com/rds/';
+    const route53 = 'https://aws.amazon.com/route53/';
+    const s3 = 'https://aws.amazon.com/s3/';
+    const ses = 'https://aws.amazon.com/ses/';
+    const sns = 'https://aws.amazon.com/sns/';
+    const systems_manager = 'https://aws.amazon.com/systems-manager/';
+    const secrets_manager = 'https://aws.amazon.com/secrets-manager/';
+    const step_functions = 'https://aws.amazon.com/step-functions/';
+    const waf = 'https://aws.amazon.com/waf/';
     // GitHub repos
-    let aws_cdk_examples = 'https://github.com/d-w-arnold/aws-cdk-examples';
-    let aws_ec2_examples = 'https://github.com/d-w-arnold/aws-ec2-examples';
-    let aws_lambda_examples = 'https://github.com/d-w-arnold/aws-lambda-examples';
-    let aws_scripts_examples = 'https://github.com/d-w-arnold/aws-scripts-examples';
-    let cipher_decrypt = 'https://github.com/d-w-arnold/ciphertext-decryption';
-    let dwa_website_react = 'https://github.com/d-w-arnold/dwa-website-react';
-    let homebrew_auto = 'https://github.com/d-w-arnold/homebrew-auto-upgrade';
-    let ipsec_vpn_server = 'https://github.com/d-w-arnold/aws-cdk-examples/tree/main/cdk-sih/cdk_sih/ipsec_vpn';
-    let open_all_images = 'https://github.com/d-w-arnold/macOS-open-all-images';
-    let openvpn_vpn_server = 'https://github.com/d-w-arnold/aws-cdk-examples/tree/main/cdk-sih/cdk_sih/internal_domain/openvpn_vpn';
-    let proxy_server = 'https://github.com/d-w-arnold/aws-cdk-examples/tree/main/cdk-sih/cdk_sih/proxy';
-    let pypi_server = 'https://github.com/d-w-arnold/aws-cdk-examples/tree/main/cdk-sih/cdk_sih/internal_domain/pypi';
-    let python_hackerrank = 'https://github.com/d-w-arnold/python-hackerrank';
-    let sudoku_solver = 'https://github.com/d-w-arnold/python-sudoku-solver';
-    let timestamp_media = 'https://github.com/d-w-arnold/appleScript-timestamp-media';
+    const aws_cdk_examples = 'https://github.com/d-w-arnold/aws-cdk-examples';
+    const aws_ec2_examples = 'https://github.com/d-w-arnold/aws-ec2-examples';
+    const aws_lambda_examples = 'https://github.com/d-w-arnold/aws-lambda-examples';
+    const aws_scripts_examples = 'https://github.com/d-w-arnold/aws-scripts-examples';
+    const cipher_decrypt = 'https://github.com/d-w-arnold/ciphertext-decryption';
+    const dwa_website_react = 'https://github.com/d-w-arnold/dwa-website-react';
+    const homebrew_auto = 'https://github.com/d-w-arnold/homebrew-auto-upgrade';
+    const ipsec_vpn_server = 'https://github.com/d-w-arnold/aws-cdk-examples/tree/main/cdk-sih/cdk_sih/ipsec_vpn';
+    const open_all_images = 'https://github.com/d-w-arnold/macOS-open-all-images';
+    const openvpn_vpn_server = 'https://github.com/d-w-arnold/aws-cdk-examples/tree/main/cdk-sih/cdk_sih/internal_domain/openvpn_vpn';
+    const proxy_server = 'https://github.com/d-w-arnold/aws-cdk-examples/tree/main/cdk-sih/cdk_sih/proxy';
+    const pypi_server = 'https://github.com/d-w-arnold/aws-cdk-examples/tree/main/cdk-sih/cdk_sih/internal_domain/pypi';
+    const python_hackerrank = 'https://github.com/d-w-arnold/python-hackerrank';
+    const sudoku_solver = 'https://github.com/d-w-arnold/python-sudoku-solver';
+    const timestamp_media = 'https://github.com/d-w-arnold/appleScript-timestamp-media';
     // Events
-    let cisco_uni_cha = 'https://www.cisco.com/c/m/en_uk/training-events/university-challenge.html';
+    const cisco_uni_cha = 'https://www.cisco.com/c/m/en_uk/training-events/university-challenge.html';
     return (
-        <React.Fragment>
-            <div className="body">
+        <div className="body">
                 <p className="title">Computing Skills</p>
 
                 <div className="roboto">
@@ -169,8 +166,7 @@ function Computing() {
                         </tbody>
                     </table>
                 </div>
-            </div>
-        </React.Fragment>
+        </div>
     );
 }
 

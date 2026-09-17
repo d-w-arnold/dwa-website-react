@@ -1,12 +1,12 @@
-import {BrowserRouter, Link, Routes, Route} from "react-router-dom";
-import COMPUTING_COM from './components/Computing';
-import CONTACT_COM from './components/Contact';
-import EDUCATION_COM from './components/Education';
-import EXPERIENCE_COM from './components/Experience';
-import HOME_COM from './components/Home';
+import {Link, Route, Routes} from "react-router-dom";
+import Computing from './components/Computing';
+import Contact from './components/Contact';
+import Education from './components/Education';
+import Experience from './components/Experience';
+import Home from './components/Home';
 
 const Nav = () => (
-    <BrowserRouter>
+    <>
         <nav>
             <ul>
                 <li><Link to="/">Home</Link></li>
@@ -18,32 +18,12 @@ const Nav = () => (
         </nav>
         <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/computing" element={<ComputingSkills />}/>
+            <Route path="/computing" element={<Computing />}/>
             <Route path="/experience" element={<Experience />}/>
             <Route path="/education" element={<Education />}/>
             <Route path="/contact" element={<Contact />}/>
         </Routes>
-    </BrowserRouter>
-);
-
-const Home = () => (
-    <HOME_COM/>
-);
-
-const ComputingSkills = () => (
-    <COMPUTING_COM/>
-);
-
-const Experience = () => (
-    <EXPERIENCE_COM/>
-);
-
-const Education = () => (
-    <EDUCATION_COM/>
-);
-
-const Contact = () => (
-    <CONTACT_COM/>
+    </>
 );
 
 export default Nav;
