@@ -164,7 +164,6 @@ export const homeSections: HomeSectionData[] = [
                 {type: 'link', text: 'Lake District', href: links.interests.lakeDistrict},
                 {type: 'text', text: ', climbing peaks to take in the views, with the occasional swim in fresh water lakes/tarns/rivers, is an annual summer event I simply live for.'},
             ],
-            [{type: 'text', text: "I enjoy cooking fresh meals, with local ingredients, and I'm always trying to learn new recipes!"}],
             [
                 {type: 'text', text: 'Motorsport is a strong passion of mine. Having done multiple '},
                 {type: 'link', text: 'Track Day', href: links.interests.cadwellPark},
