@@ -2,17 +2,21 @@ import {computingSections} from '../content/siteContent';
 import PageIntro from './PageIntro';
 import RichText from './RichText';
 
+const certificateCount = computingSections.find((section) => section.title === 'Certificates')?.items.length ?? 0;
+const projectCount = computingSections.find((section) => section.title === 'Projects')?.items.length ?? 0;
+const awsServiceCount = computingSections.find((section) => section.title === '*AWS Tech Stack')?.items.length ?? 0;
+
 function Computing() {
     return (
         <div className="body">
             <PageIntro
                 eyebrow="Capabilities"
                 title="Computing Skills"
-                summary="A practical mix of cloud platform engineering, automation, software delivery, and day-to-day tooling experience."
+                summary="Hands-on platform engineering across AWS, combining Infrastructure as Code, reusable automation, and pragmatic delivery tooling shaped by building centralized cloud platforms with TypeScript, Python, CDK, and OpenTofu."
                 meta={[
-                    `${computingSections.length} skill groups`,
-                    'AWS • Python • DevOps',
-                    'Delivery-focused mindset',
+                    `${certificateCount} certificates & badges`,
+                    `${awsServiceCount} AWS services used in practice`,
+                    `${projectCount} portfolio projects across cloud, automation & tooling`,
                 ]}
             />
 
