@@ -214,11 +214,11 @@ export const homeSections: HomeSectionData[] = [
                 {type: 'text', text: '.'},
             ],
             [
-                {type: 'text', text: 'Aged 19 with a handicap of [-1], I relinquished my amateur status and turned professional, participating on the '},
+                {type: 'text', text: 'Aged 19 with a handicap of [-1], I turned professional, participating on the '},
                 {type: 'link', text: 'EuroPro UK Golf Tour', href: links.interests.euroPro},
                 {type: 'text', text: '.'},
             ],
-            [{type: 'text', text: 'In late 2016, I hung up my golf clubs to study Computer Science. Golf remains a passion of mine, and will remain a lifetime hobby.'}],
+            [{type: 'text', text: 'In late 2016, I hung up my golf clubs to study Computer Science. Golf will remain a passion and a lifetime hobby.'}],
         ],
     },
 ];
