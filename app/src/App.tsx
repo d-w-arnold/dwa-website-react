@@ -11,9 +11,9 @@ const linkedin = 'https://uk.linkedin.com/in/david-w-arnold';
 const certificateCount = computingSections.find((section) => section.title === 'Certificates')?.items.length ?? 0;
 
 const profileHighlights = [
-    {label: 'Certificates', value: `${certificateCount}`},
-    {label: 'Roles highlighted', value: `${experienceEntries.length}`},
-    {label: 'Education milestones', value: `${educationEntries.length}`},
+    {label: 'Certificates', value: `${certificateCount}`, to: '/computing'},
+    {label: 'Roles highlighted', value: `${experienceEntries.length}`, to: '/experience'},
+    {label: 'Education milestones', value: `${educationEntries.length}`, to: '/education'},
 ];
 
 function App() {
@@ -62,10 +62,10 @@ function App() {
 
                     <section className="heroStats roboto" aria-label="Profile overview">
                         {profileHighlights.map((item) => (
-                            <div key={item.label} className="heroStat entryCard">
+                            <Link key={item.label} to={item.to} className="heroStat heroStatLink entryCard">
                                 <p className="heroStatValue">{item.value}</p>
                                 <p className="heroStatLabel">{item.label}</p>
-                            </div>
+                            </Link>
                         ))}
                     </section>
                 </div>
