@@ -114,7 +114,6 @@ const links = {
         compSciYearInd: 'https://www.kent.ac.uk/courses/undergraduate/128/computer-science-with-a-year-in-industry',
         compSecCrypt: 'https://www.kent.ac.uk/courses/modules/module/COMP6340',
         dataMining: 'https://www.kent.ac.uk/courses/modules/module/COMP8320',
-        harvey: 'http://www.harveygs.kent.sch.uk',
         iot: 'https://www.kent.ac.uk/courses/modules/module/COMP6570',
         newberry: 'https://www.newberry.edu',
         openUni: 'https://www.open.ac.uk',
@@ -391,12 +390,6 @@ export const educationEntries: EntryData[] = [
             {parts: [{type: 'text', text: 'I studied (part-time) for two years: Computing, Psychology and Mathematics.'}]},
             {parts: [{type: 'text', text: 'Computing: Overall Continuous Assessment Score: 75%, Overall Examinable Score: 89%'}]},
         ],
-    },
-    {
-        organization: {name: 'The Harvey Grammar School', href: links.education.harvey, iconClass: 'iconUni'},
-        title: [{type: 'text', text: 'GCSE (General Certificate of Higher Education)'}],
-        location: 'Folkestone, U.K.',
-        dateRange: 'Sep. 2007 - Jul. 2012',
     },
 ];
 
