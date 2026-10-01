@@ -438,7 +438,7 @@ export const computingSections: SkillSectionData[] = [
             [{type: 'text', text: 'macOS (Intel & Apple Silicon)'}],
             [{type: 'text', text: 'Amazon Linux 2023 (AL2023)'}],
             [{type: 'text', text: 'Amazon Linux 2 (AL2)'}],
-            [{type: 'text', text: 'Ubuntu 22.04 LTS (Jammy Jellyfish)'}],
+            [{type: 'text', text: 'Ubuntu 22.04 LTS'}],
             [{type: 'text', text: 'iOS 26'}],
         ],
     },
