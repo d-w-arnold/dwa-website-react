@@ -208,11 +208,6 @@ export const homeSections: HomeSectionData[] = [
                 {type: 'text', text: '.'},
             ],
             [
-                {type: 'text', text: 'One of my latest best rounds of golf was in the '},
-                {type: 'link', text: 'Kent Amateur Championship 2015', href: links.interests.kentAmChamp2015},
-                {type: 'text', text: '.'},
-            ],
-            [
                 {type: 'text', text: 'Aged 19 with a handicap of [-1], I turned professional, participating on the '},
                 {type: 'link', text: 'EuroPro UK Golf Tour', href: links.interests.euroPro},
                 {type: 'text', text: '.'},
