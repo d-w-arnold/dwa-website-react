@@ -271,7 +271,7 @@ export const experienceEntries: EntryData[] = [
                     {type: 'text', text: ' | Shell (Bash) Scripting | Docker | MySQL | Atlassian ]'},
                 ],
             },
-            {parts: [{type: 'text', text: "Lead the company's migration of cloud resources from Azure to AWS."}]},
+            {parts: [{type: 'text', text: "Led the company's migration of cloud resources from Azure to AWS."}]},
             {
                 parts: [
                     {type: 'text', text: 'Implemented a new Infrastructure as Code (IaC) process using '},
@@ -312,7 +312,7 @@ export const experienceEntries: EntryData[] = [
         location: 'Milton Keynes, U.K.',
         dateRange: 'Jun. 2018 - Jun. 2019',
         details: [
-            {parts: [{type: 'text', text: 'Project lead the organisation of new starter hardware and software delivery.'}]},
+            {parts: [{type: 'text', text: 'Project led the organisation of new starter hardware and software delivery.'}]},
             {parts: [{type: 'text', text: 'Volunteered during busy F1 race weekend.'}]},
         ],
     },
