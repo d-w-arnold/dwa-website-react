@@ -108,6 +108,7 @@ const links = {
         peach: 'https://www.peach.me/en-gb/',
         redBull: 'https://www.redbull.com/int-en/redbullracing',
         sihealth: 'https://www.sihealth.co.uk/',
+        veriskMaplecroft: 'https://www.maplecroft.com/',
     },
     education: {
         compNetCom: 'https://www.kent.ac.uk/courses/modules/module/COMP6330',
@@ -223,11 +224,40 @@ export const homeSections: HomeSectionData[] = [
 ];
 
 export const experienceEntries: EntryData[] = [
+        {
+        organization: {name: 'Verisk Maplecroft', href: links.employers.veriskMaplecroft, iconClass: 'iconLap'},
+        title: [{type: 'text', text: 'Platform Engineer (AWS)'}],
+        location: '(Remote) - Bath, U.K.',
+        dateRange: 'Feb. 2025 - Current',
+        details: [
+            {parts: [{type: 'text', text: 'All-in-one: Platform / AWS Cloud Engineer & Solutions Architect'}]},
+            {
+                parts: [
+                    {type: 'text', text: 'Tech Stack: [ macOS | '},
+                    {type: 'link', text: 'AWS Cloud Development Kit (CDK)', href: links.aws.cdk},
+                    {type: 'text', text: ' | TypeScript | OpenTofu | Python3 | PyCharm | '},
+                    {type: 'link', text: 'Boto3 - AWS SDK for Python', href: links.tools.boto3},
+                    {type: 'text', text: ' | CoPilot | Unix CLI | Git | '},
+                    {type: 'link', text: 'AWS CLI', href: links.aws.cli},
+                    {type: 'text', text: ' | Shell (Bash) Scripting | Docker | Atlassian ]'},
+                ],
+            },
+            {
+                parts: [
+                    {type: 'text', text: 'Led the architecture of a new centralized '},
+                    {type: 'link', text: 'AWS CDK', href: links.aws.cdk},
+                    {type: 'text', text: ' infrastructure repository, consolidating siloed Infrastructure as Code (IaC) from multiple application repos into a single unified GitHub source of truth.'},
+                ],
+            },
+            {parts: [{type: 'text', text: 'Designed robust, reusable CDK L3 construct classes (extending L2/L1 constructs) to simplify stack definitions, enabling rapid provisioning of new infrastructure stacks.'}]},
+            {parts: [{type: 'text', text: 'Challenges: Ensuring the new IaC repository was modular, maintainable, and scalable to support multiple applications and environments across multiple AWS accounts, while adhering to best practices for security, compliance, and cost optimization.'}]},
+        ],
+    },
     {
         organization: {name: 'siHealth Ltd.', href: links.employers.sihealth, iconClass: 'iconLap'},
         title: [{type: 'text', text: 'DevOps Engineer'}],
         location: 'Harwell Campus, Didcot, U.K.',
-        dateRange: 'Nov. 2021 - Current',
+        dateRange: 'Nov. 2021 - Feb. 2025',
         details: [
             {parts: [{type: 'text', text: 'All-in-one: Cloud Engineer / Cloud Architect / DevOps'}]},
             {
