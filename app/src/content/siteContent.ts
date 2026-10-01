@@ -429,7 +429,7 @@ export const computingSections: SkillSectionData[] = [
         items: [
             [{type: 'link', text: 'AWS CSA-A (Certified Solutions Architect – Associate)', href: links.certifications.awsCsaA}],
             [{type: 'link', text: 'AWS CCP (Certified Cloud Practitioner)', href: links.certifications.awsCcp}],
-            [{type: 'link', text: 'HackerRank Problem Solving 6-Star (Badge)', href: links.certifications.hackerrank}],
+            [{type: 'link', text: 'HackerRank 6-Star Problem Solving (Badge)', href: links.certifications.hackerrank}],
         ],
     },
     {
