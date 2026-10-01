@@ -8,8 +8,10 @@ const github = 'https://github.com/d-w-arnold';
 const keybase = 'https://keybase.io/d_w_arnold';
 const linkedin = 'https://uk.linkedin.com/in/david-w-arnold';
 
+const certificateCount = computingSections.find((section) => section.title === 'Certificates')?.items.length ?? 0;
+
 const profileHighlights = [
-    {label: 'Skill areas', value: `${computingSections.length}+`},
+    {label: 'Certificates', value: `${certificateCount}`},
     {label: 'Roles highlighted', value: `${experienceEntries.length}`},
     {label: 'Education milestones', value: `${educationEntries.length}`},
 ];
