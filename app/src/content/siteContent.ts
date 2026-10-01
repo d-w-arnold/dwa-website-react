@@ -435,10 +435,11 @@ export const computingSections: SkillSectionData[] = [
     {
         title: 'Operating Systems',
         items: [
-            [{type: 'text', text: 'macOS'}],
-            [{type: 'text', text: 'Amazon Linux 2'}],
-            [{type: 'text', text: 'Ubuntu 22.04'}],
-            [{type: 'text', text: 'iOS'}],
+            [{type: 'text', text: 'macOS (Intel & Apple Silicon)'}],
+            [{type: 'text', text: 'Amazon Linux 2023 (AL2023)'}],
+            [{type: 'text', text: 'Amazon Linux 2 (AL2)'}],
+            [{type: 'text', text: 'Ubuntu 22.04 LTS (Jammy Jellyfish)'}],
+            [{type: 'text', text: 'iOS 26'}],
         ],
     },
     {
