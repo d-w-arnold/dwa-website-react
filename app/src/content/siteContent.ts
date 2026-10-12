@@ -1,10 +1,10 @@
 export type IconClass = 'iconUni' | 'iconPaper' | 'iconLap';
 
 export type InlinePart =
-    | {type: 'text'; text: string}
-    | {type: 'link'; text: string; href: string; className?: string}
-    | {type: 'route'; text: string; to: string; className?: string}
-    | {type: 'icon'; iconClass: IconClass};
+    | { type: 'text'; text: string }
+    | { type: 'link'; text: string; href: string; className?: string }
+    | { type: 'route'; text: string; to: string; className?: string }
+    | { type: 'icon'; iconClass: IconClass };
 
 export type ListItemData = {
     parts: InlinePart[];
@@ -40,20 +40,20 @@ const links = {
         cdk: 'https://github.com/aws/aws-cdk',
         cli: 'https://aws.amazon.com/cli/',
         certificateManager: 'https://aws.amazon.com/certificate-manager/',
-        amazonMq: 'https://aws.amazon.com/amazon-mq/',
         amplify: 'https://aws.amazon.com/amplify/',
         cloudformation: 'https://aws.amazon.com/cloudformation/',
         cloudfront: 'https://aws.amazon.com/cloudfront/',
         cloudwatch: 'https://aws.amazon.com/cloudwatch/',
-        codeartifact: 'https://aws.amazon.com/codeartifact/',
         codebuild: 'https://aws.amazon.com/codebuild/',
         codepipeline: 'https://aws.amazon.com/codepipeline/',
+        datasync: 'https://aws.amazon.com/datasync/',
         dynamodb: 'https://aws.amazon.com/dynamodb/',
         ec2: 'https://aws.amazon.com/ec2/',
         ecr: 'https://aws.amazon.com/ecr/',
         ecs: 'https://aws.amazon.com/ecs/',
         efs: 'https://aws.amazon.com/efs/',
         elasticache: 'https://aws.amazon.com/elasticache/',
+        elb: 'https://aws.amazon.com/elasticloadbalancing/',
         eventbridge: 'https://aws.amazon.com/eventbridge/',
         iam: 'https://aws.amazon.com/iam/',
         kms: 'https://aws.amazon.com/kms/',
@@ -63,6 +63,7 @@ const links = {
         s3: 'https://aws.amazon.com/s3/',
         ses: 'https://aws.amazon.com/ses/',
         sns: 'https://aws.amazon.com/sns/',
+        sqs: 'https://aws.amazon.com/sqs/',
         systemsManager: 'https://aws.amazon.com/systems-manager/',
         secretsManager: 'https://aws.amazon.com/secrets-manager/',
         stepFunctions: 'https://aws.amazon.com/step-functions/',
@@ -147,7 +148,10 @@ export const homeSections: HomeSectionData[] = [
     {
         title: 'Welcome!',
         paragraphs: [[
-            {type: 'text', text: "I'm a Software Engineer (specialty: AWS Cloud Engineer), and a First-Class Honours Computer Science graduate from the "},
+            {
+                type: 'text',
+                text: "I'm a Software Engineer (specialty: AWS Cloud Engineer), and a First-Class Honours Computer Science graduate from the "
+            },
             {type: 'link', text: 'University of Kent', href: links.education.uniOfKent},
             {type: 'text', text: '.'},
         ]],
@@ -162,12 +166,18 @@ export const homeSections: HomeSectionData[] = [
             [
                 {type: 'text', text: 'Hiking in the '},
                 {type: 'link', text: 'Lake District', href: links.interests.lakeDistrict},
-                {type: 'text', text: ', climbing peaks to take in the views, with the occasional swim in fresh water lakes/tarns/rivers, is an annual summer event I simply live for.'},
+                {
+                    type: 'text',
+                    text: ', climbing peaks to take in the views, with the occasional swim in fresh water lakes/tarns/rivers, is an annual summer event I simply live for.'
+                },
             ],
             [
                 {type: 'text', text: 'Motorsport is a strong passion of mine. Having done multiple '},
                 {type: 'link', text: 'Track Day', href: links.interests.cadwellPark},
-                {type: 'text', text: ' sessions, with occasional tuition from professional racing drivers, I relish the opportunity to better my skills behind the wheel.'},
+                {
+                    type: 'text',
+                    text: ' sessions, with occasional tuition from professional racing drivers, I relish the opportunity to better my skills behind the wheel.'
+                },
             ],
             [{type: 'text', text: "I'm currently learning Japanese - 読んでいただきありがとうございます！"}],
             [
@@ -183,9 +193,16 @@ export const homeSections: HomeSectionData[] = [
             [
                 {type: 'icon', iconClass: 'iconPaper'},
                 {type: 'text', text: 'Research Project - '},
-                {type: 'link', text: '"Quantum Cryptography: Security for the Post-Quantum world"', href: links.internal.researchProject},
+                {
+                    type: 'link',
+                    text: '"Quantum Cryptography: Security for the Post-Quantum world"',
+                    href: links.internal.researchProject
+                },
             ],
-            [{type: 'text', text: 'This research project set out to survey the field of Quantum Cryptography, providing a basic insight into various aspects of Quantum Cryptography - all of which could be very important regarding our online security in the future! Aimed at people in industry concerned with security.'}],
+            [{
+                type: 'text',
+                text: 'This research project set out to survey the field of Quantum Cryptography, providing a basic insight into various aspects of Quantum Cryptography - all of which could be very important regarding our online security in the future! Aimed at people in industry concerned with security.'
+            }],
         ],
     },
     {
@@ -193,9 +210,15 @@ export const homeSections: HomeSectionData[] = [
         paragraphs: [
             [{type: 'text', text: 'Before I was a Software Engineer, I trained as a professional golfer.'}],
             [
-                {type: 'text', text: 'My grandfather bought me my first golf clubs for my 7th birthday. Over the years I represented '},
+                {
+                    type: 'text',
+                    text: 'My grandfather bought me my first golf clubs for my 7th birthday. Over the years I represented '
+                },
                 {type: 'link', text: 'Kent County Golf Union (KCGU)', href: links.interests.kentGolf},
-                {type: 'text', text: " in various teams: Kent Under 13's, Under 14's, Under 16's (Captain), Under 18's."},
+                {
+                    type: 'text',
+                    text: " in various teams: Kent Under 13's, Under 14's, Under 16's (Captain), Under 18's."
+                },
             ],
             [
                 {type: 'text', text: 'Aged 15, I scored 68 to win the '},
@@ -212,13 +235,16 @@ export const homeSections: HomeSectionData[] = [
                 {type: 'link', text: 'EuroPro UK Golf Tour', href: links.interests.euroPro},
                 {type: 'text', text: '.'},
             ],
-            [{type: 'text', text: 'In late 2016, I hung up my golf clubs to study Computer Science. Golf will remain a passion and a lifetime hobby.'}],
+            [{
+                type: 'text',
+                text: 'In late 2016, I hung up my golf clubs to study Computer Science. Golf will remain a passion and a lifetime hobby.'
+            }],
         ],
     },
 ];
 
 export const experienceEntries: EntryData[] = [
-        {
+    {
         organization: {name: 'Verisk Maplecroft', href: links.employers.veriskMaplecroft, iconClass: 'iconLap'},
         title: [{type: 'text', text: 'Platform Engineer (AWS)'}],
         location: '(Remote) - Bath, U.K.',
@@ -240,11 +266,24 @@ export const experienceEntries: EntryData[] = [
                 parts: [
                     {type: 'text', text: 'Led the architecture of a new centralized '},
                     {type: 'link', text: 'AWS CDK', href: links.aws.cdk},
-                    {type: 'text', text: ' infrastructure repository, consolidating siloed Infrastructure as Code (IaC) from multiple application repos into a single unified GitHub source of truth.'},
+                    {
+                        type: 'text',
+                        text: ' infrastructure repository, consolidating siloed Infrastructure as Code (IaC) from multiple application repos into a single unified GitHub source of truth.'
+                    },
                 ],
             },
-            {parts: [{type: 'text', text: 'Designed robust, reusable CDK L3 construct classes (extending L2/L1 constructs) to simplify stack definitions, enabling rapid provisioning of new infrastructure stacks.'}]},
-            {parts: [{type: 'text', text: 'Challenges: Ensuring the new IaC repository was modular, maintainable, and scalable to support multiple applications and environments across multiple AWS accounts, while adhering to best practices for security, compliance, and cost optimization.'}]},
+            {
+                parts: [{
+                    type: 'text',
+                    text: 'Designed robust, reusable CDK L3 construct classes (extending L2/L1 constructs) to simplify stack definitions, enabling rapid provisioning of new infrastructure stacks.'
+                }]
+            },
+            {
+                parts: [{
+                    type: 'text',
+                    text: 'Challenges: Ensuring the new IaC repository was modular, maintainable, and scalable to support multiple applications and environments across multiple AWS accounts, while adhering to best practices for security, compliance, and cost optimization.'
+                }]
+            },
         ],
     },
     {
@@ -276,9 +315,24 @@ export const experienceEntries: EntryData[] = [
             {
                 parts: [{type: 'text', text: 'Main responsibilities:'}],
                 nestedItems: [
-                    {parts: [{type: 'text', text: 'Development/provisioning of new cloud resources (via IaC and/or scripts) to support multiple active projects.'}]},
-                    {parts: [{type: 'text', text: 'Oversee all Continuous Integration/Continuous Delivery (CI/CD) processes.'}]},
-                    {parts: [{type: 'text', text: 'Provide internal support to technical team members using cloud resources.'}]},
+                    {
+                        parts: [{
+                            type: 'text',
+                            text: 'Development/provisioning of new cloud resources (via IaC and/or scripts) to support multiple active projects.'
+                        }]
+                    },
+                    {
+                        parts: [{
+                            type: 'text',
+                            text: 'Oversee all Continuous Integration/Continuous Delivery (CI/CD) processes.'
+                        }]
+                    },
+                    {
+                        parts: [{
+                            type: 'text',
+                            text: 'Provide internal support to technical team members using cloud resources.'
+                        }]
+                    },
                 ],
             },
             {
@@ -297,16 +351,30 @@ export const experienceEntries: EntryData[] = [
         dateRange: 'Oct. 2020 - Nov. 2021',
         details: [
             {parts: [{type: 'text', text: 'DevOps team member.'}]},
-            {parts: [{type: 'text', text: 'Tech Stack: [ Linux | Git | AWS | Python (inc. Django) | Docker | SQL | TeamCity | Jenkins ]'}]},
+            {
+                parts: [{
+                    type: 'text',
+                    text: 'Tech Stack: [ Linux | Git | AWS | Python (inc. Django) | Docker | SQL | TeamCity | Jenkins ]'
+                }]
+            },
         ],
     },
     {
-        organization: {name: 'Red Bull Technology / Red Bull Racing', href: links.employers.redBull, iconClass: 'iconLap'},
+        organization: {
+            name: 'Red Bull Technology / Red Bull Racing',
+            href: links.employers.redBull,
+            iconClass: 'iconLap'
+        },
         title: [{type: 'text', text: 'IT Student Placement'}],
         location: 'Milton Keynes, U.K.',
         dateRange: 'Jun. 2018 - Jun. 2019',
         details: [
-            {parts: [{type: 'text', text: 'Project led the organisation of new starter hardware and software delivery.'}]},
+            {
+                parts: [{
+                    type: 'text',
+                    text: 'Project led the organisation of new starter hardware and software delivery.'
+                }]
+            },
             {parts: [{type: 'text', text: 'Volunteered during busy F1 race weekend.'}]},
         ],
     },
@@ -336,7 +404,11 @@ export const educationEntries: EntryData[] = [
                             {type: 'text', text: '(First-Class) '},
                             {type: 'icon', iconClass: 'iconPaper'},
                             {type: 'text', text: 'Research Project - '},
-                            {type: 'link', text: '"Quantum Cryptography: Security for the Post-Quantum world"', href: links.internal.researchProject},
+                            {
+                                type: 'link',
+                                text: '"Quantum Cryptography: Security for the Post-Quantum world"',
+                                href: links.internal.researchProject
+                            },
                         ],
                     },
                     {
@@ -348,7 +420,11 @@ export const educationEntries: EntryData[] = [
                     {
                         parts: [
                             {type: 'text', text: '92% '},
-                            {type: 'link', text: 'Computer Security and Cryptography', href: links.education.compSecCrypt},
+                            {
+                                type: 'link',
+                                text: 'Computer Security and Cryptography',
+                                href: links.education.compSecCrypt
+                            },
                             {type: 'text', text: ' [ Java ] - Featuring my '},
                             {type: 'link', text: 'favourite assignment', href: links.projects.cipherDecrypt},
                             {type: 'text', text: ' ^_^'},
@@ -357,28 +433,44 @@ export const educationEntries: EntryData[] = [
                     {
                         parts: [
                             {type: 'text', text: '88% '},
-                            {type: 'link', text: 'Computer Networks and Communication', href: links.education.compNetCom},
+                            {
+                                type: 'link',
+                                text: 'Computer Networks and Communication',
+                                href: links.education.compNetCom
+                            },
                             {type: 'text', text: ' [ Java ]'},
                         ],
                     },
                     {
                         parts: [
                             {type: 'text', text: '88% '},
-                            {type: 'link', text: 'Programming Language Implementation', href: links.education.progLangImp},
+                            {
+                                type: 'link',
+                                text: 'Programming Language Implementation',
+                                href: links.education.progLangImp
+                            },
                             {type: 'text', text: ' [ OCaml | C ]'},
                         ],
                     },
                     {
                         parts: [
                             {type: 'text', text: '88% '},
-                            {type: 'link', text: 'Programming Languages: Applications and Design', href: links.education.progLangsApp},
+                            {
+                                type: 'link',
+                                text: 'Programming Languages: Applications and Design',
+                                href: links.education.progLangsApp
+                            },
                             {type: 'text', text: ' [ Java | Rust | Haskell ]'},
                         ],
                     },
                     {
                         parts: [
                             {type: 'text', text: '82% '},
-                            {type: 'link', text: '(Masters) Data Mining and Knowledge Discovery', href: links.education.dataMining},
+                            {
+                                type: 'link',
+                                text: '(Masters) Data Mining and Knowledge Discovery',
+                                href: links.education.dataMining
+                            },
                             {type: 'text', text: ' [ R ]'},
                         ],
                     },
@@ -391,7 +483,12 @@ export const educationEntries: EntryData[] = [
                     },
                 ],
             },
-            {parts: [{type: 'text', text: 'Year 2: 78% [ Java | Erlang | JavaScript | jQuery | AJAX | PHP | HTML | CSS | Haskell ]'}]},
+            {
+                parts: [{
+                    type: 'text',
+                    text: 'Year 2: 78% [ Java | Erlang | JavaScript | jQuery | AJAX | PHP | HTML | CSS | Haskell ]'
+                }]
+            },
             {parts: [{type: 'text', text: 'Year 1: 86% [ Java | JavaScript | MySQL | PHP | HTML | CSS ]'}]},
         ],
     },
@@ -401,8 +498,18 @@ export const educationEntries: EntryData[] = [
         location: 'Newberry, South Carolina, U.S.A.',
         dateRange: 'Jan. 2015 - Oct. 2015',
         details: [
-            {parts: [{type: 'text', text: 'I was offered a 100% scholarship (golf and academic) to play for the Newberry College NCAA (National Collegiate Athletic Association) golf team while studying as a Mathematics Major.'}]},
-            {parts: [{type: 'text', text: 'My GPA (Grade Point Average) for the time I was there was 3.8/4.0 (A-Grade).'}]},
+            {
+                parts: [{
+                    type: 'text',
+                    text: 'I was offered a 100% scholarship (golf and academic) to play for the Newberry College NCAA (National Collegiate Athletic Association) golf team while studying as a Mathematics Major.'
+                }]
+            },
+            {
+                parts: [{
+                    type: 'text',
+                    text: 'My GPA (Grade Point Average) for the time I was there was 3.8/4.0 (A-Grade).'
+                }]
+            },
         ],
     },
     {
@@ -411,8 +518,18 @@ export const educationEntries: EntryData[] = [
         location: '(Remote) - Milton Keynes, U.K.',
         dateRange: 'Jun. 2012 - Jul. 2014',
         details: [
-            {parts: [{type: 'text', text: 'I studied (part-time) for two years: Computing, Psychology and Mathematics.'}]},
-            {parts: [{type: 'text', text: 'Computing: Overall Continuous Assessment Score: 75%, Overall Examinable Score: 89%'}]},
+            {
+                parts: [{
+                    type: 'text',
+                    text: 'I studied (part-time) for two years: Computing, Psychology and Mathematics.'
+                }]
+            },
+            {
+                parts: [{
+                    type: 'text',
+                    text: 'Computing: Overall Continuous Assessment Score: 75%, Overall Examinable Score: 89%'
+                }]
+            },
         ],
     },
 ];
@@ -421,7 +538,11 @@ export const computingSections: SkillSectionData[] = [
     {
         title: 'Certificates',
         items: [
-            [{type: 'link', text: 'AWS CSA-A (Certified Solutions Architect – Associate)', href: links.certifications.awsCsaA}],
+            [{
+                type: 'link',
+                text: 'AWS CSA-A (Certified Solutions Architect – Associate)',
+                href: links.certifications.awsCsaA
+            }],
             [{type: 'link', text: 'AWS CCP (Certified Cloud Practitioner)', href: links.certifications.awsCcp}],
             [{type: 'link', text: 'HackerRank 6-Star Problem Solving (Badge)', href: links.certifications.hackerrank}],
         ],
@@ -581,34 +702,35 @@ export const computingSections: SkillSectionData[] = [
         wide: true,
         compact: true,
         items: [
-            [{type: 'link', text: 'ACM - Certificate Manager', href: links.aws.certificateManager}],
-            [{type: 'link', text: 'AmazonMQ', href: links.aws.amazonMq}],
+            [{type: 'link', text: '[ACM] Certificate Manager', href: links.aws.certificateManager}],
             [{type: 'link', text: 'Amplify (Apps)', href: links.aws.amplify}],
             [{type: 'link', text: 'CloudFormation', href: links.aws.cloudformation}],
             [{type: 'link', text: 'CloudFront', href: links.aws.cloudfront}],
-            [{type: 'link', text: 'CloudWatch (Alarms, Log Groups, Metrics)', href: links.aws.cloudwatch}],
-            [{type: 'link', text: 'CodeArtifact', href: links.aws.codeartifact}],
+            [{type: 'link', text: 'CloudWatch', href: links.aws.cloudwatch}],
             [{type: 'link', text: 'CodeBuild', href: links.aws.codebuild}],
-            [{type: 'link', text: 'CodePipeline (inc. CodeConnections, formerly CodeStar Connections)', href: links.aws.codepipeline}],
+            [{type: 'link', text: 'CodePipeline', href: links.aws.codepipeline}],
+            [{type: 'link', text: 'DataSync', href: links.aws.datasync}],
             [{type: 'link', text: 'DynamoDB', href: links.aws.dynamodb}],
-            [{type: 'link', text: 'EC2 - Elastic Compute Cloud (ALBs & NLBs, Security Groups, ASGs, Launch Templates, Volumes, Elastic IPs)', href: links.aws.ec2}],
-            [{type: 'link', text: 'ECR - Elastic Container Registry', href: links.aws.ecr}],
-            [{type: 'link', text: 'ECS - Elastic Container Service (Fargate)', href: links.aws.ecs}],
-            [{type: 'link', text: 'EFS - Elastic File System', href: links.aws.efs}],
-            [{type: 'link', text: 'ElastiCache (Redis OSS)', href: links.aws.elasticache}],
-            [{type: 'link', text: 'EventBridge (Buses, Rules)', href: links.aws.eventbridge}],
-            [{type: 'link', text: 'IAM - Identity & Access Management (User Groups, Roles, Policies)', href: links.aws.iam}],
-            [{type: 'link', text: 'KMS - Key Management Service', href: links.aws.kms}],
+            [{type: 'link', text: 'EC2', href: links.aws.ec2}],
+            [{type: 'link', text: 'ECR', href: links.aws.ecr}],
+            [{type: 'link', text: 'ECS Fargate', href: links.aws.ecs}],
+            [{type: 'link', text: 'EFS', href: links.aws.efs}],
+            [{type: 'link', text: 'ElastiCache', href: links.aws.elasticache}],
+            [{type: 'link', text: 'ELB (ALB & NLB)', href: links.aws.elb}],
+            [{type: 'link', text: 'EventBridge', href: links.aws.eventbridge}],
+            [{type: 'link', text: 'IAM', href: links.aws.iam}],
+            [{type: 'link', text: 'KMS', href: links.aws.kms}],
             [{type: 'link', text: 'Lambda (Functions)', href: links.aws.lambda}],
-            [{type: 'link', text: 'RDS - Relational Database Service (Databases, Proxies)', href: links.aws.rds}],
-            [{type: 'link', text: 'Route53 (Hosted Zones, Domain Management)', href: links.aws.route53}],
-            [{type: 'link', text: 'S3 - Simple Storage Service (Buckets, Lifecycle Rules)', href: links.aws.s3}],
-            [{type: 'link', text: 'SES - Simple Email Service', href: links.aws.ses}],
-            [{type: 'link', text: 'SNS - Simple Notification Service (Topics, Mobile Push Notifications)', href: links.aws.sns}],
-            [{type: 'link', text: 'SSM - Systems Manager (Parameter Store)', href: links.aws.systemsManager}],
+            [{type: 'link', text: 'RDS', href: links.aws.rds}],
+            [{type: 'link', text: 'Route53', href: links.aws.route53}],
+            [{type: 'link', text: 'S3', href: links.aws.s3}],
             [{type: 'link', text: 'Secrets Manager', href: links.aws.secretsManager}],
+            [{type: 'link', text: 'SES', href: links.aws.ses}],
+            [{type: 'link', text: 'SNS', href: links.aws.sns}],
+            [{type: 'link', text: 'SQS', href: links.aws.sqs}],
             [{type: 'link', text: 'Step Functions (State Machines)', href: links.aws.stepFunctions}],
-            [{type: 'link', text: 'WAF - Web Application Firewall (Web ACLs)', href: links.aws.waf}],
+            [{type: 'link', text: '[SSM] Systems Manager', href: links.aws.systemsManager}],
+            [{type: 'link', text: 'WAF Web ACLs', href: links.aws.waf}],
         ],
     },
     {
