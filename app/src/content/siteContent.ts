@@ -255,11 +255,11 @@ export const experienceEntries: EntryData[] = [
                 parts: [
                     {type: 'text', text: 'Tech Stack: [ macOS | '},
                     {type: 'link', text: 'AWS Cloud Development Kit (CDK)', href: links.aws.cdk},
-                    {type: 'text', text: ' | TypeScript | OpenTofu | Python3 | PyCharm | '},
+                    {type: 'text', text: ' | TypeScript | OpenTofu | Python3 | PyCharm | GitHub CoPilot | '},
                     {type: 'link', text: 'Boto3 - AWS SDK for Python', href: links.tools.boto3},
-                    {type: 'text', text: ' | GitHub CoPilot | Unix CLI | Git | '},
+                    {type: 'text', text: ' | Git | '},
                     {type: 'link', text: 'AWS CLI', href: links.aws.cli},
-                    {type: 'text', text: ' | Shell (Bash) Scripting | Docker | Atlassian ]'},
+                    {type: 'text', text: ' | Shell (Bash) Scripting | Docker | AWS ECR | Jira | Confluence ]'},
                 ],
             },
             {
@@ -268,20 +268,20 @@ export const experienceEntries: EntryData[] = [
                     {type: 'link', text: 'AWS CDK', href: links.aws.cdk},
                     {
                         type: 'text',
-                        text: ' infrastructure repository, consolidating siloed Infrastructure as Code (IaC) from multiple application repos into a single unified GitHub source of truth.'
+                        text: ' infrastructure, consolidating Infrastructure as Code (IaC) from multiple application repos into a single GitHub repository.'
                     },
                 ],
             },
             {
                 parts: [{
                     type: 'text',
-                    text: 'Designed robust, reusable CDK L3 construct classes (extending L2/L1 constructs) to simplify stack definitions, enabling rapid provisioning of new infrastructure stacks.'
+                    text: 'Designed robust, reusable CDK (L3) construct classes (extending L2/L1 constructs) to simplify CDK stack definitions, enabling rapid provisioning of new infrastructure stacks.'
                 }]
             },
             {
                 parts: [{
                     type: 'text',
-                    text: 'Challenges: Ensuring the new IaC repository was modular, maintainable, and scalable to support multiple applications and environments across multiple AWS accounts, while adhering to best practices for security, compliance, and cost optimization.'
+                    text: 'Challenges: Ensuring the new IaC repository was modular & maintainable to support multiple environments across multiple AWS accounts, while adhering to best practices for security, compliance, and cost optimisation.'
                 }]
             },
         ],
@@ -292,16 +292,19 @@ export const experienceEntries: EntryData[] = [
         location: 'Harwell Campus, Didcot, U.K.',
         dateRange: 'Nov. 2021 - Feb. 2025',
         details: [
-            {parts: [{type: 'text', text: 'All-in-one: Cloud Engineer / Cloud Architect / DevOps'}]},
+            {parts: [{type: 'text', text: 'All-in-one: Cloud Engineer / Solutions Architect / DevOps'}]},
             {
                 parts: [
                     {type: 'text', text: 'Tech Stack: [ macOS | '},
                     {type: 'link', text: 'AWS Cloud Development Kit (CDK)', href: links.aws.cdk},
                     {type: 'text', text: ' | Python3 | PyCharm | '},
                     {type: 'link', text: 'Boto3 - AWS SDK for Python', href: links.tools.boto3},
-                    {type: 'text', text: ' | Unix CLI | Git | '},
+                    {type: 'text', text: ' | Git | '},
                     {type: 'link', text: 'AWS CLI', href: links.aws.cli},
-                    {type: 'text', text: ' | Shell (Bash) Scripting | Docker | MySQL | Atlassian ]'},
+                    {
+                        type: 'text',
+                        text: ' | Shell (Bash) Scripting | Docker | AWS ECR | MySQL | Bitbucket | Jira | Confluence ]'
+                    },
                 ],
             },
             {parts: [{type: 'text', text: "Led the company's migration of cloud resources from Azure to AWS."}]},
@@ -313,33 +316,28 @@ export const experienceEntries: EntryData[] = [
                 ],
             },
             {
-                parts: [{type: 'text', text: 'Main responsibilities:'}],
-                nestedItems: [
+                parts: [
                     {
-                        parts: [{
-                            type: 'text',
-                            text: 'Development/provisioning of new cloud resources (via IaC and/or scripts) to support multiple active projects.'
-                        }]
+                        type: 'text',
+                        text: 'Development/provisioning of new cloud resources (via IaC and/or scripts) to support multiple active projects.'
                     },
-                    {
-                        parts: [{
-                            type: 'text',
-                            text: 'Oversee all Continuous Integration/Continuous Delivery (CI/CD) processes.'
-                        }]
-                    },
-                    {
-                        parts: [{
-                            type: 'text',
-                            text: 'Provide internal support to technical team members using cloud resources.'
-                        }]
-                    },
+                ],
+            },
+            {
+                parts: [
+                    {type: 'text', text: 'Oversee all Continuous Integration/Continuous Delivery (CI/CD) processes.'},
+                ],
+            },
+            {
+                parts: [
+                    {type: 'text', text: 'Provide internal support to technical team members using cloud resources.'},
                 ],
             },
             {
                 parts: [
                     {type: 'text', text: 'Solely architected and implemented new IaC for an in-house '},
                     {type: 'link', text: 'Satellite Data Acquisition System', href: links.internal.satelliteDiagram},
-                    {type: 'text', text: ', for serving live data to company products.'},
+                    {type: 'text', text: ', for serving live satellite data to company products.'},
                 ],
             },
         ],
@@ -349,15 +347,7 @@ export const experienceEntries: EntryData[] = [
         title: [{type: 'text', text: 'Junior Software Engineer'}],
         location: '(Remote) - London, U.K.',
         dateRange: 'Oct. 2020 - Nov. 2021',
-        details: [
-            {parts: [{type: 'text', text: 'DevOps team member.'}]},
-            {
-                parts: [{
-                    type: 'text',
-                    text: 'Tech Stack: [ Linux | Git | AWS | Python (inc. Django) | Docker | SQL | TeamCity | Jenkins ]'
-                }]
-            },
-        ],
+        details: [],
     },
     {
         organization: {
@@ -368,15 +358,7 @@ export const experienceEntries: EntryData[] = [
         title: [{type: 'text', text: 'IT Student Placement'}],
         location: 'Milton Keynes, U.K.',
         dateRange: 'Jun. 2018 - Jun. 2019',
-        details: [
-            {
-                parts: [{
-                    type: 'text',
-                    text: 'Project led the organisation of new starter hardware and software delivery.'
-                }]
-            },
-            {parts: [{type: 'text', text: 'Volunteered during busy F1 race weekend.'}]},
-        ],
+        details: [],
     },
 ];
 
@@ -568,9 +550,9 @@ export const computingSections: SkillSectionData[] = [
             ],
             [{type: 'text', text: 'Languages [ TypeScript | Python3 ]'}],
             [
-                {type: 'text', text: 'Python Tooling [ '},
+                {type: 'text', text: 'Dev Tooling [ '},
                 {type: 'link', text: 'PyCharm', href: links.tools.pycharm},
-                {type: 'text', text: ' | '},
+                {type: 'text', text: ' | GitHub Copilot | '},
                 {type: 'link', text: 'Boto3 - AWS SDK for Python', href: links.tools.boto3},
                 {type: 'text', text: ' ]'},
             ],
@@ -586,15 +568,15 @@ export const computingSections: SkillSectionData[] = [
                 {type: 'text', text: ' | Shell (Bash) Scripting ]'},
             ],
             [
-                {type: 'text', text: 'Containers [ Docker | '},
-                {type: 'link', text: 'AWS ECR - Elastic Container Registry', href: links.aws.ecr},
-                {type: 'text', text: ' | '},
+                {type: 'text', text: 'Containers [ Docker & '},
                 {type: 'link', text: 'Docker Compose', href: links.tools.dockerCompose},
+                {type: 'text', text: ' | '},
+                {type: 'link', text: 'AWS ECR', href: links.aws.ecr},
                 {type: 'text', text: ' ]'},
             ],
             [{type: 'text', text: 'Databases [ MySQL ]'}],
             [
-                {type: 'text', text: 'Collaboration & Productivity [ GitHub Copilot | '},
+                {type: 'text', text: 'Collaboration & Productivity [ '},
                 {type: 'link', text: 'Bitbucket', href: links.tools.bitbucket},
                 {type: 'text', text: ' | '},
                 {type: 'link', text: 'Jira', href: links.tools.jira},
@@ -651,7 +633,7 @@ export const computingSections: SkillSectionData[] = [
                 {type: 'link', text: 'AWS Scripts Examples', href: links.projects.awsScriptsExamples},
                 {type: 'text', text: ' [ Python3 | '},
                 {type: 'link', text: 'Boto3 - AWS SDK for Python', href: links.tools.boto3},
-                {type: 'text', text: ' | Shell | '},
+                {type: 'text', text: ' | Shell (Bash) Scripting | '},
                 {type: 'link', text: 'AWS CLI', href: links.aws.cli},
                 {type: 'text', text: ' ]'},
             ],
@@ -663,13 +645,13 @@ export const computingSections: SkillSectionData[] = [
             ],
             [
                 {type: 'link', text: 'AWS EC2 Examples', href: links.projects.awsEc2Examples},
-                {type: 'text', text: ' [ Shell ]'},
+                {type: 'text', text: ' [ Shell (Bash) Scripting ]'},
             ],
             [
                 {type: 'link', text: 'My React Website', href: links.projects.dwaWebsiteReact},
                 {type: 'text', text: ' [ React | TypeScript | Python3 - '},
                 {type: 'link', text: 'AWS Lambda (Functions)', href: links.aws.lambda},
-                {type: 'text', text: ' | SCSS ]'},
+                {type: 'text', text: ' ]'},
             ],
             [
                 {type: 'link', text: 'HackerRank Problem Solving Solutions', href: links.projects.pythonHackerrank},
@@ -682,18 +664,6 @@ export const computingSections: SkillSectionData[] = [
             [
                 {type: 'link', text: 'Ciphertext Decryption', href: links.projects.cipherDecrypt},
                 {type: 'text', text: ' [ Java ]'},
-            ],
-            [
-                {type: 'link', text: 'Homebrew Package Auto-Upgrade Tool', href: links.projects.homebrewAuto},
-                {type: 'text', text: ' [ Shell ]'},
-            ],
-            [
-                {type: 'link', text: 'Open All Images', href: links.projects.openAllImages},
-                {type: 'text', text: ' [ Shell | AppleScript ]'},
-            ],
-            [
-                {type: 'link', text: 'Timestamp Media', href: links.projects.timestampMedia},
-                {type: 'text', text: ' [ AppleScript ]'},
             ],
         ],
     },
@@ -728,7 +698,7 @@ export const computingSections: SkillSectionData[] = [
             [{type: 'link', text: 'SES', href: links.aws.ses}],
             [{type: 'link', text: 'SNS', href: links.aws.sns}],
             [{type: 'link', text: 'SQS', href: links.aws.sqs}],
-            [{type: 'link', text: 'Step Functions (State Machines)', href: links.aws.stepFunctions}],
+            [{type: 'link', text: 'Step Functions', href: links.aws.stepFunctions}],
             [{type: 'link', text: '[SSM] Systems Manager', href: links.aws.systemsManager}],
             [{type: 'link', text: 'WAF Web ACLs', href: links.aws.waf}],
         ],
