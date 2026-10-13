@@ -1,48 +1,78 @@
-import React from "react";
 import './App.scss';
+import {Link} from 'react-router-dom';
 import Nav from './Nav';
+import {computingSections, educationEntries, experienceEntries} from './content/siteContent';
 
-class App extends React.Component {
-    render() {
-        let cv_path = '/cv/David_W_Arnold-CV-website.pdf';
-        let github = 'https://github.com/d-w-arnold';
-        let keybase = 'https://keybase.io/d_w_arnold';
-        let linkedin = 'https://uk.linkedin.com/in/david-w-arnold';
-        return (
-            <React.Fragment>
-                <div id="myDiv">
-                    <header>
-                        <div id="top">
-                            <div className="alignRight">
-                                <a className="iconLink" target="_blank" rel="noopener noreferrer" href={github}>
-                                    <i className="fa fa-github-square" aria-hidden="true"/>
-                                </a>
-                                <a className="iconLink" target="_blank" rel="noopener noreferrer"
-                                   href={linkedin}>
-                                    <i className="fa fa-linkedin-square" aria-hidden="true"/>
-                                </a>
-                                <a className="iconLink" target="_blank" rel="noopener noreferrer" href={keybase}>
-                                    <i className="fa fa-key" aria-hidden="true"/>
-                                </a>
-                                <a id="cv" target="_blank" rel="noopener noreferrer"
-                                   href={cv_path}>** CV (Résumé) **</a>
-                            </div>
-                            <div className="alignLeft">
-                                <p id="delta">
-                                    <a href="/">∆WA</a>
-                                </p>
-                            </div>
+const cvPath = '/cv/David_W_Arnold-CV-website.pdf';
+const github = 'https://github.com/d-w-arnold';
+const keybase = 'https://keybase.io/d_w_arnold';
+const linkedin = 'https://uk.linkedin.com/in/david-w-arnold';
+
+const certificateCount = computingSections.find((section) => section.title === 'Certificates')?.items.length ?? 0;
+
+const profileHighlights = [
+    {label: 'Certificates', value: `${certificateCount}`, to: '/computing'},
+    {label: 'Roles highlighted', value: `${experienceEntries.length}`, to: '/experience'},
+    {label: 'Education milestones', value: `${educationEntries.length}`, to: '/education'},
+];
+
+function App() {
+    return (
+        <div id="myDiv" className="appShell">
+            <header className="siteHeader entryCard">
+                <div className="siteHeaderTop">
+                    <div className="alignLeft">
+                        <p id="delta">
+                            <Link className="brandMark" to="/">∆WA</Link>
+                        </p>
+                    </div>
+
+                    <div className="alignRight">
+                        <div className="socialLinks" aria-label="External profiles">
+                            <a className="iconLink" target="_blank" rel="noopener noreferrer" href={github} aria-label="GitHub profile">
+                                <i className="fa fa-github-square" aria-hidden="true"/>
+                            </a>
+                            <a className="iconLink" target="_blank" rel="noopener noreferrer" href={linkedin} aria-label="LinkedIn profile">
+                                <i className="fa fa-linkedin-square" aria-hidden="true"/>
+                            </a>
+                            <a className="iconLink" target="_blank" rel="noopener noreferrer" href={keybase} aria-label="Keybase profile">
+                                <i className="fa fa-key" aria-hidden="true"/>
+                            </a>
                         </div>
-                        <div>
-                            <h1 id="myName"><a className="link-color" target="_blank" rel="noopener noreferrer"
-                                               href={cv_path}>David W. Arnold</a></h1>
-                        </div>
-                    </header>
-                    <Nav/>
+                    </div>
                 </div>
-            </React.Fragment>
-        );
-    }
+
+                <div className="siteHero">
+                    <div className="siteIdentity">
+                        <p className="heroEyebrow roboto">Portfolio • Cloud &amp; Software Engineering</p>
+                        <h1 id="myName">
+                            <a className="link-color" target="_blank" rel="noopener noreferrer" href={cvPath}>David W. Arnold</a>
+                        </h1>
+                        <p className="heroIntro roboto">Software Engineer • AWS Cloud Engineer</p>
+                        <p className="heroSummary roboto">
+                            Building reliable cloud platforms, automation workflows, and maintainable engineering systems with a practical delivery mindset.
+                        </p>
+
+                        <div className="heroActions roboto">
+                            <Link className="heroAction heroActionSecondary" to="/experience">View Experience</Link>
+                            <Link className="heroAction heroActionGhost" to="/computing">Explore Skills</Link>
+                            <a id="cv" className="heroAction" target="_blank" rel="noopener noreferrer" href={cvPath}>Download CV</a>
+                        </div>
+                    </div>
+
+                    <section className="heroStats roboto" aria-label="Profile overview">
+                        {profileHighlights.map((item) => (
+                            <Link key={item.label} to={item.to} className="heroStat heroStatLink entryCard">
+                                <p className="heroStatValue">{item.value}</p>
+                                <p className="heroStatLabel">{item.label}</p>
+                            </Link>
+                        ))}
+                    </section>
+                </div>
+            </header>
+            <Nav/>
+        </div>
+    );
 }
 
 export default App;

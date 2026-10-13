@@ -1,0 +1,65 @@
+@use "../shared.scss" as *;
+
+%faIconBase {
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  padding-right: 10px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconUni::before {
+  content: "\f19c";
+  @extend %faIconBase;
+}
+
+.iconPaper::before {
+  content: "\f1ea";
+  @extend %faIconBase;
+}
+
+.iconLap::before {
+  content: "\f109";
+  @extend %faIconBase;
+}
+
+@media only screen and (max-width: 520px) {
+  body {
+    padding-inline: 0.85rem;
+  }
+
+  .siteHeader,
+  .siteNav {
+    padding: 1rem;
+  }
+
+  .homeSection,
+  .pageIntro,
+  .skillSection,
+  .contactSidebar,
+  .contactPanel,
+  .stackedCards > .entryCard {
+    padding: 1rem;
+  }
+
+  .siteHeader,
+  .siteNav,
+  .pageIntro,
+  .homeSection,
+  .skillSection,
+  .contactSidebar,
+  .contactPanel,
+  .stackedCards > .entryCard {
+    border-radius: 20px;
+  }
+
+  .socialLinks {
+    width: 100%;
+  }
+
+  .iconLink {
+    width: 2.55rem;
+    height: 2.55rem;
+  }
+}

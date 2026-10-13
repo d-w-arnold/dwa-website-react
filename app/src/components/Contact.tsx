@@ -1,19 +1,16 @@
-import React from "react";
-import MyForm from "./MyForm";
-// import GITHUB_ICON from '../icons/github_white.png';
-// import KEYBASE_ICON from '../icons/keybase-tile.svg';
+import MyForm, {type FormConfig} from "./MyForm";
+import PageIntro from './PageIntro';
 
-/**
- * @config preparing config prop.
- * api: url for the server endpoint
- * successMessage: message will show in the UI when mail is successfully sent.
- * errorMessage: message will show in the UI when mail is not sent.
- * fields: this is the name of each field. This should be exact order of the fieldsConfig and fieldsConfig.fieldName should be the same
- * fieldsConfig = settings for each input/textarea field
+/*
+ * Config consumed by the contact form component.
+ * - api: server endpoint URL
+ * - successMessage/errorMessage: submission feedback
+ * - fields: initial field values
+ * - fieldsConfig: rendering details for each input/textarea
  */
-const config = {
-    api: `${process.env.REACT_APP_API}`,
-    sitekey: `${process.env.REACT_APP_RECAPTCHA_SITEKEY}`,
+const config: FormConfig = {
+    api: import.meta.env.VITE_API ?? '',
+    sitekey: import.meta.env.VITE_RECAPTCHA_SITEKEY ?? '',
     successMessage: 'Thank you for contacting me, I\'ll be in touch!',
     errorMessage: 'Sorry we have some problems.',
     fields: {
@@ -28,7 +25,10 @@ const config = {
             fieldName: 'fullname',
             type: 'text',
             isRequired: true,
-            klassName: 'fullname-field response'
+            klassName: 'fullname-field response',
+            placeholder: 'Your name',
+            description: 'A minimum of 2 characters works best.',
+            autoComplete: 'name'
         },
         {
             id: 2,
@@ -36,7 +36,10 @@ const config = {
             fieldName: 'emailaddress',
             type: 'email',
             isRequired: true,
-            klassName: 'emailaddress-field response'
+            klassName: 'emailaddress-field response',
+            placeholder: 'you@example.com',
+            description: 'This is only used to reply to your message.',
+            autoComplete: 'email'
         },
         {
             id: 3,
@@ -44,46 +47,45 @@ const config = {
             fieldName: 'mssg',
             type: 'textarea',
             isRequired: true,
-            klassName: 'mssg-field response'
+            klassName: 'mssg-field response',
+            placeholder: 'Share a little context about your enquiry…',
+            description: 'Include enough detail for a useful response.',
+            autoComplete: 'off'
         }
     ]
-}
+};
 
 function Contact() {
     return (
-        <React.Fragment>
-            <div className="body">
+        <div className="body">
+            <PageIntro
+                eyebrow="Connect"
+                title="Contact"
+                summary="Use the form below to get in touch about engineering work, technical discussions, or collaboration opportunities."
+                meta={[
+                    'Secure form with reCAPTCHA',
+                    'Clear context helps speed up replies',
+                ]}
+            />
 
-                <p id="contactTitle" className="title">Contact</p>
+            <div className="contactLayout roboto">
+                <aside className="contactSidebar entryCard" aria-labelledby="contact-guidance-title">
+                    <h3 id="contact-guidance-title" className="skillTitle">Helpful guidance</h3>
+                    <ul className="detailList contactChecklist">
+                        <li>Briefly describe your project, role, or question.</li>
+                        <li>Mention any relevant timelines, technologies, or constraints.</li>
+                        <li>Include the best email address for a response.</li>
+                    </ul>
+                </aside>
 
-                <div className="roboto">
-                    <div className="contact-details">
-                        <div className="left">
-                            {/*<div className="LI-profile-badge" data-version="v1" data-size="medium" data-locale="en_US"*/}
-                            {/*     data-type="vertical" data-theme="dark" data-vanity="david-w-arnold"><a*/}
-                            {/*    className="LI-simple-link"*/}
-                            {/*    href='https://uk.linkedin.com/in/david-w-arnold?trk=profile-badge'>David W. Arnold</a>*/}
-                            {/*</div>*/}
-                            {/*<div id="github" className="center logos">*/}
-                            {/*    <a href={github} target="_blank" rel="noopener noreferrer">*/}
-                            {/*        <img src={GITHUB_ICON} alt="GitHub" width="64" height="64"/>*/}
-                            {/*    </a>*/}
-                            {/*</div>*/}
-                            {/*<div id="keybase" className="center logos">*/}
-                            {/*    <a href={keybase} target="_blank" rel="noopener noreferrer">*/}
-                            {/*        <img src={KEYBASE_ICON} alt="Keybase" width="64" height="64"/>*/}
-                            {/*    </a>*/}
-                            {/*</div>*/}
-                        </div>
-                        <div className="right">
-                            <MyForm config={config}/>
-                        </div>
-                    </div>
-                </div>
-
+                <section className="contactPanel entryCard" aria-labelledby="contact-form-title">
+                    <h3 id="contact-form-title" className="skillTitle">Send a message</h3>
+                    <MyForm config={config}/>
+                </section>
             </div>
-        </React.Fragment>
+        </div>
     );
 }
+
 
 export default Contact;

@@ -1,0 +1,59 @@
+@use "../shared.scss" as *;
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.skillSection {
+  padding: 1.35rem 1.45rem;
+  transition: all 0.3s ease;
+}
+
+.skillSection:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.48);
+}
+
+.skillSectionWide {
+  grid-column: 1 / -1;
+}
+
+.skillTitle {
+  margin: 0 0 1rem;
+  color: $writing;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.skillSection:hover .skillTitle {
+  color: $link;
+}
+
+.skillList,
+.skillListCompact {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.skillList li {
+  margin-bottom: 0.75rem;
+}
+
+.skillListCompact {
+  columns: 2;
+  column-gap: 1.75rem;
+}
+
+.skillListCompact li {
+  break-inside: avoid;
+}
+
+@media only screen and (max-width: 680px) {
+  .skillListCompact {
+    columns: 1;
+  }
+}
+

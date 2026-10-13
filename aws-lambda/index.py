@@ -24,15 +24,21 @@ msg_key = "mssg"
 
 def recaptcha_verified(event):
     if recaptcha_response_key in event:
-        res_json = json.loads(
-            requests.post(
+        try:
+            response = requests.post(
                 "https://www.google.com/recaptcha/api/siteverify",
                 data={"secret": os.environ["RECAPTCHA_SECRET"], "response": event[recaptcha_response_key]},
                 headers={"Content-Type": "application/x-www-form-urlencoded"},
-            ).text
-        )
+                timeout=10,
+            )
+            response.raise_for_status()
+            res_json = response.json()
+        except requests.RequestException as exc:
+            logger.exception("reCAPTCHA verification request failed: %s", exc)
+            return False
+
         logger.info(f"## reCaptcha Response: {res_json}")
-        return res_json["success"]
+        return res_json.get("success", False)
     return False
 
 

@@ -1,0 +1,223 @@
+@use "../shared.scss" as *;
+
+.stackedCards {
+  display: grid;
+  gap: 1rem;
+}
+
+.entryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.marginBottom2 {
+  margin-bottom: 1.25rem;
+}
+
+.entryMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+
+.employerName {
+  margin: 0;
+  color: $writing;
+  font-size: 1.15rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.employerName a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.employerName a:hover,
+.employerName a:focus-visible {
+  color: $link;
+}
+
+.jobTitle {
+  margin: 0.45rem 0 0;
+  color: $writing;
+  font-size: 1.02rem;
+  transition: color 0.3s ease;
+}
+
+.jobDates,
+.location {
+  margin: 0;
+  color: $muted;
+  font-size: 0.95rem;
+  text-align: right;
+}
+
+.detailList,
+.nestedDetailList {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.detailList li,
+.nestedDetailList li {
+  margin-bottom: 0.7rem;
+}
+
+.detailList li:last-child,
+.nestedDetailList li:last-child,
+.skillList li:last-child {
+  margin-bottom: 0;
+}
+
+.nestedDetailList {
+  margin-top: 0.7rem;
+}
+
+// Timeline card layout
+.timelineCards {
+  position: relative;
+  padding: 0;
+}
+
+.timelineCards::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.6), rgba(56, 189, 248, 0.1), transparent);
+  border-radius: 999px;
+  margin-left: 1.7rem;
+}
+
+.timelineCard {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  padding: 1.35rem 1.45rem;
+  align-items: start;
+  position: relative;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.timelineCard:not(:last-child) {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.timelineCard:hover {
+  background: rgba(56, 189, 248, 0.05);
+  border-bottom-color: rgba(56, 189, 248, 0.18);
+}
+
+.timelineMarker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  border: 2px solid $link;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.14), rgba(14, 165, 233, 0.08));
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  font-size: 1.3rem;
+  color: $link;
+  font-weight: 600;
+}
+
+.timelineCard:hover .timelineMarker {
+  transform: scale(1.1);
+  border-color: $link-hover;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(14, 165, 233, 0.14));
+}
+
+.timelineContent {
+  padding-top: 0.25rem;
+}
+
+.timelineCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.timelineCompany {
+  color: $writing;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.timelineCard:hover .timelineCompany {
+  color: $link;
+}
+
+.timelineDate {
+  color: $muted;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.timelineCard:hover .timelineDate {
+  color: $writing;
+}
+
+.timelineTitle {
+  color: $link;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.timelineLocation {
+  color: $muted;
+  font-size: 0.9rem;
+  margin-top: 0.35rem;
+}
+
+.timelineDetails {
+  margin-top: 0.85rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .entryHeader,
+  .timelineCardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .entryMeta,
+  .timelineDate {
+    text-align: left;
+    align-items: flex-start;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .timelineCards::before {
+    display: none;
+  }
+
+  .timelineCard {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .timelineMarker {
+    width: 2.8rem;
+    height: 2.8rem;
+    font-size: 1rem;
+  }
+}
+

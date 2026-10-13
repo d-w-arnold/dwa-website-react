@@ -1,0 +1,101 @@
+@use "../shared.scss" as *;
+
+.siteNav {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.1rem;
+  animation: slideDown 0.5s ease-out 0.1s both;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.siteNavLabel {
+  margin: 0 0 0.85rem;
+  color: $link;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.siteNav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.siteNav li {
+  list-style: none;
+}
+
+.siteNavLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.7rem 1.15rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: $muted;
+  font: 600 0.98rem/1.2 "Roboto", sans-serif;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.siteNavLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: $link;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.siteNavLink:hover,
+.siteNavLink:focus-visible {
+  color: $writing;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: $border;
+  transform: translateY(-1px);
+}
+
+.siteNavLink:hover::after,
+.siteNavLink:focus-visible::after {
+  width: calc(100% - 1.5rem);
+}
+
+.siteNavLink.active {
+  color: $writing;
+  background: rgba(56, 189, 248, 0.16);
+  border-color: rgba(56, 189, 248, 0.28);
+}
+
+.siteNavLink.active::after {
+  width: calc(100% - 1.5rem);
+}
+
+@media only screen and (max-width: 680px) {
+  .siteNav ul {
+    flex-direction: column;
+  }
+
+  .siteNavLink {
+    width: 100%;
+  }
+}
+
